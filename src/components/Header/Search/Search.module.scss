@@ -1,0 +1,137 @@
+.searchInput {
+  font-family: "Montserrat", sans-serif;
+
+  border: 1px solid #b8b7b7;
+  border-radius: 25px;
+  outline: none;
+  &::placeholder {
+    font-size: 12px;
+    padding-left: 5px;
+    font-weight: 400;
+    color: #9e9e9e;
+  }
+  &:active {
+    outline: none;
+  }
+  height: 30px;
+  width: 100%;
+  padding: 8px 10px;
+}
+
+.searchInputImg {
+  position: absolute;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  top: 9px;
+  cursor: pointer;
+}
+
+.closeImgPhone {
+  position: absolute;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  top: 9px;
+  cursor: pointer;
+}
+.searchWrapperPhone {
+  margin-top: -3px;
+  width: 100%;
+  width: 28px;
+  height: 28px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  .searchInputImgPhone {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.searchNewWrapper {
+  width: 30%;
+  margin-top: 5px;
+}
+
+.searchWrapper {
+  width: 100%;
+  position: relative;
+}
+
+.searched {
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+.searchDrop {
+  z-index: 321321;
+  position: absolute;
+  font-family: "Montserrat", sans-serif;
+  max-height: 500px;
+  overflow-y: scroll;
+  border: 1px solid #b8b7b7;
+  border-radius: 0 0 10px 10px;
+  outline: none;
+  width: 100%;
+
+  padding: 5px;
+  border-top: 0;
+  left: 0;
+
+  min-height: 50px;
+  background: white;
+  list-style: none;
+  p {
+    font-size: 12px;
+    color: rgb(120, 120, 120);
+    padding-bottom: 10px;
+  }
+  li {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgb(199, 199, 199);
+    width: auto;
+    overflow: hidden;
+    &:hover {
+      color: blue;
+    }
+    white-space: nowrap;
+  }
+}
+.dropDown {
+  position: relative;
+}
+@media screen and (max-width: 1000px) {
+  .searchWrapper {
+    display: none;
+  }
+  .searchWrapperPhone {
+    display: flex;
+  }
+
+  .searchNewWrapper {
+    width: auto;
+    margin-top: 0;
+  }
+
+  .openWrapper {
+    display: block;
+
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 16px 22px;
+    height: 60px;
+    background: white;
+  }
+
+  .closeImgPhone {
+    position: absolute;
+    right: 30px;
+    width: 14px;
+    height: 14px;
+    top: 24px;
+  }
+}

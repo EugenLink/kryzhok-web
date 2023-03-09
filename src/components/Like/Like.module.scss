@@ -1,0 +1,38 @@
+.like {
+  background: white;
+  cursor: pointer;
+  padding: 9px 8px 0 8px;
+  border-radius: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 50px;
+  img {
+    width: 42px;
+    height: 42px;
+  }
+}
+@media screen and (max-width: 810px) {
+  .like {
+    padding: 9px 8px 0 8px;
+
+    bottom: 20px;
+    right: 20px;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .like {
+    padding: 9px 8px 0 8px;
+
+    bottom: 10px;
+    right: 10px;
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

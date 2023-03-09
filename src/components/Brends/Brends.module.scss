@@ -1,0 +1,53 @@
+.wrapper {
+  width: 280px;
+  height: 420px;
+  background-color: #fcfcfc;
+  border: 1px solid #bbbbbb;
+  margin: 20px 80px;
+  cursor: pointer;
+
+  &:hover {
+    .title {
+      transition: color 0.2s ease-out 100ms;
+      color: #246acc;
+      text-decoration: underline;
+    }
+  }
+  &:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  .imageWrapper {
+    height: 150px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .text {
+    height: 265px;
+    background-color: white;
+    padding: 20px 15px;
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      padding-bottom: 15px;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .wrapper {
+    margin: 20px 40px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .wrapper {
+    margin: 20px 20px;
+    font-size: 14px;
+  }
+}
