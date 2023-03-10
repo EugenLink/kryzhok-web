@@ -1,10 +1,15 @@
+import getActiveItemIndexCarousel from "@/hooks/getActiveItemIndexCarousel.js";
 import { num_word } from "@/hooks/num_words.js";
 import Star from "@/img/star.png";
 import Image from "next/image.js";
+import Link from "next/link.js";
+import { useRouter } from "next/router.js";
 import { useState } from "react";
 import ReactItemsCarousel from "react-items-carousel";
 import styles from "./ProductCardHead.module.scss";
-export const ProductCardHeadMobile = ({ item }) => {
+export const ProductCardHeadMobile = ({ item, anchor }) => {
+  const router = useRouter();
+
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   return (
     <div className={styles.productCardWrapper}>
@@ -20,17 +25,23 @@ export const ProductCardHeadMobile = ({ item }) => {
             <Image src={Star} alt={"stars"} width="16" height="15" />
             <Image src={Star} alt={"stars"} width="16" height="15" />
           </div>
-          <div className={styles.recenz}>
-            {item.recenz}{" "}
-            {num_word(+item.recenz, ["Отзыв", "Отзыва", "Отзывов"])}
-          </div>
+          <Link href={`${router.asPath}#recenz`} onClick={anchor}>
+            <div className={styles.recenz}>
+              {item.recenz}{" "}
+              {num_word(+item.recenz, ["Отзыв", "Отзыва", "Отзывов"])}
+            </div>
+          </Link>
         </div>
       </div>
       <div>
         <div className={styles.caurusel}>
           <ReactItemsCarousel
             requestToChangeActive={setActiveItemIndex}
-            activeItemIndex={activeItemIndex}
+            activeItemIndex={getActiveItemIndexCarousel(
+              activeItemIndex,
+              item.images.split(";").length,
+              1
+            )}
             numberOfCards={1}
             slidesToScroll={1}
           >
@@ -64,7 +75,14 @@ export const ProductCardHeadMobile = ({ item }) => {
                   return (
                     <span
                       className={`${styles.caruselDot} ${
-                        i === activeItemIndex ? styles.activeDot : null
+                        i ===
+                        getActiveItemIndexCarousel(
+                          activeItemIndex,
+                          item.images.split(";").length,
+                          1
+                        )
+                          ? styles.activeDot
+                          : null
                       }`}
                       key={el}
                     ></span>

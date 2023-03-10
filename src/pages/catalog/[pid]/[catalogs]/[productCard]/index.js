@@ -11,8 +11,14 @@ import { num_word } from "@/hooks/num_words.js";
 import Star from "@/img/star.png";
 import Head from "next/head";
 import Image from "next/image.js";
+import Link from "next/link.js";
+import { useRouter } from "next/router.js";
+import { useState } from "react";
 
 export default function Catalogs({ item, hits }) {
+  const [selected, setSelected] = useState("desc");
+  const router = useRouter();
+
   return (
     <div>
       <Head>
@@ -47,11 +53,16 @@ export default function Catalogs({ item, hits }) {
                   <Image src={Star} alt={"stars"} width="22" height="20" />
                   <Image src={Star} alt={"stars"} width="22" height="20" />
                 </div>
-                {/* ОТЗЫВЫ СДЕЛАТЬ */}
-                <div className={styles.recenz}>
-                  {item.recenz}{" "}
-                  {num_word(+item.recenz, ["Отзыв", "Отзыва", "Отзывов"])}
-                </div>
+
+                <Link
+                  href={`${router.asPath}#recenz`}
+                  onClick={() => setSelected("recenz")}
+                >
+                  <div className={styles.recenz}>
+                    {item.recenz}{" "}
+                    {num_word(+item.recenz, ["Отзыв", "Отзыва", "Отзывов"])}
+                  </div>
+                </Link>
               </div>
               <p className={styles.cost}>
                 {item.Cost}
@@ -149,8 +160,15 @@ export default function Catalogs({ item, hits }) {
               </div>
             </div>
           </div>
-          <ProductCardHeadMobile item={item} />
-          <ProductCategories item={item} />
+          <ProductCardHeadMobile
+            item={item}
+            anchor={() => setSelected("recenz")}
+          />
+          <ProductCategories
+            item={item}
+            selected={selected}
+            setSelected={setSelected}
+          />
           <div className={styles.recomended}>
             <p className={styles.titleRecomended}>Так же рекомендуем</p>
             <Carousel items={hits.hit} />

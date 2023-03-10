@@ -50,6 +50,7 @@
 }
 
 .searchNewWrapper {
+  z-index: 321321;
   width: 30%;
   margin-top: 5px;
 }
@@ -63,12 +64,24 @@
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid rgb(192, 192, 192);
 }
+
 .searchDrop {
   z-index: 321321;
   position: absolute;
   font-family: "Montserrat", sans-serif;
   max-height: 500px;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 3px; /* width of the entire scrollbar */
+  }
+  &::-webkit-scrollbar-track {
+    background: white; /* color of the tracking area */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(106, 106, 106, 1); /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid rgba(106, 106, 106, 0); /* creates padding around scroll thumb */
+  }
   border: 1px solid #b8b7b7;
   border-radius: 0 0 10px 10px;
   outline: none;
@@ -81,7 +94,7 @@
   min-height: 50px;
   background: white;
   list-style: none;
-  p {
+  .searchDropLabel {
     font-size: 12px;
     color: rgb(120, 120, 120);
     padding-bottom: 10px;
@@ -93,6 +106,19 @@
     border-bottom: 1px solid rgb(199, 199, 199);
     width: auto;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    .searchItemName {
+      overflow: hidden;
+      display: block;
+      width: 70%;
+    }
+    .searchItemCost {
+      .rub::after {
+        content: " \20BD";
+      }
+      font-weight: 500;
+    }
     &:hover {
       color: blue;
     }
@@ -133,5 +159,59 @@
     width: 14px;
     height: 14px;
     top: 24px;
+  }
+  // .dropDown {
+  //   position: initial;
+  // }
+  // .searchDrop {
+  //   max-height: 100vh;
+
+  //   overflow-y: scroll;
+
+  //   border: none;
+  //   border-radius: 0;
+  //   outline: none;
+  //   width: 100%;
+
+  //   padding: 15px 10px;
+  //   border-top: 0;
+  //   left: 0;
+
+  //   min-height: 50px;
+  //   background: white;
+  //   list-style: none;
+  //   .searchDropLabel {
+  //     font-size: 12px;
+  //     color: rgb(120, 120, 120);
+  //     padding-bottom: 10px;
+  //   }
+  //   li {
+  //     cursor: pointer;
+  //     font-size: 14px;
+  //     padding: 5px 0;
+  //     border-bottom: 1px solid rgb(199, 199, 199);
+  //     width: auto;
+  //     overflow: hidden;
+  //     display: flex;
+  //     justify-content: space-between;
+  //     .searchItemName {
+  //       overflow: hidden;
+  //       display: block;
+  //       width: 70%;
+  //     }
+  //     .searchItemCost {
+  //       .rub::after {
+  //         content: " \20BD";
+  //       }
+  //       font-weight: 500;
+  //     }
+  //     &:hover {
+  //       color: blue;
+  //     }
+  //     white-space: nowrap;
+  //   }
+  // }
+  .catalogUnderWrapper {
+    display: none;
   }
 }

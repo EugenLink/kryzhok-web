@@ -1,3 +1,4 @@
+import getActiveItemIndexCarousel from "@/hooks/getActiveItemIndexCarousel.js";
 import getLink from "@/hooks/getLinkFromBase.js";
 import useWindowSize from "@/hooks/getWindowSize.js";
 import Image from "next/image.js";
@@ -12,7 +13,6 @@ export const Carousel = ({ items }) => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const size = useWindowSize();
   const chevronWidth = 40;
-
   return (
     <div>
       <div className={styles.caurusel}>
@@ -53,38 +53,20 @@ export const Carousel = ({ items }) => {
             />
           ))}
         </ItemsCarousel>
-        <div className={styles.caruselDots}>
-          {[...Array(items.length)].map((el, i) => {
-            return (
-              <span
-                className={`${styles.caruselDot} ${
-                  activeItemIndex === i ? styles.activeDot : null
-                }`}
-                key={i}
-              ></span>
-            );
-          })}
-        </div>
       </div>
       <div className={`${styles.caurusel} ${styles.mobile}`}>
         <ItemsCarousel
           requestToChangeActive={setActiveItemIndex}
-          activeItemIndex={activeItemIndex}
+          activeItemIndex={getActiveItemIndexCarousel(
+            activeItemIndex,
+            items.length,
+            Math.floor(size.width / 180) > 6 ? 6 : Math.floor(size.width / 180)
+          )}
           numberOfCards={
-            Math.floor(size.width / 220) > 6 ? 6 : Math.floor(size.width / 180)
+            Math.floor(size.width / 180) > 6 ? 6 : Math.floor(size.width / 180)
           }
           slidesToScroll={
-            Math.floor(size.width / 220) > 6 ? 6 : Math.floor(size.width / 220)
-          }
-          leftChevron={
-            <div className={styles.slideButton}>
-              <Image src={ArrowLeft} alt={"arrowleft"} />
-            </div>
-          }
-          rightChevron={
-            <div className={styles.slideButton}>
-              <Image src={ArrowRight} alt={"arrowleft"} />
-            </div>
+            Math.floor(size.width / 180) > 6 ? 6 : Math.floor(size.width / 180)
           }
           chevronWidth={chevronWidth}
         >
@@ -105,11 +87,29 @@ export const Carousel = ({ items }) => {
           ))}
         </ItemsCarousel>
         <div className={styles.caruselDots}>
-          {[...Array(items.length)].map((el, i) => {
+          {[
+            ...Array(
+              size.width && items.length
+                ? items.length +
+                    1 -
+                    (Math.floor(size.width / 180) > 6
+                      ? 6
+                      : Math.floor(size.width / 180))
+                : 0
+            ),
+          ].map((el, i) => {
             return (
               <span
                 className={`${styles.caruselDot} ${
-                  activeItemIndex === i ? styles.activeDot : null
+                  getActiveItemIndexCarousel(
+                    activeItemIndex,
+                    items.length,
+                    Math.floor(size.width / 220) > 6
+                      ? 6
+                      : Math.floor(size.width / 180)
+                  ) === i
+                    ? styles.activeDot
+                    : null
                 }`}
                 key={i}
               ></span>

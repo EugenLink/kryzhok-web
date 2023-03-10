@@ -5,6 +5,19 @@ p {
   font-family: "Montserrat", sans-serif !important;
   margin-bottom: 0 !important;
 }
+button,
+textarea,
+input,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 :root {
   font-family: "Montserrat", sans-serif !important;
   --max-width: 1100px;

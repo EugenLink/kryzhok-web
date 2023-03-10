@@ -1,13 +1,10 @@
 import Recenz from "@/components/Recenz/Recenz.js";
 import Image from "next/image.js";
-import { useState } from "react";
 import styles from "./ProductCategories.module.scss";
 
-export const ProductCategories = ({ item }) => {
-  const [selected, setSelected] = useState("desc");
-
+export const ProductCategories = ({ item, selected, setSelected }) => {
   return (
-    <div className={styles.categories}>
+    <div className={styles.categories} id={"recenz"}>
       <ul className={styles.categoriesNav}>
         <li
           className={selected === "desc" ? styles.active : null}
@@ -85,7 +82,7 @@ export const ProductCategories = ({ item }) => {
           <p className={styles.title}>Отзывы</p>
 
           <div className={styles.recenzItems}>
-            {item.recenzItems ? (
+            {item.recenzItems?.length ? (
               item.recenzItems.map((el) => {
                 return (
                   <Recenz

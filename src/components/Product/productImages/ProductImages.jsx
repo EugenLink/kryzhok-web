@@ -1,9 +1,19 @@
 import Image from "next/image.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ProductImages.module.scss";
 
 export const ProductImages = ({ images, id }) => {
-  const [active, setActive] = useState(images ? images[0] : "/noPhoto.png");
+  const [active, setActive] = useState("/noPhoto.png");
+
+  useEffect(() => {
+    if (images) {
+      console.log(`/${images[0]}`);
+      setActive(`/${images[0]}`);
+    } else {
+      console.log("NO-PHOTO");
+      setActive("/noPhoto.png");
+    }
+  }, [images]);
 
   return (
     <div className={styles.wrapper}>
@@ -14,9 +24,9 @@ export const ProductImages = ({ images, id }) => {
                 <div
                   key={el}
                   className={`${styles.imageWrapper} ${
-                    active === el ? styles.active : null
+                    active === `/${el}` ? styles.active : null
                   }`}
-                  onClick={() => setActive(el)}
+                  onClick={() => setActive(`/${el}`)}
                 >
                   <Image
                     src={`https://volga24bot.com/cgi-bin/product/photos/${id}/images/${el}`}
@@ -33,7 +43,7 @@ export const ProductImages = ({ images, id }) => {
         <Image
           src={
             images
-              ? `https://volga24bot.com/cgi-bin/product/photos/${id}/images/${active}`
+              ? `https://volga24bot.com/cgi-bin/product/photos/${id}/images${active}`
               : active
           }
           alt={"img"}

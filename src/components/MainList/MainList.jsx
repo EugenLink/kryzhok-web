@@ -53,30 +53,24 @@ export const MainList = ({ newI = [], hit = [] }) => {
       </div>
       <div className={styles.rubrics}>
         <Link href="/recipes">
-          <div className={styles.backgroundWrapper}>
-            <div className={styles.contentStyle}>
-              <Image
-                src={Kitchen}
-                alt="Банер"
-                style={{ backgroundSize: "cover" }}
-              />
+          <div className={styles.rubricWrapper}>
+            <div className={styles.fillImage}>
+              <Image src={Kitchen} alt="Банер" fill />
             </div>
             <div
               className={styles.bannerText}
               style={{ background: " rgba(208, 12, 12, 0.89)" }}
             >
-              <p>Готовим вместе с “ Texnika room ”</p>
+              <p>
+                Готовим вместе с <br /> “ Texnika room ”
+              </p>
             </div>
           </div>
         </Link>
         <Link href="/catalog/kitchen?name=Кухня">
-          <div className={styles.backgroundWrapper}>
-            <div className={styles.contentStyle}>
-              <Image
-                src={Banner2}
-                alt="Банер"
-                style={{ backgroundSize: "cover" }}
-              />
+          <div className={styles.rubricWrapper}>
+            <div className={styles.fillImage}>
+              <Image src={Banner2} alt="Банер" fill />
             </div>
             <div
               className={styles.bannerText}
@@ -87,13 +81,9 @@ export const MainList = ({ newI = [], hit = [] }) => {
           </div>
         </Link>
         <Link href="/articles">
-          <div className={styles.backgroundWrapper}>
-            <div className={styles.contentStyle}>
-              <Image
-                src={Banner3}
-                alt="Банер"
-                style={{ backgroundSize: "cover" }}
-              />
+          <div className={styles.rubricWrapper}>
+            <div className={styles.fillImage}>
+              <Image src={Banner3} alt="Банер" fill />
             </div>
             <div
               className={styles.bannerText}
@@ -103,21 +93,19 @@ export const MainList = ({ newI = [], hit = [] }) => {
             </div>
           </div>
         </Link>
-        <div className={styles.backgroundWrapper}>
-          <div className={styles.contentStyle}>
-            <Image
-              src={Banner4}
-              alt="Банер"
-              style={{ backgroundSize: "cover" }}
-            />
+        <Link href="/articles">
+          <div className={styles.rubricWrapper}>
+            <div className={styles.fillImage}>
+              <Image src={Banner4} alt="Банер" fill />
+            </div>
+            <div
+              className={styles.bannerText}
+              style={{ background: "rgba(118, 209, 127, 0.9)" }}
+            >
+              <p>Готовые решения для вашего дома</p>
+            </div>
           </div>
-          <div
-            className={styles.bannerText}
-            style={{ background: "rgba(118, 209, 127, 0.9)" }}
-          >
-            <p>Готовые решения для вашего дома</p>
-          </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

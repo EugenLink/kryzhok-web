@@ -47,25 +47,32 @@
 }
 
 .rubrics {
-  margin-top: 40px;
-  margin-bottom: 30px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
 
-  .backgroundWrapper {
-    margin: 10px 30px;
-  }
-  img {
-    max-height: 347px;
-    max-width: 417px;
-    width: 100%;
-    height: auto;
-    cursor: pointer;
+  .rubricWrapper {
+    margin: 20px 50px;
+    position: relative;
+    transition: box-shadow 0.3s ease-in-out;
+    width: 365px;
     &:hover {
-      -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-      -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-      box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+      box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+    }
+    .fillImage {
+      max-width: 365px;
+      max-height: 320px;
+      min-width: 280px;
+      position: relative;
+      width: 100%;
+      height: 80vh;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
     }
   }
 }
@@ -77,10 +84,9 @@
 .bannerText {
   position: absolute;
 
-  width: 45%;
   height: 18%;
-  top: 10%;
-  left: 0;
+  top: 30px;
+  width: 50%;
   color: white;
 
   display: flex;
@@ -109,6 +115,26 @@
   background: rgb(96, 96, 96) !important;
 }
 
+@media screen and (max-width: 990px) {
+  .rubrics {
+    .rubricWrapper {
+      &:hover {
+        box-shadow: none;
+      }
+      margin: 10px 10px;
+      position: relative;
+
+      width: 345px;
+    }
+    .bannerText {
+      top: 40px;
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .productType {
     p {
@@ -127,12 +153,6 @@
   .caruselDots {
     display: flex;
   }
-
-  .bannerText {
-    p {
-      font-size: 14px;
-    }
-  }
 }
 
 @media screen and (max-width: 630px) {
@@ -149,9 +169,23 @@
 }
 
 @media screen and (max-width: 360px) {
+  .rubrics {
+    .rubricWrapper {
+      margin: 0;
+      position: relative;
+
+      width: 310px;
+    }
+    .bannerText {
+      top: 40px;
+      p {
+        font-size: 14px;
+      }
+    }
+  }
   .bannerText {
     p {
-      font-size: 9px;
+      font-size: 11px;
       width: 100%;
     }
   }

@@ -46,9 +46,6 @@
     }
   }
 
-  .slideButton {
-    display: none;
-  }
   .caruselDots {
     display: flex;
   }
@@ -67,6 +64,9 @@
 }
 
 @media screen and (max-width: 810px) {
+  .slideButton {
+    display: none;
+  }
   .caurusel {
     display: none;
   }

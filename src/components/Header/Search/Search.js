@@ -29,83 +29,91 @@ export const SearchWrapper = () => {
   }, [products.length]);
 
   return (
-    <div className={styles.searchNewWrapper}>
-      <div
-        className={`${styles.searchWrapper} ${
-          searchStatus ? styles.openWrapper : null
-        }`}
-      >
-        <input
-          type="text"
-          placeholder="Поиск по товарам"
-          className={`${styles.searchInput} ${
-            searchList && value.length > 3 ? styles.searched : null
+    <>
+      <div className={styles.searchNewWrapper}>
+        <div
+          className={`${styles.searchWrapper} ${
+            searchStatus ? styles.openWrapper : null
           }`}
-          value={value}
-          onChange={(e) => {
-            if (e.target.value > 3) {
-              setSearchList(true);
-            }
-            setValue(e.target.value);
-          }}
-          onFocus={() => setSearchList(true)}
-          onBlur={() => {
-            const timer = setTimeout(() => setSearchList(false), 100);
-          }}
-        />
-        <div className={styles.dropDown}>
-          {searchList && value.length > 3 ? (
-            <ul className={styles.searchDrop}>
-              <p>Поиск: {value}</p>
-              {searchItems.length ? (
-                searchItems.map((el) => {
-                  return (
-                    <Link
-                      href={getLink(el.Chapter, el.PreChapter, el.id)}
-                      key={el.id}
-                    >
-                      <li>
-                        {el.Name} {el.Model}
-                      </li>
-                    </Link>
-                  );
-                })
-              ) : (
-                <p className={styles.empty}>Ничего не найдено</p>
-              )}
-            </ul>
-          ) : null}
-        </div>
-
-        {searchStatus || value.length ? (
-          <Image
-            src={Close}
-            alt="Close"
-            className={styles.closeImgPhone}
-            onClick={() => {
-              setValue("");
-              setSearchStatus(false);
+        >
+          <input
+            type="text"
+            placeholder="Поиск по товарам"
+            className={`${styles.searchInput} ${
+              searchList && value.length > 3 ? styles.searched : null
+            }`}
+            value={value}
+            onChange={(e) => {
+              if (e.target.value > 3) {
+                setSearchList(true);
+              }
+              setValue(e.target.value);
+            }}
+            onFocus={() => setSearchList(true)}
+            onBlur={() => {
+              const timer = setTimeout(() => setSearchList(false), 100);
             }}
           />
-        ) : (
+
+          <div className={styles.dropDown}>
+            {searchList && value.length > 3 ? (
+              <ul className={styles.searchDrop}>
+                <p className={styles.searchDropLabel}>Поиск: {value}</p>
+                {searchItems.length ? (
+                  searchItems.map((el) => {
+                    return (
+                      <Link
+                        href={getLink(el.Chapter, el.PreChapter, el.id)}
+                        key={el.id}
+                      >
+                        <li className={styles.searchItem}>
+                          <p className={styles.searchItemName}>
+                            {el.Name} {el.Model}
+                          </p>
+                          <p className={styles.searchItemCost}>
+                            {el.Cost} <span className={styles.rub}></span>
+                          </p>
+                        </li>
+                      </Link>
+                    );
+                  })
+                ) : (
+                  <p className={styles.empty}>Ничего не найдено</p>
+                )}
+              </ul>
+            ) : null}
+          </div>
+
+          {searchStatus || value.length ? (
+            <Image
+              src={Close}
+              alt="Close"
+              className={styles.closeImgPhone}
+              onClick={() => {
+                setValue("");
+                setSearchStatus(false);
+              }}
+            />
+          ) : (
+            <Image
+              src={SearchImg}
+              alt="Search"
+              className={styles.searchInputImg}
+            />
+          )}
+        </div>
+        <div
+          className={styles.searchWrapperPhone}
+          onClick={() => setSearchStatus(true)}
+          style={searchStatus ? { display: "none" } : null}
+        >
           <Image
             src={SearchImg}
             alt="Search"
-            className={styles.searchInputImg}
+            className={styles.searchInputImgPhone}
           />
-        )}
+        </div>
       </div>
-      <div
-        className={styles.searchWrapperPhone}
-        onClick={() => setSearchStatus(true)}
-        style={searchStatus ? { display: "none" } : null}
-      >
-        <Image
-          src={SearchImg}
-          alt="Search"
-          className={styles.searchInputImgPhone}
-        />
-      </div>
-    </div>
+    </>
   );
 };
