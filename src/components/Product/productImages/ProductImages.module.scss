@@ -6,9 +6,15 @@
     padding: 10px 3px;
     margin: 5px;
     cursor: pointer;
+    position: relative;
     border-radius: 5px;
     width: 70px;
+    height: 70px;
+
     display: flex;
+    img {
+      padding: 0 3px;
+    }
     justify-content: center;
   }
   .active {
@@ -35,6 +41,11 @@
   object-position: top;
 }
 
+.ImageSmall {
+  object-fit: contain;
+  width: 68px;
+  height: 68px;
+}
 .fullImageWrapper {
   position: fixed;
   top: 0;

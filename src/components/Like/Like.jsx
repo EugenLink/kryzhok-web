@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import styles from "./Like.module.scss";
 const Like = ({ likes, id }) => {
   const [liked, setLiked] = useState(false);
-  console.log(liked);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("like");

@@ -1,0 +1,21 @@
+.wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+
+  .select {
+    width: 100%;
+  }
+}
+
+.bodyWrapper {
+  h2 {
+    padding: 10px 0;
+  }
+}
+
+.addButton {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}

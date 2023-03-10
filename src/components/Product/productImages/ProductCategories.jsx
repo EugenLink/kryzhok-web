@@ -1,10 +1,11 @@
-import Stars from "@/img/stars.png";
+import Recenz from "@/components/Recenz/Recenz.js";
 import Image from "next/image.js";
 import { useState } from "react";
 import styles from "./ProductCategories.module.scss";
 
 export const ProductCategories = ({ item }) => {
   const [selected, setSelected] = useState("desc");
+  console.log(item);
   return (
     <div className={styles.categories}>
       <ul className={styles.categoriesNav}>
@@ -52,7 +53,7 @@ export const ProductCategories = ({ item }) => {
           </div>
           <div className={styles.ImageFullScreenWrapper}>
             <Image
-              src={item.descPhoto}
+              src={`https://volga24bot.com/cgi-bin/product/photos/${item.id}/descImg/${item.descImg}`}
               alt={"img"}
               className={styles.Image}
               fill
@@ -84,40 +85,19 @@ export const ProductCategories = ({ item }) => {
           <p className={styles.title}>Отзывы</p>
 
           <div className={styles.recenzItems}>
-            {item.reviews ? (
-              item.reviews.map((el) => {
+            {item.recenzItems ? (
+              item.recenzItems.map((el) => {
                 return (
-                  <div className={styles.recenzItem} key={el.name}>
-                    <div className={styles.headRecenz}>
-                      <div className={styles.flex}>
-                        <div className={styles.avatar}></div>
-                        <div className={styles.titles}>
-                          <div className={styles.flex}>
-                            <p className={styles.recenzName}>{el.name}</p>
-                            <Image
-                              src={Stars}
-                              alt={"stars"}
-                              className={styles.stars}
-                            />
-                          </div>
-                          <p className={styles.recenzOut}>
-                            Отзыв оставлен на {el.place}
-                          </p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className={styles.date}>{el.date}</p>
-                      </div>
-                    </div>
-                    <div className={styles.bodyRecenz}>
-                      <p className={styles.recenzTitle}>Достоинства</p>
-                      <p className={styles.recenzText}>{el.advantages}</p>
-                      <p className={styles.recenzTitle}>Недостатки</p>
-                      <p className={styles.recenzText}>{el.flaws}</p>
-                      <p className={styles.recenzTitle}>Комментарий</p>
-                      <p className={styles.recenzText}>{el.comment}</p>
-                    </div>
-                  </div>
+                  <Recenz
+                    key={el}
+                    name={el.name}
+                    flaws={el.flaws}
+                    date={el.date}
+                    comment={el.comment}
+                    advantages={el.advantages}
+                    place={el.place}
+                    stars={el.stars}
+                  />
                 );
               })
             ) : (

@@ -7,6 +7,7 @@ import Header from "@/components/Header/Header";
 import { ProductCardHeadMobile } from "@/components/Product/ProductCardHead/ProductCardHeadMobile.jsx";
 import { ProductCategories } from "@/components/Product/productImages/ProductCategories.jsx";
 import { ProductImages } from "@/components/Product/productImages/ProductImages.jsx";
+import { num_word } from "@/hooks/num_words.js";
 import Star from "@/img/star.png";
 import Head from "next/head";
 import Image from "next/image.js";
@@ -31,7 +32,10 @@ export default function Catalogs({ item, hits }) {
           </div>
 
           <div className={styles.productCardWrapper}>
-            <ProductImages images={item.photos ? item.photos : null} />
+            <ProductImages
+              images={item.images ? item.images.split(";") : null}
+              id={item.id}
+            />
             <div className={styles.mainText}>
               <p className={styles.titleName}>{item.Name}</p>
               <p className={styles.titleType}>{item.Model}</p>
@@ -44,7 +48,10 @@ export default function Catalogs({ item, hits }) {
                   <Image src={Star} alt={"stars"} width="22" height="20" />
                 </div>
                 {/* ОТЗЫВЫ СДЕЛАТЬ */}
-                <div className={styles.recenz}>122 Отзыва</div>
+                <div className={styles.recenz}>
+                  {item.recenz}{" "}
+                  {num_word(+item.recenz, ["Отзыв", "Отзыва", "Отзывов"])}
+                </div>
               </div>
               <p className={styles.cost}>
                 {item.Cost}

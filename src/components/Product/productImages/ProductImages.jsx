@@ -2,8 +2,9 @@ import Image from "next/image.js";
 import { useState } from "react";
 import styles from "./ProductImages.module.scss";
 
-export const ProductImages = ({ images }) => {
+export const ProductImages = ({ images, id }) => {
   const [active, setActive] = useState(images ? images[0] : "/noPhoto.png");
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.ImagePicker}>
@@ -17,14 +18,28 @@ export const ProductImages = ({ images }) => {
                   }`}
                   onClick={() => setActive(el)}
                 >
-                  <Image src={el} alt="img1" width={"auto"} height={"68"} />
+                  <Image
+                    src={`https://volga24bot.com/cgi-bin/product/photos/${id}/images/${el}`}
+                    alt="img1"
+                    className={styles.ImageSmall}
+                    fill
+                  />
                 </div>
               );
             })
           : null}
       </div>
       <div className={styles.ImageFullScreenWrapper}>
-        <Image src={active} alt={"img"} className={styles.Image} fill />
+        <Image
+          src={
+            images
+              ? `https://volga24bot.com/cgi-bin/product/photos/${id}/images/${active}`
+              : active
+          }
+          alt={"img"}
+          className={styles.Image}
+          fill
+        />
       </div>
     </div>
   );

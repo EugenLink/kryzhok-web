@@ -42,9 +42,14 @@ export const Carousel = ({ items }) => {
               key={el.id}
               cost={el.Cost}
               name={el.Name}
-              recenz={"122"}
               type={el.Model}
               link={getLink(el.Chapter, el.PreChapter, el.id)}
+              recenz={el.recenz}
+              img={
+                el.previewImg.length
+                  ? `https://volga24bot.com/cgi-bin/product/photos/${el.id}/previewImg/${el.previewImg}`
+                  : "/noPhoto.png"
+              }
             />
           ))}
         </ItemsCarousel>
@@ -88,9 +93,14 @@ export const Carousel = ({ items }) => {
               key={el.id}
               cost={el.Cost}
               name={el.Name}
-              recenz={"122"}
+              recenz={el.recenz}
               type={el.Model}
               link={getLink(el.Chapter, el.PreChapter, el.id)}
+              img={
+                el.previewImg.length
+                  ? `https://volga24bot.com/cgi-bin/product/photos/${el.id}/previewImg/${el.previewImg}`
+                  : "/noPhoto.png"
+              }
             />
           ))}
         </ItemsCarousel>

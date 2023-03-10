@@ -1,14 +1,22 @@
+import { num_word } from "@/hooks/num_words.js";
 import Image from "next/image.js";
 import Link from "next/link.js";
 import styles from "./ProductPreview.module.scss";
 
-export const ProductPreview = ({ name, cost, type, recenz, link = "" }) => {
+export const ProductPreview = ({
+  name,
+  cost,
+  type,
+  recenz,
+  link = "",
+  img,
+}) => {
   return (
     <Link href={link}>
       <div className={styles.productPreview}>
         <div className={styles.productImage}>
           <Image
-            src={"/noPhoto.png"}
+            src={img}
             alt={name}
             style={{ backgroundSize: "cover" }}
             fill
@@ -24,7 +32,9 @@ export const ProductPreview = ({ name, cost, type, recenz, link = "" }) => {
             <p>{name}</p>
             <p style={{ fontWeight: 600 }}>{type}</p>
           </div>
-          <p className={styles.recenz}>{recenz} Отзыва</p>
+          <p className={styles.recenz}>
+            {recenz} {num_word(+recenz, ["Отзыв", "Отзыва", "Отзывов"])}
+          </p>
         </div>
       </div>
     </Link>

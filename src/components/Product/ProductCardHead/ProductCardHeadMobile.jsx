@@ -1,3 +1,4 @@
+import { num_word } from "@/hooks/num_words.js";
 import Star from "@/img/star.png";
 import Image from "next/image.js";
 import { useState } from "react";
@@ -19,7 +20,10 @@ export const ProductCardHeadMobile = ({ item }) => {
             <Image src={Star} alt={"stars"} width="16" height="15" />
             <Image src={Star} alt={"stars"} width="16" height="15" />
           </div>
-          <div className={styles.recenz}>{item.reviews?.length} Отзыва</div>
+          <div className={styles.recenz}>
+            {item.recenz}{" "}
+            {num_word(+item.recenz, ["Отзыв", "Отзыва", "Отзывов"])}
+          </div>
         </div>
       </div>
       <div>
@@ -30,11 +34,16 @@ export const ProductCardHeadMobile = ({ item }) => {
             numberOfCards={1}
             slidesToScroll={1}
           >
-            {item.photos ? (
-              item.photos.map((el) => {
+            {item.images ? (
+              item.images.split(";").map((el) => {
                 return (
                   <div className={styles.ImageFullScreenWrapper} key={el}>
-                    <Image src={el} alt={"img"} className={styles.Image} fill />
+                    <Image
+                      src={`https://volga24bot.com/cgi-bin/product/photos/${item.id}/images/${el}`}
+                      alt={"img"}
+                      className={styles.Image}
+                      fill
+                    />
                   </div>
                 );
               })
@@ -50,8 +59,8 @@ export const ProductCardHeadMobile = ({ item }) => {
             )}
           </ReactItemsCarousel>
           <div className={styles.caruselDots}>
-            {item.photos
-              ? item.photos.map((el, i) => {
+            {item.images
+              ? item.images.split(";").map((el, i) => {
                   return (
                     <span
                       className={`${styles.caruselDot} ${

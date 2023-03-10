@@ -1,0 +1,128 @@
+.recenzWrapper {
+  width: 50%;
+}
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 100%;
+  margin-bottom: 3px;
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    margin-right: 5px;
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+.stars {
+  margin-top: 5px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  img {
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 3px;
+  }
+}
+
+.titles {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  .recenzName {
+    font-weight: 600;
+    line-height: 2rem;
+  }
+  .recenzOut {
+    font-size: 12px;
+    color: #979797;
+  }
+}
+
+.headRecenz {
+  display: flex;
+  justify-content: space-between;
+  .date {
+    font-size: 12px;
+    color: #979797;
+  }
+}
+.bodyRecenz {
+  margin-left: 47px;
+  .recenzTitle {
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  .recenzText {
+    line-height: 1.5rem;
+    font-size: 13px;
+  }
+}
+.recenzItem {
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.recenzItems {
+  div:last-child {
+    border: none !important;
+  }
+}
+
+.input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+  padding-left: 5px;
+  margin: 0 5px 5px 0;
+}
+
+@media screen and (max-width: 886px) {
+  .titles {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    .recenzName {
+      font-size: 12px;
+    }
+    .recenzOut {
+      font-size: 10px;
+      color: #979797;
+    }
+  }
+
+  .headRecenz {
+    display: flex;
+    justify-content: space-between;
+    .date {
+      font-size: 10px;
+      margin-top: 7px;
+      color: #979797;
+    }
+  }
+  .bodyRecenz {
+    margin-left: 47px;
+    .recenzTitle {
+      font-size: 12px;
+    }
+
+    .recenzText {
+      font-size: 12px;
+    }
+  }
+
+  .avatar {
+    margin-bottom: 3px;
+  }
+
+  .recenzWrapper {
+    width: 100%;
+  }
+}
