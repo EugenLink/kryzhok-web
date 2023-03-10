@@ -17,7 +17,7 @@ export const Images = ({ images, id, title, type, count }) => {
   const [fileList, setFileList] = useState([]);
   useEffect(() => {
     setFileList(
-      images.length
+      images
         ? images.split(";").map((el) => {
             return {
               uid: el,
@@ -28,7 +28,7 @@ export const Images = ({ images, id, title, type, count }) => {
           })
         : []
     );
-  }, [images]);
+  }, [images, id, type]);
   const handleCancel = () => setPreviewOpen(false);
   const handlePreview = async (file) => {
     if (!file.url && !file.preview) {

@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 export default function Catalogs({ data }) {
   const router = useRouter();
   const { name } = router.query;
-  console.log(data);
+
   return (
     <div>
       <Head>

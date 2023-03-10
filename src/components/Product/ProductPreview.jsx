@@ -15,12 +15,7 @@ export const ProductPreview = ({
     <Link href={link}>
       <div className={styles.productPreview}>
         <div className={styles.productImage}>
-          <Image
-            src={img}
-            alt={name}
-            style={{ backgroundSize: "cover" }}
-            fill
-          />
+          <Image src={img} alt={name} fill />
         </div>
         <div className={styles.textBlock}>
           <p className={styles.costNormal}>

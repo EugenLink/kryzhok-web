@@ -7,7 +7,6 @@ import { Banners } from "./../components/Banners/Banners";
 import Footer from "./../components/Footer/Footer";
 
 export default function Home({ data }) {
-  console.log(data);
   return (
     <div>
       <Head>

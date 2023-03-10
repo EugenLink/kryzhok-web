@@ -1,6 +1,6 @@
 import Star from "@/img/star.png";
 import StarOutline from "@/img/StarOutline.png";
-import { Button, Rate } from "antd";
+import { Button, message, Rate } from "antd";
 
 import Image from "next/image.js";
 import { useState } from "react";
@@ -19,7 +19,10 @@ const Recenz = ({
   deleteItem = false,
   count = 0,
   itemId = 0,
+  funcDelete,
+  funcAdd,
 }) => {
+  const [messageApi, contextHolder] = message.useMessage();
   const [recenzForm, setRecenzForm] = useState({
     name: "",
     stars: 0,
@@ -46,18 +49,59 @@ const Recenz = ({
     fetch(`https://volga24bot.com/cgi-bin/recenz/addRecenz.php`, {
       method: "POST",
       body: fmData,
-    });
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        if (res !== "false") {
+          funcAdd({
+            name: recenzForm.name,
+            flaws: recenzForm.flaws,
+            date: recenzForm.date,
+            comment: recenzForm.comment,
+            advantages: recenzForm.advantages,
+            place: recenzForm.place,
+            stars: recenzForm.stars,
+            id: id,
+            itemId: +res,
+          });
+          messageApi.success("Отзыв оставлен успешно");
+          setRecenzForm({
+            name: "",
+            stars: 0,
+            place: "",
+            date: "",
+            advantages: "",
+            flaws: "",
+            comment: "",
+          });
+        } else {
+          messageApi.error("Произошла ошибка, отзыв не оставлен");
+        }
+      });
   };
 
   const deleteRecenz = () => {
-    fetch(
-      `https://volga24bot.com/cgi-bin/recenz/deleteRecenz.php?id=${id}&idR=${itemId}&count=${
-        count - 1
-      }`
-    );
+    if (confirm("Вы уверены что хотите удалить отзыв?")) {
+      fetch(
+        `https://volga24bot.com/cgi-bin/recenz/deleteRecenz.php?id=${id}&idR=${itemId}&count=${
+          count - 1
+        }`
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          if (res === "true") {
+            funcDelete();
+            messageApi.success("Отзыв удален успешно");
+          } else {
+            messageApi.error("Произошла ошибка, отзыв не удален");
+          }
+        });
+    }
   };
   return edit ? (
     <div className={styles.recenzItem}>
+      {contextHolder}
       <div className={styles.headRecenz}>
         <div className={styles.flex}>
           <div className={styles.avatar}>
@@ -160,6 +204,7 @@ const Recenz = ({
     </div>
   ) : (
     <div className={styles.recenzItem}>
+      {contextHolder}
       <div className={styles.headRecenz}>
         <div className={styles.flex}>
           <div className={styles.avatar}>

@@ -40,7 +40,7 @@ export const Burger = () => {
             className={styles.catalogList}
             onClick={() => setOpenCatalog(!openCatalog)}
           >
-            <span>Каталог </span> <i class="arrow down"></i>
+            <span>Каталог </span> <i className="arrow down"></i>
           </p>
           {openCatalog ? (
             <ul>

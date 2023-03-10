@@ -5,7 +5,7 @@ import styles from "./ProductCategories.module.scss";
 
 export const ProductCategories = ({ item }) => {
   const [selected, setSelected] = useState("desc");
-  console.log(item);
+
   return (
     <div className={styles.categories}>
       <ul className={styles.categoriesNav}>
@@ -65,11 +65,11 @@ export const ProductCategories = ({ item }) => {
         <div className={`${styles.wrapper} ${styles.charWrapper}`}>
           <p className={styles.title}>Технические характеристики</p>
           {item.charst
-            ? item.charst.split('"/"').map((el) => {
+            ? item.charst.split('"/"').map((el, i) => {
                 const title = el.split(" - ")[0];
                 const value = el.split(" - ")[1];
                 return (
-                  <div key={el.title}>
+                  <div key={i}>
                     <div className={styles.charItem}>
                       <p>{title}</p>
                       <p>{value}</p>
@@ -89,7 +89,7 @@ export const ProductCategories = ({ item }) => {
               item.recenzItems.map((el) => {
                 return (
                   <Recenz
-                    key={el}
+                    key={el.id}
                     name={el.name}
                     flaws={el.flaws}
                     date={el.date}

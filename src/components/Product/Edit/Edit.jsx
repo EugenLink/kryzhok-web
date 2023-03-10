@@ -1,21 +1,36 @@
 import Recenz from "@/components/Recenz/Recenz.js";
 import { Select } from "antd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./Edit.module.scss";
 import { Images } from "./Images.js";
 
 export const Edit = ({ products }) => {
-  const [selected, setSelected] = useState(0);
-  const [item, setItem] = useState([]);
+  const [selected, setSelected] = useState([]);
   const onChange = (value) => {
-    setSelected(value);
+    const item = products.find((el) => el.id === value);
+    setSelected(item);
+    setRecenzArr(
+      item.recenzItems?.map((el) => {
+        return {
+          name: el.name,
+          flaws: el.flaws,
+          date: el.date,
+          comment: el.comment,
+          advantages: el.advantages,
+          place: el.place,
+          stars: el.stars,
+          id: el.product_id,
+          itemId: el.id,
+        };
+      })
+    );
   };
   const onSearch = (value) => {
     console.log("search:", value);
   };
-  useEffect(() => {
-    setItem(products.find((el) => el.id === selected));
-  }, [selected, products]);
+  console.log(selected);
+  const [recenzArr, setRecenzArr] = useState([]);
+
   return (
     <div className={styles.wrapper}>
       <div style={{ width: "60%" }}>
@@ -38,26 +53,26 @@ export const Edit = ({ products }) => {
         />
       </div>
 
-      {selected !== 0 ? (
+      {selected.id ? (
         <div className={styles.bodyWrapper}>
           <h2>Фото</h2>
           <Images
-            images={products.filter((el) => el.id === selected)[0]?.images}
-            id={selected}
+            images={selected?.images}
+            id={selected?.id}
             title={"Фото в карточке товара"}
             type={"images"}
             count={6}
           />
           <Images
-            images={products.find((el) => el.id === selected)?.previewImg}
-            id={selected}
+            images={selected?.previewImg}
+            id={selected?.id}
             title={"Фото превью"}
             type={"previewImg"}
             count={1}
           />
           <Images
-            images={products.find((el) => el.id === selected)?.descImg}
-            id={selected}
+            images={selected?.descImg}
+            id={selected?.id}
             title={"Фото для описания"}
             type={"descImg"}
             count={1}
@@ -71,12 +86,12 @@ export const Edit = ({ products }) => {
                 textAlign: "center",
               }}
             >
-              Текущие отзывы - {item?.recenz}
+              Текущие отзывы - {recenzArr.length}
             </p>
-            {item ? (
-              item.recenzItems.map((el) => {
+            {recenzArr ? (
+              recenzArr.map((el) => {
                 return (
-                  <div key={el.id}>
+                  <div key={el.itemId}>
                     <Recenz
                       name={el.name}
                       flaws={el.flaws}
@@ -86,9 +101,14 @@ export const Edit = ({ products }) => {
                       place={el.place}
                       stars={el.stars}
                       deleteItem={true}
-                      count={item?.recenzItems.length}
-                      id={el.product_id}
-                      itemId={el.id}
+                      count={recenzArr.length}
+                      id={el.id}
+                      itemId={el.itemId}
+                      funcDelete={() =>
+                        setRecenzArr(
+                          recenzArr.filter((el2) => el2.itemId !== el.itemId)
+                        )
+                      }
                     />
                   </div>
                 );
@@ -106,7 +126,12 @@ export const Edit = ({ products }) => {
           >
             Добавить новый
           </p>
-          <Recenz edit={true} id={item?.id} count={item?.recenzItems.length} />
+          <Recenz
+            edit={true}
+            id={selected?.id}
+            count={recenzArr.length}
+            funcAdd={(arr) => setRecenzArr([...recenzArr, arr])}
+          />
         </div>
       ) : null}
     </div>
