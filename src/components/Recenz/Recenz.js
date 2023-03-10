@@ -1,5 +1,5 @@
 import Star from "@/img/star.png";
-import StarOutline from "@/img/StarOutline.png";
+import StarOutline from "@/img/starOutline.png";
 import { Button, message, Rate } from "antd";
 
 import Image from "next/image.js";
