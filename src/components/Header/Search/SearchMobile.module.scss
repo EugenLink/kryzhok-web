@@ -1,0 +1,107 @@
+.search {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .search {
+    display: block;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    z-index: 1000002;
+    align-items: center;
+
+    transition: width 0.2s ease-in-out;
+  }
+  .inputWrapper {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    .searched {
+      border-radius: 15px 15px 0 0;
+      border-bottom: none;
+    }
+    input {
+      width: 100%;
+      padding: 6px 10px;
+      padding-top: 7px;
+      padding-left: 1rem;
+      font-size: 13px;
+      border-radius: 25px;
+      outline: none;
+      border: 1px solid rgb(184, 184, 184);
+      transition: all 0.1s ease-in;
+      &::placeholder {
+        color: rgb(184, 184, 184);
+      }
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      }
+    }
+    .icon {
+      cursor: pointer;
+      padding: 4px;
+      position: absolute;
+      box-sizing: border-box;
+      top: 52%;
+      right: 6px;
+      transform: translateY(-50%);
+    }
+  }
+  .open {
+    overflow: hidden;
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1000000;
+  }
+
+  .close {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0.1px;
+    height: 100%;
+    background: white;
+    z-index: 1000000;
+  }
+  .searchDrop {
+    width: 100%;
+    border-top: 1px solid rgb(180, 180, 180);
+    padding: 5px 5%;
+    overflow: scroll;
+    list-style: none;
+    .rub::after {
+      content: " \20BD";
+    }
+    li {
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgb(197, 197, 197);
+
+      :first-child {
+        width: 80%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      :last-child {
+        font-weight: 500;
+      }
+    }
+  }
+  .searchDropLabel {
+    padding-bottom: 5px;
+    color: gray;
+    font-size: 12px;
+  }
+}

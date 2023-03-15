@@ -1,7 +1,10 @@
+import { Articles } from "@/components/Creator/Arcticles.jsx";
+import { News } from "@/components/Creator/News.jsx";
+import { Recipes } from "@/components/Creator/Recipes.jsx";
 import Login from "@/components/Login/Login.jsx";
 import { Edit } from "@/components/Product/Edit/Edit.jsx";
 import styles from "@/styles/Admin.module.scss";
-import { message } from "antd";
+import { Menu, message } from "antd";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Header from "../components/Header/Header";
@@ -17,6 +20,29 @@ export default function Admin({ data }) {
       setLogIn(saved);
     }
   }, []);
+  const Navitems = [
+    {
+      label: "Товары",
+      key: "product",
+    },
+    {
+      label: "Новости",
+      key: "news",
+    },
+    {
+      label: "Рецепты",
+      key: "recipes",
+    },
+    {
+      label: "Статьи",
+      key: "articles",
+    },
+  ];
+  const [current, setCurrent] = useState("product");
+  const onClick = (e) => {
+    console.log("click ", e);
+    setCurrent(e.key);
+  };
 
   return (
     <div>
@@ -30,7 +56,18 @@ export default function Admin({ data }) {
       <main className={styles.main}>
         {contextHolder}
         {logIn ? (
-          <Edit products={data} />
+          <div>
+            <Menu
+              onClick={onClick}
+              selectedKeys={[current]}
+              mode="horizontal"
+              items={Navitems}
+            />
+            {current === "product" ? <Edit products={data} /> : null}
+            {current === "news" ? <News /> : null}
+            {current === "articles" ? <Articles /> : null}
+            {current === "recipes" ? <Recipes /> : null}
+          </div>
         ) : (
           <div className={styles.center}>
             <div className={styles.loginWrapper}>

@@ -35,7 +35,7 @@ export default function Recipe({ data }) {
             <div className={styles.backgroundWrapper}>
               <div className={styles.contentStyle}>
                 <Image
-                  src={`https://volga24bot.com/cgi-bin/recipes/photos/${data[0]}/logo.jpg`}
+                  src={`https://volga24bot.com/cgi-bin/recipes/photos/${data[0]}/logo.png`}
                   alt="Банер"
                   fill
                   style={{ objectFit: "cover" }}

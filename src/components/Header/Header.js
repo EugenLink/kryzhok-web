@@ -4,8 +4,8 @@ import { useState } from "react";
 import Logo from "../../img/logo.png";
 import { Burger } from "./Burger/Burger.js";
 import styles from "./Header.module.scss";
-import { SearchWrapper } from "./Search/Search.js";
-
+import { SearchDesctop } from "./Search/SearchDesctop";
+import { SearchMobile } from "./Search/SearchMobile.jsx";
 export default function Header() {
   const [isShown, setIsShown] = useState(false);
   const [funcName, setFuncName] = useState(null);
@@ -39,7 +39,8 @@ export default function Header() {
             </p>
           </nav>
         </div>
-        <SearchWrapper />
+        <SearchDesctop />
+        <SearchMobile />
       </div>
       <div
         className={styles.catalogUnderWrapper}

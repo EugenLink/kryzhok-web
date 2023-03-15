@@ -36,7 +36,7 @@ export default function Catalogs({ data }) {
                 return (
                   <ChapterCardRecipe
                     text={el[1]}
-                    src={`https://volga24bot.com/cgi-bin/recipes/photos/${el[0]}/logo.jpg`}
+                    src={`https://volga24bot.com/cgi-bin/recipes/photos/${el[0]}/logo.png`}
                     link={`/recipes/${recipeCatalog}/${el[0]}?name=${el[1]}`}
                     key={el[0]}
                     time={el[5]}

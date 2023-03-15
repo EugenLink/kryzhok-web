@@ -8,7 +8,7 @@ const Like = ({ likes, id }) => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("like");
+      const saved = localStorage.getItem(`like:${id}`);
 
       setLiked(saved);
     }
@@ -27,7 +27,7 @@ const Like = ({ likes, id }) => {
                 +likes - 1
               }`
             );
-            localStorage.removeItem("like");
+            localStorage.removeItem(`like:${id}`);
           }}
         />
       ) : (
@@ -41,7 +41,7 @@ const Like = ({ likes, id }) => {
                 +likes + 1
               }`
             );
-            localStorage.setItem("like", true);
+            localStorage.setItem(`like:${id}`, true);
           }}
         />
       )}

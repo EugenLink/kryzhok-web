@@ -17,18 +17,34 @@ export default function Footer() {
       <div className={styles.footerWrapper}>
         <div className={styles.contacts}>
           <p style={{ fontWeight: 700 }}>Контакты</p>
-          <p>Телефон горячей линии 8 888 888-88-88</p>
+          <p>Телефон горячей линии 8 967 822-13-30</p>
           <div className={styles.footerImages}>
-            <Image src={Vk} alt="vk" />
-            <Image src={Wa} alt="wa" />
-            <Image src={Tg} alt="tg" />
-            <Image src={Inst} alt="inst" />
+            <Link href="https://vk.com/texnika_room">
+              <Image src={Vk} alt="vk" />
+            </Link>
+            <Link href="https://wa.me/89678221330">
+              <Image src={Wa} alt="wa" />
+            </Link>
+            <Link href="https://t.me/texnika_room">
+              <Image src={Tg} alt="tg" />
+            </Link>
+            <Link href="https://www.instagram.com/texnika_room/">
+              <Image src={Inst} alt="inst" />
+            </Link>
           </div>
           <div className={styles.footerImages}>
-            <Image src={Ozon} alt="Ozon" />
-            <Image src={Wb} alt="Wb" />
-            <Image src={Ym} alt="Ym" />
-            <Image src={Ali} alt="Ali" />
+            <Link href="https://www.ozon.ru/seller/texnika-room-88203/?miniapp=seller_88203&sprt=1">
+              <Image src={Ozon} alt="Ozon" />
+            </Link>
+            <Link href="https://www.wildberries.ru/seller/54951">
+              <Image src={Wb} alt="Wb" />
+            </Link>
+            <Link href="https://aliexpress.ru/store/5779747?spm=a2g2w.productlist.search_results.0.610c4aa6nckyuE&_ga=2.220125020.475076430.1674767664-1155849552.1667662721">
+              <Image src={Ali} alt="Ali" />
+            </Link>
+            <Link href="https://market.yandex.ru/search?businessId=862729&allowCollapsing=1&local-offers-first=0">
+              <Image src={Ym} alt="Ym" />
+            </Link>
           </div>
         </div>
         <ul className={styles.list}>

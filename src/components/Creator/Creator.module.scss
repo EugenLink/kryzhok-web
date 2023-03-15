@@ -1,0 +1,53 @@
+.editor {
+  margin: 20px 0;
+  h2 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .editorInput {
+    margin: 20px 0;
+    width: 50%;
+
+    p {
+      font-size: 14px;
+      padding: 5px 0;
+      font-weight: 500;
+    }
+  }
+}
+
+.buttonSave {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 20px 0;
+  button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #3b5fdf;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+  }
+}
+
+.list {
+  padding: 20px 0;
+  list-style: none;
+  li {
+    padding: 5px 15px;
+    margin: 5px 0;
+    background-color: rgb(226, 226, 226);
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.select {
+  width: 100%;
+}

@@ -9,7 +9,15 @@ const getBase64 = (file) =>
     reader.onerror = (error) => reject(error);
   });
 
-export const Images = ({ images, id, title, type, count }) => {
+export const Images = ({
+  images,
+  id,
+  title,
+  type,
+  count,
+  func = () => {},
+  set,
+}) => {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
   const [previewTitle, setPreviewTitle] = useState("");
@@ -72,6 +80,8 @@ export const Images = ({ images, id, title, type, count }) => {
         }
       )
         .then((res) => {
+          func(id, arr);
+
           onSuccess("Ok");
         })
         .catch((err) => {
@@ -97,7 +107,7 @@ export const Images = ({ images, id, title, type, count }) => {
       }
     )
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => func(id, arr.join(";")));
   };
   return (
     <>

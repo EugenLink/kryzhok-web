@@ -150,7 +150,7 @@ function getLink(chapter, preChapter, id) {
   const second = names.find((el) => el.title === chapter);
 
   if (first?.name && second?.name) {
-    return `/catalog/${first.name}/${second.name}/${id}`;
+    return `/catalog/${first.name}/${second.name}/${id}?chapter=${chapter}`;
   } else {
     return "/";
   }

@@ -15,7 +15,7 @@ export const ProductCardHeadMobile = ({ item, anchor }) => {
     <div className={styles.productCardWrapper}>
       <div className={styles.mainText}>
         <p style={{ fontWeight: 500 }}>
-          {item.name} <span style={{ fontWeight: 600 }}>{item.type}</span>
+          {item.Name} <span style={{ fontWeight: 600 }}>{item.Model}</span>
         </p>
         <div className={styles.flex}>
           <div className={styles.raiting}>

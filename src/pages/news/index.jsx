@@ -4,6 +4,7 @@ import styles from "@/styles/Catalog.module.scss";
 import NewsCard from "@/components/ChapterCard/NewsCard.jsx";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import moment from "moment";
 import Head from "next/head";
 import { useRouter } from "next/router.js";
 
@@ -35,7 +36,7 @@ export default function News({ data }) {
                   key={el[0]}
                   src={`https://volga24bot.com/cgi-bin/news/photos/${el[0]}/logo.png`}
                   text={el[1]}
-                  date={el[3]}
+                  date={moment(el[3]).format("DD.MM.YYYY HH:mm")}
                   link={`${path}/${el[0]}?name=${el[1]}`}
                 />
               );

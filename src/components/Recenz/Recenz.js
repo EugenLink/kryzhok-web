@@ -21,6 +21,7 @@ const Recenz = ({
   itemId = 0,
   funcDelete,
   funcAdd,
+  funcRefresh,
 }) => {
   const [messageApi, contextHolder] = message.useMessage();
   const [recenzForm, setRecenzForm] = useState({
@@ -52,7 +53,6 @@ const Recenz = ({
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         if (res !== "false") {
           funcAdd({
             name: recenzForm.name,
@@ -66,6 +66,7 @@ const Recenz = ({
             itemId: +res,
           });
           messageApi.success("Отзыв оставлен успешно");
+          funcRefresh(id, count + 1);
           setRecenzForm({
             name: "",
             stars: 0,
@@ -91,6 +92,7 @@ const Recenz = ({
         .then((res) => res.json())
         .then((res) => {
           if (res === "true") {
+            funcRefresh(id, count - 1);
             funcDelete();
             messageApi.success("Отзыв удален успешно");
           } else {
