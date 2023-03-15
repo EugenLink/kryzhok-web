@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
         </div>
         <ul className={styles.list}>
-          <li>
+          <li className={styles.link}>
             <Link href="/catalog/home?name=Дом">Дом</Link>
           </li>
           <li>

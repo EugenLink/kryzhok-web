@@ -51,6 +51,9 @@
         width: 120px;
         cursor: pointer;
         padding: 5px 0;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -78,6 +81,11 @@
     .list {
       align-items: start !important;
       padding: 10px 0;
+      li {
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
 }

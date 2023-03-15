@@ -30,6 +30,7 @@ export const Burger = () => {
         placement="left"
         onClose={onClose}
         open={open}
+        zIndex={1000002}
         closeIcon={
           <Image src={Close} alt="321321" className={styles.closeMenuButton} />
         }
