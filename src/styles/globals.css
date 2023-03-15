@@ -55,7 +55,12 @@ a {
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 }
-
+.ant-modal-content {
+  padding: 0 !important;
+}
+.ant-modal-footer {
+  padding: 0 24px 20px 24px;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -264,5 +269,11 @@ button.is_active {
   }
   .container {
     padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .ant-modal-footer {
+    padding: 0 14px 10px 14px;
   }
 }

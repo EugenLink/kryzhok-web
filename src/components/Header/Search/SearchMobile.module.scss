@@ -3,6 +3,13 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 20px;
+  }
   .search {
     display: block;
   }
@@ -43,11 +50,6 @@
     .icon {
       cursor: pointer;
       padding: 4px;
-      position: absolute;
-      box-sizing: border-box;
-      top: 52%;
-      right: 6px;
-      transform: translateY(-50%);
     }
   }
   .open {

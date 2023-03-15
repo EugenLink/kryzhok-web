@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import styles from "./Loader.module.scss";
 export const Loader = () => {
   const [load, setLoad] = useState(true);
+
   useEffect(() => {
-    const timer = setTimeout(() => setLoad(false), 100);
+    const timer = setTimeout(() => setLoad(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 

@@ -17,6 +17,7 @@ export const SearchDesctop = () => {
   const value = useStore($value);
   const products = useStore($products);
   const [isSearchFocus, setIsSearchFocus] = useState(false);
+
   const searchItems = useStore($searchItems);
   useEffect(() => {
     if (products.length === 0) {
@@ -35,7 +36,10 @@ export const SearchDesctop = () => {
             placeholder={"Поиск по товарам"}
             onFocus={() => setIsSearchFocus(true)}
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e) => {
+              setIsSearchFocus(true);
+              setValue(e.target.value);
+            }}
             onBlur={() => {
               const timer = setTimeout(() => setIsSearchFocus(false), 200);
             }}

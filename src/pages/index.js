@@ -11,7 +11,7 @@ import Footer from "./../components/Footer/Footer";
 export default function Home({ data }) {
   const [load, setLoad] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => setLoad(true), 2000);
+    const timer = setTimeout(() => setLoad(true), 3000);
     return () => clearTimeout(timer);
   }, []);
 

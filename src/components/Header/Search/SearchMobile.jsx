@@ -40,42 +40,35 @@ export const SearchMobile = () => {
       <div
         className={`${styles.wrapper} ${isOpen ? styles.open : styles.close}`}
       >
-        <label className={`${styles.inputWrapper}`}>
-          <input
-            type="text"
-            placeholder={"Поиск по товарам"}
-            onFocus={() => setIsSearchFocus(true)}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            onBlur={() => {
-              const timer = setTimeout(() => setIsSearchFocus(false), 200);
-            }}
-            className={`${
-              isSearchFocus && value.length > 3 ? styles.shadow : null
-            } `}
-          />
-          {isOpen ? (
-            <Image
-              src={"/icons/closeGray.png"}
-              alt={"searchIcon"}
-              width={"20"}
-              onClick={() => {
-                setValue("");
-                setIsOpen(false);
+        <div className={styles.flex}>
+          <label className={`${styles.inputWrapper}`}>
+            <input
+              type="text"
+              placeholder={"Поиск по товарам"}
+              onFocus={() => setIsSearchFocus(true)}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              onBlur={() => {
+                const timer = setTimeout(() => setIsSearchFocus(false), 200);
               }}
-              height={"20"}
-              className={styles.icon}
+              className={`${
+                isSearchFocus && value.length > 3 ? styles.shadow : null
+              } `}
             />
-          ) : (
-            <Image
-              src={"/icons/searchgray.png"}
-              alt={"searchIcon"}
-              width={"20"}
-              height={"20"}
-              className={styles.icon}
-            />
-          )}
-        </label>
+          </label>
+          <Image
+            src={"/icons/close.png"}
+            alt={"searchIcon"}
+            width={"20"}
+            onClick={() => {
+              setValue("");
+              setIsOpen(false);
+            }}
+            height={"20"}
+            className={styles.icon}
+          />
+        </div>
+
         {value.length > 3 ? (
           <ul className={styles.searchDrop}>
             <p className={styles.searchDropLabel}>Поиск: {value}</p>
