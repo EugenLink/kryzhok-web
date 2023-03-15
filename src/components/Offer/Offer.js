@@ -16,7 +16,7 @@ export const Offer = ({ children }) => {
       const saved = localStorage.getItem(`subscription`);
 
       if (!saved) {
-        const timer = setTimeout(() => setOpen(true), 5000);
+        const timer = setTimeout(() => setOpen(true), 35000);
       }
     }
   }, []);
