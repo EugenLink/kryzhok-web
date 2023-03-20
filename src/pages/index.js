@@ -41,7 +41,7 @@ export default function Home({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(
-    `https://volga24bot.com/cgi-bin/product/getHitAndNew.php`
+    `http://u1978287.isp.regruhosting.ru/product/getHitAndNew.php`
   );
 
   const data = await res.json();

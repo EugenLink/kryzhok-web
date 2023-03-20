@@ -35,7 +35,7 @@ export default function Recipe({ data }) {
             <div className={styles.backgroundWrapper}>
               <div className={styles.contentStyle}>
                 <Image
-                  src={`https://volga24bot.com/cgi-bin/recipes/photos/${data[0]}/logo.png`}
+                  src={`http://u1978287.isp.regruhosting.ru/recipes/photos/${data[0]}/logo.png`}
                   alt="Банер"
                   fill
                   style={{ objectFit: "cover" }}
@@ -71,15 +71,15 @@ export async function getServerSideProps(context) {
   // Fetch data from external API
 
   const res = await fetch(
-    `https://volga24bot.com/cgi-bin/recipes/getRecipe.php?id=${recipe}`
+    `http://u1978287.isp.regruhosting.ru/recipes/getRecipe.php?id=${recipe}`
   );
   const data = await res.json();
 
   // Pass data to the page via props
   fetch(
-    `https://volga24bot.com/cgi-bin/recipes/setView.php?id=${data[0]}&views=${
-      +data[6] + 1
-    }`
+    `http://u1978287.isp.regruhosting.ru/recipes/setView.php?id=${
+      data[0]
+    }&views=${+data[6] + 1}`
   );
   return { props: { data } };
 }

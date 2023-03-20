@@ -44,7 +44,7 @@ export async function getServerSideProps(context) {
   // Fetch data from external API
 
   const res = await fetch(
-    `https://volga24bot.com/cgi-bin/news/getNews.php?id=${news}`
+    `http://u1978287.isp.regruhosting.ru/news/getNews.php?id=${news}`
   );
   const data = await res.json();
 

@@ -47,7 +47,7 @@ const Recenz = ({
     fmData.append("id", id);
     fmData.append("count", count + 1);
 
-    fetch(`https://volga24bot.com/cgi-bin/recenz/addRecenz.php`, {
+    fetch(`http://u1978287.isp.regruhosting.ru/recenz/addRecenz.php`, {
       method: "POST",
       body: fmData,
     })
@@ -85,7 +85,7 @@ const Recenz = ({
   const deleteRecenz = () => {
     if (confirm("Вы уверены что хотите удалить отзыв?")) {
       fetch(
-        `https://volga24bot.com/cgi-bin/recenz/deleteRecenz.php?id=${id}&idR=${itemId}&count=${
+        `http://u1978287.isp.regruhosting.ru/recenz/deleteRecenz.php?id=${id}&idR=${itemId}&count=${
           count - 1
         }`
       )

@@ -23,7 +23,7 @@ export const News = () => {
     onSuccess("Ok");
   };
   useEffect(() => {
-    fetch(`https://volga24bot.com/cgi-bin/news/getAllNews.php`)
+    fetch(`http://u1978287.isp.regruhosting.ru/news/getAllNews.php`)
       .then((res) => res.json())
       .then((res) => setAllNews(res));
   }, []);
@@ -56,7 +56,7 @@ export const News = () => {
                       danger
                       onClick={() => {
                         fetch(
-                          `https://volga24bot.com/cgi-bin/news/deleteNews.php?id=${el[0]}`
+                          `http://u1978287.isp.regruhosting.ru/news/deleteNews.php?id=${el[0]}`
                         )
                           .then((res) => res.json())
                           .then((res) => {
@@ -125,7 +125,7 @@ export const News = () => {
                         }}
                       >
                         <img
-                          src={`https://volga24bot.com/cgi-bin/news/photos/${id
+                          src={`http://u1978287.isp.regruhosting.ru/news/photos/${id
                             .toString()
                             .substring(5)}/${alt}`}
                           alt={alt}
@@ -157,10 +157,13 @@ export const News = () => {
                 formData.append("content", htmlString);
                 formData.append("images", filtredImages);
 
-                fetch("https://volga24bot.com/cgi-bin/news/pushToNews.php", {
-                  method: "POST",
-                  body: formData,
-                })
+                fetch(
+                  "http://u1978287.isp.regruhosting.ru/news/pushToNews.php",
+                  {
+                    method: "POST",
+                    body: formData,
+                  }
+                )
                   .then((res) => res.json())
                   .then((res) => {
                     if (res === "true") {

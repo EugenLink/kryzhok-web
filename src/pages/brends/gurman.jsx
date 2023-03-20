@@ -73,7 +73,7 @@ export default function Gurman({ data }) {
 }
 export async function getServerSideProps() {
   const res = await fetch(
-    `https://volga24bot.com/cgi-bin/product/getByBrend.php?brend=GURMAN`
+    `http://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=GURMAN`
   );
 
   const data = await res.json();

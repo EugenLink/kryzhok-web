@@ -6,10 +6,10 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "volga24bot.com",
+        protocol: "http",
+        hostname: "u1978287.isp.regruhosting.ru",
         port: "",
-        pathname: "/cgi-bin/**",
+        pathname: "/**",
       },
     ],
   },

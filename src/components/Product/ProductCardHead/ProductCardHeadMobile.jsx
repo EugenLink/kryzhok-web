@@ -50,7 +50,7 @@ export const ProductCardHeadMobile = ({ item, anchor }) => {
                 return (
                   <div className={styles.ImageFullScreenWrapper} key={el}>
                     <Image
-                      src={`https://volga24bot.com/cgi-bin/product/photos/${item.id}/images/${el}`}
+                      src={`http://u1978287.isp.regruhosting.ru/product/photos/${item.id}/images/${el}`}
                       alt={"img"}
                       className={styles.Image}
                       fill

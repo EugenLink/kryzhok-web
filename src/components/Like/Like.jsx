@@ -23,7 +23,7 @@ const Like = ({ likes, id }) => {
           onClick={() => {
             setLiked(false);
             fetch(
-              `https://volga24bot.com/cgi-bin/recipes/setLike.php?id=${id}&likes=${
+              `http://u1978287.isp.regruhosting.ru/recipes/setLike.php?id=${id}&likes=${
                 +likes - 1
               }`
             );
@@ -37,7 +37,7 @@ const Like = ({ likes, id }) => {
           onClick={() => {
             setLiked(true);
             fetch(
-              `https://volga24bot.com/cgi-bin/recipes/setLike.php?id=${id}&likes=${
+              `http://u1978287.isp.regruhosting.ru/recipes/setLike.php?id=${id}&likes=${
                 +likes + 1
               }`
             );

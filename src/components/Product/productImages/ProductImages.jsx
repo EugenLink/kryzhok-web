@@ -29,7 +29,7 @@ export const ProductImages = ({ images, id }) => {
                   onClick={() => setActive(`/${el}`)}
                 >
                   <Image
-                    src={`https://volga24bot.com/cgi-bin/product/photos/${id}/images/${el}`}
+                    src={`http://u1978287.isp.regruhosting.ru/product/photos/${id}/images/${el}`}
                     alt="img1"
                     className={styles.ImageSmall}
                     fill
@@ -43,7 +43,7 @@ export const ProductImages = ({ images, id }) => {
         <Image
           src={
             images
-              ? `https://volga24bot.com/cgi-bin/product/photos/${id}/images${active}`
+              ? `http://u1978287.isp.regruhosting.ru/product/photos/${id}/images${active}`
               : active
           }
           alt={"img"}

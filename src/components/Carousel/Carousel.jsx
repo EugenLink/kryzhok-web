@@ -47,7 +47,7 @@ export const Carousel = ({ items }) => {
               recenz={el.recenz}
               img={
                 el.previewImg.length
-                  ? `https://volga24bot.com/cgi-bin/product/photos/${el.id}/previewImg/${el.previewImg}`
+                  ? `http://u1978287.isp.regruhosting.ru/product/photos/${el.id}/previewImg/${el.previewImg}`
                   : "/noPhoto.png"
               }
             />
@@ -80,7 +80,7 @@ export const Carousel = ({ items }) => {
               link={getLink(el.Chapter, el.PreChapter, el.id)}
               img={
                 el.previewImg.length
-                  ? `https://volga24bot.com/cgi-bin/product/photos/${el.id}/previewImg/${el.previewImg}`
+                  ? `http://u1978287.isp.regruhosting.ru/product/photos/${el.id}/previewImg/${el.previewImg}`
                   : "/noPhoto.png"
               }
             />

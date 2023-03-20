@@ -25,7 +25,7 @@ export const Recipes = () => {
     onSuccess("Ok");
   };
   useEffect(() => {
-    fetch(`https://volga24bot.com/cgi-bin/recipes/getRecipes.php`)
+    fetch(`http://u1978287.isp.regruhosting.ru/recipes/getRecipes.php`)
       .then((res) => res.json())
       .then((res) => setAllNews(res));
   }, []);
@@ -59,7 +59,7 @@ export const Recipes = () => {
                       danger
                       onClick={() => {
                         fetch(
-                          `https://volga24bot.com/cgi-bin/recipes/delete.php?id=${el[0]}`
+                          `http://u1978287.isp.regruhosting.ru/recipes/delete.php?id=${el[0]}`
                         )
                           .then((res) => res.json())
                           .then((res) => {
@@ -177,7 +177,7 @@ export const Recipes = () => {
                         }}
                       >
                         <img
-                          src={`https://volga24bot.com/cgi-bin/recipes/photos/${id}/${alt}`}
+                          src={`http://u1978287.isp.regruhosting.ru/recipes/photos/${id}/${alt}`}
                           alt={alt}
                         />
                       </div>
@@ -208,7 +208,7 @@ export const Recipes = () => {
                 formData.append("text", htmlString);
                 formData.append("images", filtredImages);
                 fetch(
-                  "https://volga24bot.com/cgi-bin/recipes/pushToRecipes.php",
+                  "http://u1978287.isp.regruhosting.ru/recipes/pushToRecipes.php",
                   {
                     method: "POST",
                     body: formData,

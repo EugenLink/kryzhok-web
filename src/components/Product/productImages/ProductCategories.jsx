@@ -50,7 +50,7 @@ export const ProductCategories = ({ item, selected, setSelected }) => {
           </div>
           <div className={styles.ImageFullScreenWrapper}>
             <Image
-              src={`https://volga24bot.com/cgi-bin/product/photos/${item.id}/descImg/${item.descImg}`}
+              src={`http://u1978287.isp.regruhosting.ru/product/photos/${item.id}/descImg/${item.descImg}`}
               alt={"img"}
               className={styles.Image}
               fill

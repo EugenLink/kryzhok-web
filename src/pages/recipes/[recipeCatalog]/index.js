@@ -36,7 +36,7 @@ export default function Catalogs({ data }) {
                 return (
                   <ChapterCardRecipe
                     text={el[1]}
-                    src={`https://volga24bot.com/cgi-bin/recipes/photos/${el[0]}/logo.png`}
+                    src={`http://u1978287.isp.regruhosting.ru/recipes/photos/${el[0]}/logo.png`}
                     link={`/recipes/${recipeCatalog}/${el[0]}?name=${el[1]}`}
                     key={el[0]}
                     time={el[5]}
@@ -56,7 +56,7 @@ export default function Catalogs({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(
-    `https://volga24bot.com/cgi-bin/recipes/getRecipes.php`
+    `http://u1978287.isp.regruhosting.ru/recipes/getRecipes.php`
   );
   const data = await res.json();
 

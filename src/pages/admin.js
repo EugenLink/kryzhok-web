@@ -90,7 +90,7 @@ export default function Admin({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(
-    `https://volga24bot.com/cgi-bin/product/getAllForChange.php`
+    `http://u1978287.isp.regruhosting.ru/product/getAllForChange.php`
   );
 
   const data = await res.json();
