@@ -29,6 +29,7 @@
     "html-react-parser": "^3.0.9",
     "moment": "^2.29.4",
     "next": "13.1.6",
+    "next-optimized-images": "^2.6.2",
     "node-sass": "^7.0.3",
     "normalize.css": "^8.0.1",
     "react": "18.2.0",

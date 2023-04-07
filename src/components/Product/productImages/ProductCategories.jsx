@@ -32,7 +32,7 @@ export const ProductCategories = ({ item, selected, setSelected }) => {
             <p className={styles.name}>
               {item.Name} {item.Model}
             </p>
-            {item.Desc.split('"/"').map((el, i) => (
+            {item.Desc.split("/").map((el, i) => (
               <p className={styles.text} key={i}>
                 {el.replace(/["']/g, "")}
               </p>
@@ -41,7 +41,7 @@ export const ProductCategories = ({ item, selected, setSelected }) => {
             <p className={styles.title}>Комплектация</p>
             <p className={styles.name}>Данная модель включает</p>
             <ul className={`${styles.text} ${styles.list}`}>
-              {item.Comple?.split('"/"').map((el) =>
+              {item.Comple?.split("/").map((el) =>
                 el.length > 3 ? (
                   <li key={el}>{el.replace(/["']/g, "")}</li>
                 ) : null
@@ -62,7 +62,7 @@ export const ProductCategories = ({ item, selected, setSelected }) => {
         <div className={`${styles.wrapper} ${styles.charWrapper}`}>
           <p className={styles.title}>Технические характеристики</p>
           {item.charst
-            ? item.charst.split('"/"').map((el, i) => {
+            ? item.charst.split("/").map((el, i) => {
                 const title = el.split(" - ")[0];
                 const value = el.split(" - ")[1];
                 return (

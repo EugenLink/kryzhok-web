@@ -72,91 +72,31 @@ export default function ProductCard({ item, hits }) {
                 Купите в любимом интернет - магазине:
               </p>
               <div className={styles.magazines}>
-                {item.ozon === "Y" ? (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
+                {item.OZON.length ? (
+                  <a target="_blank" rel="noopener noreferrer" href={item.OZON}>
                     OZON
                   </a>
-                ) : (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
-                    OZON
-                  </a>
-                )}
-                {item.wb === "Y" ? (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
+                ) : null}
+                {item.WB.length ? (
+                  <a target="_blank" rel="noopener noreferrer" href={item.WB}>
                     Wildberries
                   </a>
-                ) : (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
-                    Wildberries
-                  </a>
-                )}
-                {item.ym === "Y" ? (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
+                ) : null}
+                {item.YM.length ? (
+                  <a target="_blank" rel="noopener noreferrer" href={item.YM}>
                     Яндекс Маркет
                   </a>
-                ) : (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
-                    Яндекс Маркет
-                  </a>
-                )}
-                {item.ali === "Y" ? (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
+                ) : null}
+                {item.ALI.length ? (
+                  <a target="_blank" rel="noopener noreferrer" href={item.ALI}>
                     Aliexpress
                   </a>
-                ) : (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
-                    Aliexpress
-                  </a>
-                )}
-                {item.am === "Y" ? (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
+                ) : null}
+                {item.AM.length ? (
+                  <a target="_blank" rel="noopener noreferrer" href={item.AM}>
                     Астмаркет
                   </a>
-                ) : (
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.ozon.ru/product/blender-pogruzhnoy-astix-abl-2800-3-v-1-izmelchitel-blender-mikser-208738488/?asb=r3CVRlQkq69prm7HmRXd5wCJ2GnNrWzIBplIJ0YT9aA%253D&asb2=QdM9O94TpWjEhA7sKh80nCKtmWTa9LXOCiPT1tqHMVw_4ZvAT5XEZ4AW9Sh8Re42&avtc=1&avte=2&avts=1674758032&keywords=%D0%B1%D0%BB%D0%B5%D0%BD%D0%B4%D0%B5%D1%80+astix&sh=tFIEfL0iNQ"
-                  >
-                    Астмаркет
-                  </a>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
