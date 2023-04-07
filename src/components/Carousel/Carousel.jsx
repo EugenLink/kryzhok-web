@@ -13,6 +13,15 @@ export const Carousel = ({ items }) => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const size = useWindowSize();
   const chevronWidth = 40;
+  console.log(
+    size.width && items.length
+      ? Math.floor(size.width / 180) > items.length
+        ? 0
+        : items.length +
+          1 -
+          (Math.floor(size.width / 180) > 6 ? 6 : Math.floor(size.width / 180))
+      : 0
+  );
   return (
     <div>
       <div className={styles.caurusel}>
@@ -90,7 +99,9 @@ export const Carousel = ({ items }) => {
           {[
             ...Array(
               size.width && items.length
-                ? items.length +
+                ? Math.floor(size.width / 180) > items.length
+                  ? 0
+                  : items.length +
                     1 -
                     (Math.floor(size.width / 180) > 6
                       ? 6
