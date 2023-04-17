@@ -87,11 +87,7 @@ export default function ProductCard({ item, hits }) {
                     Яндекс Маркет
                   </a>
                 ) : null}
-                {item.ALI.length ? (
-                  <a target="_blank" rel="noopener noreferrer" href={item.ALI}>
-                    Aliexpress
-                  </a>
-                ) : null}
+
                 {item.AM.length ? (
                   <a target="_blank" rel="noopener noreferrer" href={item.AM}>
                     Астмаркет

@@ -15,7 +15,7 @@ export const ProductPreview = ({
     <Link href={link}>
       <div className={styles.productPreview}>
         <div className={styles.productImage}>
-          <Image src={img} alt={name} fill placeholder="blur" loading="lazy" />
+          <Image src={img} alt={name} fill loading="lazy" />
         </div>
         <div className={styles.textBlock}>
           <p className={styles.costNormal}>

@@ -1,6 +1,6 @@
 import Image from "next/image.js";
 import Link from "next/link.js";
-import Ali from "../../img/ali.png";
+import Ast from "../../img/ast.png";
 import Inst from "../../img/inst.png";
 import Ozon from "../../img/ozon.png";
 import Tg from "../../img/tg.png";
@@ -39,8 +39,8 @@ export default function Footer() {
             <Link href="https://www.wildberries.ru/seller/54951">
               <Image src={Wb} alt="Wb" />
             </Link>
-            <Link href="https://aliexpress.ru/store/5779747?spm=a2g2w.productlist.search_results.0.610c4aa6nckyuE&_ga=2.220125020.475076430.1674767664-1155849552.1667662721">
-              <Image src={Ali} alt="Ali" />
+            <Link href="https://astmarket.com/">
+              <Image src={Ast} alt="Ali" />
             </Link>
             <Link href="https://market.yandex.ru/search?businessId=862729&allowCollapsing=1&local-offers-first=0">
               <Image src={Ym} alt="Ym" />

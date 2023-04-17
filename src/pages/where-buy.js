@@ -26,8 +26,7 @@ export default function Feedback() {
             <p className={styles.textCenter}>
               Весь представленный на сайте товар вы можете приобрести в любом,
               удобном вам, маркетплейсе: <span>OZON</span>,{" "}
-              <span>Wildberries</span>, <span>AliExpress</span> или{" "}
-              <span>Яндекс Маркет</span>.
+              <span>Wildberries</span>, или <span>Яндекс Маркет</span>.
             </p>
             <div className={styles.markplaces}>
               <Link href="https://www.ozon.ru/seller/texnika-room-88203/?miniapp=seller_88203&sprt=1">
@@ -40,11 +39,7 @@ export default function Feedback() {
                   <Image src={"/marketplaces/wb.png"} alt={"wb"} fill />
                 </div>
               </Link>
-              <Link href="https://aliexpress.ru/store/5779747?spm=a2g2w.productlist.search_results.0.610c4aa6nckyuE&_ga=2.220125020.475076430.1674767664-1155849552.1667662721">
-                <div className={styles.mpImage}>
-                  <Image src={"/marketplaces/ali.png"} alt={"ali"} fill />
-                </div>
-              </Link>
+
               <Link href="https://market.yandex.ru/search?businessId=862729&allowCollapsing=1&local-offers-first=0">
                 <div className={styles.mpImage}>
                   <Image src={"/marketplaces/ym.png"} alt={"ym"} fill />
