@@ -1,11 +1,6 @@
 import dynamic from "next/dynamic";
-import Image from "next/image.js";
 import Link from "next/link.js";
 import { useState } from "react";
-import Banner2 from "../../img/banner2.png";
-import Banner3 from "../../img/banner3.png";
-import Banner4 from "../../img/banner4.png";
-import Kitchen from "../../img/kitching.png";
 import { Carousel } from "../Carousel/Carousel.jsx";
 import styles from "./MainList.module.scss";
 
@@ -43,8 +38,8 @@ export const MainList = ({ newI = [], hit = [] }) => {
         <h2>Наша стильная техника</h2>
         <div className={styles.videoBlock}>
           <ReactPlayer
-            url="https://www.youtube.com/watch?v=gmyIXR7pd0c"
-            controls={false}
+            url="mainvideo.mp4"
+            controls={true}
             width={"100%"}
             height={"100%"}
             style={{ top: "0", left: "0", position: "absolute" }}
@@ -52,7 +47,7 @@ export const MainList = ({ newI = [], hit = [] }) => {
         </div>
       </div>
       <div className={styles.rubrics}>
-        <Link href="/recipes">
+        {/* <Link href="/recipes">
           <div className={styles.rubricWrapper}>
             <div className={styles.fillImage}>
               <Image src={Kitchen} alt="Банер" fill />
@@ -66,43 +61,32 @@ export const MainList = ({ newI = [], hit = [] }) => {
               </p>
             </div>
           </div>
+        </Link> */}
+        <Link href="/recipes">
+          <div className={styles.rubricWrapper}>
+            <div className={styles.fillImage}>
+              <img src={"/banners/Link1.png"} alt="Банер" />
+            </div>
+          </div>
         </Link>
         <Link href="/catalog/kitchen?name=Кухня">
           <div className={styles.rubricWrapper}>
             <div className={styles.fillImage}>
-              <Image src={Banner2} alt="Банер" fill />
-            </div>
-            <div
-              className={styles.bannerText}
-              style={{ background: " rgba(190, 152, 108, 0.9)" }}
-            >
-              <p>Все для вашей кухни</p>
+              <img src={"/banners/Link2.png"} alt="Банер" />
             </div>
           </div>
         </Link>
         <Link href="/articles">
           <div className={styles.rubricWrapper}>
             <div className={styles.fillImage}>
-              <Image src={Banner3} alt="Банер" fill />
-            </div>
-            <div
-              className={styles.bannerText}
-              style={{ background: "rgba(122, 55, 231, 0.9)" }}
-            >
-              <p>Полезные статьи</p>
+              <img src={"/banners/Link3.png"} alt="Банер" />
             </div>
           </div>
         </Link>
         <Link href="/articles">
           <div className={styles.rubricWrapper}>
             <div className={styles.fillImage}>
-              <Image src={Banner4} alt="Банер" fill />
-            </div>
-            <div
-              className={styles.bannerText}
-              style={{ background: "rgba(118, 209, 127, 0.9)" }}
-            >
-              <p>Готовые решения для вашего дома</p>
+              <img src={"/banners/Link4.png"} alt="Банер" />
             </div>
           </div>
         </Link>

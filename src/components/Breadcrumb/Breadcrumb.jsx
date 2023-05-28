@@ -105,21 +105,13 @@ const getBreadCrumb = (enName, last, name) => {
       link: "/catalog/dishes/pans?name=Кастрюли",
       title: "Кастрюли",
     },
-    {
-      name: "buckets",
-      link: "/catalog/dishes/buckets?name=Ковши",
-      title: "Ковши",
-    },
+
     {
       name: "knifes",
       link: "/catalog/dishes/knifes?name=Ножи",
       title: "Ножи",
     },
-    {
-      name: "bowls",
-      link: "/catalog/dishes/bowls?name=Миски и салатницы",
-      title: "Миски и салатницы",
-    },
+
     {
       name: "convectors",
       link: "/catalog/climate/convectors?name=Конвекторы",

@@ -62,15 +62,16 @@
     }
     .fillImage {
       max-width: 365px;
-      max-height: 320px;
+      max-height: 365px;
       min-width: 280px;
       position: relative;
       width: 100%;
       height: 80vh;
-
       img {
+        height: 100%;
+        border-radius: px;
         width: 100%;
-        object-fit: contain;
+        object-fit: fill;
         object-position: center;
       }
     }
@@ -124,7 +125,7 @@
       margin: 10px 10px;
       position: relative;
 
-      width: 345px;
+      width: 365px;
     }
     .bannerText {
       top: 40px;

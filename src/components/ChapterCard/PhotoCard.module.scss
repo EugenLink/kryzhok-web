@@ -1,0 +1,15 @@
+.fillImage {
+  width: 360px;
+  height: 360px;
+
+  position: relative;
+
+  margin: 10px 0;
+  img {
+    height: 100%;
+    border-radius: px;
+    width: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+}

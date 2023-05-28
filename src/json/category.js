@@ -77,24 +77,14 @@ export const category = [
     text: "Кастрюли",
     pid: "dishes",
   },
+
   {
-    src: "/categorys/buckets.jpg",
-    link: "/buckets",
-    text: "Ковши",
-    pid: "dishes",
-  },
-  {
-    src: "/categorys/knifes.jpeg",
+    src: "/categorys/knifes.jpg",
     link: "/knifes",
     text: "Ножи",
     pid: "dishes",
   },
-  {
-    src: "/categorys/bowls.jpg",
-    link: "/bowls",
-    text: "Миски и салатницы",
-    pid: "dishes",
-  },
+
   {
     src: "/categorys/convectors.jpg",
     link: "/convectors",
@@ -119,12 +109,7 @@ export const category = [
     text: "Бассейны",
     pid: "sport",
   },
-  {
-    src: "/categorys/servizes.jpg",
-    link: "/servizes",
-    text: "Сервизы столовые",
-    pid: "dishes",
-  },
+
   {
     src: "/categorys/roasting.jpg",
     link: "/roasting",

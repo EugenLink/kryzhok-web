@@ -115,14 +115,9 @@ export default function Header() {
                 <Link href="/catalog/dishes/pans?name=Кастрюли">
                   <p>Кастрюли</p>
                 </Link>
-                <Link href="/catalog/dishes/buckets?name=Ковши">
-                  <p>Ковши</p>
-                </Link>
+
                 <Link href="/catalog/dishes/knifes?name=Ножи">
                   <p>Ножи</p>
-                </Link>
-                <Link href="/catalog/dishes/bowls?name=Миски и салатницы">
-                  <p>Миски и салатницы</p>
                 </Link>
               </div>
 

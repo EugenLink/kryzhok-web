@@ -1,38 +1,120 @@
 .contentStyle {
+  max-width: 1400px;
 
-    max-width: 1400px;
+  height: 700px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
 
-    img {
-        width: 100%;
-        height: 100%;
+.banner1 {
+  max-width: 1400px;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .last {
+    top: 40% !important;
+    margin-left: 50% !important;
+    width: 100%;
+    text-align: center !important;
+  }
+  .container {
+    position: absolute;
+    top: 32%;
+    margin-left: 25%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: white;
+
+    h1 {
+      font-size: 40px;
+      line-height: 45px;
+      font-weight: 500;
+      padding-bottom: 10px;
     }
-}   
-
+    span {
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: 300;
+    }
+  }
+}
 .bannerContainer {
-    margin: 0 auto;
-    overflow:auto;
-    max-width: 1400px;
-    padding: 15px 0.7rem;
+  margin: 0 auto;
+  overflow: auto;
+  max-width: 1400px;
+  padding: 15px 0.7rem;
 }
 
 .bannerPhone {
+  display: none !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .bannerContainer {
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .banner1 {
+    height: 500px;
+
+    .container {
+      h1 {
+        font-size: 30px;
+        line-height: 35px;
+        font-weight: 500;
+        padding-bottom: 10px;
+      }
+      span {
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .bannerPhone {
+    display: block !important;
+  }
+  .bannerDesc {
     display: none !important;
-}
-
-
-@media screen and (max-width: 1000px) { 
-    .bannerContainer {
-        margin: 0 auto;
-        overflow:auto;
-        padding: 0;
+  }
+  .contentStyle {
+    img {
+      width: 100%;
+      height: 400px;
     }
-}
+  }
+  .banner1 {
+    height: 400px;
 
-@media screen and (max-width: 630px) { 
-    .bannerPhone {
-        display:block !important;
+    .container {
+      top: 40%;
+      margin-left: 50%;
+      width: 100%;
+      padding: 0 10px;
+      text-align: center;
+      h1 {
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 500;
+        padding-bottom: 10px;
+      }
+      span {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 300;
+      }
     }
-    .bannerDesc {
-        display: none !important;
-    }
+  }
 }

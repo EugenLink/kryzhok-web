@@ -1,7 +1,7 @@
 import styles from "@/styles/Catalog.module.scss";
 
 import BreadcrumbDinamic from "@/components/Breadcrumb/Breadcrumb.jsx";
-import ChapterCard from "@/components/ChapterCard/ChapterCard.jsx";
+import PhotoCard from "@/components/ChapterCard/PhotoCard.jsx";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import { recipesCategory } from "@/json/recipesCategory.js";
@@ -32,7 +32,7 @@ export default function Catalog() {
           <div className={styles.cardWrapper}>
             {recipesCategory.map((el) => {
               return (
-                <ChapterCard
+                <PhotoCard
                   src={el.src}
                   text={el.text}
                   key={el.text}

@@ -1,16 +1,5 @@
 import { Carousel } from "antd";
-import Image from "next/image.js";
-import Banner from "../../img/banner1.png";
-import BannerPhone from "../../img/bannerPhone.png";
 import styles from "./Banners.module.scss";
-const contentStyle = {
-  margin: 0,
-  height: "160px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
-};
 
 export const Banners = () => {
   const onChange = (currentSlide) => {
@@ -20,51 +9,50 @@ export const Banners = () => {
     <div className={styles.bannerContainer}>
       <Carousel afterChange={onChange} autoplay={true}>
         <div>
-          <div className={styles.contentStyle}>
-            <Image
-              src={Banner}
-              alt="Банер"
-              style={{ objectFit: "cover" }}
-              className={styles.bannerDesc}
-            />
-            <Image
-              src={BannerPhone}
-              alt="Банер"
-              style={{ objectFit: "cover" }}
-              className={styles.bannerPhone}
-            />
+          <div
+            className={styles.banner1}
+            style={{
+              backgroundImage: 'URL("/banners/1.png")',
+            }}
+          >
+            <div className={styles.container}>
+              <h1>
+                Техника для вашего <br></br>дома и уюта
+              </h1>
+              <span>Стильный шоурум бытовой техники</span>
+            </div>
           </div>
         </div>
         <div>
-          <div className={styles.contentStyle}>
-            <Image
-              src={Banner}
-              alt="Банер"
-              style={{ objectFit: "cover" }}
-              className={styles.bannerDesc}
-            />
-            <Image
-              src={BannerPhone}
-              alt="Банер"
-              style={{ objectFit: "cover" }}
-              className={styles.bannerPhone}
-            />
+          <div
+            className={styles.banner1}
+            style={{
+              backgroundImage: 'URL("/banners/2.png")',
+            }}
+          >
+            <div className={styles.container}>
+              <h1>
+                Не плати за бренд,<br></br>плати за качество
+              </h1>
+            </div>
           </div>
         </div>
         <div>
-          <div className={styles.contentStyle}>
-            <Image
-              src={Banner}
-              alt="Банер"
-              style={{ objectFit: "cover" }}
-              className={styles.bannerDesc}
-            />
-            <Image
-              src={BannerPhone}
-              alt="Банер"
-              style={{ objectFit: "cover" }}
-              className={styles.bannerPhone}
-            />
+          <div
+            className={styles.banner1}
+            style={{
+              backgroundImage: 'URL("/banners/3.png")',
+            }}
+          >
+            <div className={`${styles.container} ${styles.last}`}>
+              <h1>
+                Наша команда посетила все <br></br> заводы производителей лично!
+              </h1>
+              <span>
+                Мы объездили много выставок, чтобы выбрать <br /> качество по
+                доступной цене
+              </span>
+            </div>
           </div>
         </div>
       </Carousel>
