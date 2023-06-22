@@ -1,5 +1,4 @@
 import moment from "moment";
-import Image from "next/image.js";
 import Link from "next/link.js";
 import styles from "./ArticleCard.module.scss";
 const ArticleCard = ({
@@ -16,7 +15,7 @@ const ArticleCard = ({
         <Link href={link}>{title}</Link>
       </p>
       <div className={styles.imageContainer}>
-        <Image src={src} alt={"article"} fill className={styles.image} />
+        <img src={src} alt={"article"} fill className={styles.image} />
       </div>
       <p className={styles.previewText}>
         {previewText} <Link href={link}>Читать далее...</Link>

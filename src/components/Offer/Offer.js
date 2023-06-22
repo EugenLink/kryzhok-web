@@ -1,5 +1,4 @@
 import { Button, Input, message, Modal } from "antd";
-import Image from "next/image.js";
 import { useEffect, useState } from "react";
 import styles from "./Offer.module.scss";
 
@@ -81,7 +80,7 @@ export const Offer = ({ children }) => {
       >
         {contextHolder}
         <div className={styles.present}>
-          <Image src={"/icons/present.jpg"} alt={"present"} fill />
+          <img src={"/icons/present.jpg"} alt={"present"} />
         </div>
         <div className={styles.bodyWrapper}>
           <p className={styles.title}>Подпишитесь сейчас!</p>

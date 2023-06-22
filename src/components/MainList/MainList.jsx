@@ -47,21 +47,6 @@ export const MainList = ({ newI = [], hit = [] }) => {
         </div>
       </div>
       <div className={styles.rubrics}>
-        {/* <Link href="/recipes">
-          <div className={styles.rubricWrapper}>
-            <div className={styles.fillImage}>
-              <Image src={Kitchen} alt="Банер" fill />
-            </div>
-            <div
-              className={styles.bannerText}
-              style={{ background: " rgba(208, 12, 12, 0.89)" }}
-            >
-              <p>
-                Готовим вместе с <br /> “ Texnika room ”
-              </p>
-            </div>
-          </div>
-        </Link> */}
         <Link href="/recipes">
           <div className={styles.rubricWrapper}>
             <div className={styles.fillImage}>

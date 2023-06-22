@@ -1,4 +1,3 @@
-import Image from "next/image.js";
 import { useEffect, useState } from "react";
 import styles from "./Loader.module.scss";
 export const Loader = () => {
@@ -12,7 +11,7 @@ export const Loader = () => {
   return (
     <div className={styles.loader}>
       <div className={styles.logoWrapper}>
-        <Image src={"/Logo.jpg"} alt={"logo"} fill />
+        <img src={"/Logo.jpg"} alt={"logo"} />
       </div>
       <div
         className={`${styles.loadLine} ${load ? styles.start : styles.finish}`}

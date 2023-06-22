@@ -1,4 +1,3 @@
-import Image from "next/image.js";
 import Link from "next/link.js";
 import styles from "./Brends.module.scss";
 export const Brends = ({ src, text, title, link = "/brends" }) => {
@@ -6,7 +5,7 @@ export const Brends = ({ src, text, title, link = "/brends" }) => {
     <Link href={link}>
       <div className={styles.wrapper}>
         <div className={styles.imageWrapper}>
-          <Image src={src} alt={"logo"} width={180} height={50} />
+          <img src={src} alt={"logo"} />
         </div>
 
         <div className={styles.text}>

@@ -1,4 +1,3 @@
-import Image from "next/image.js";
 import Link from "next/link.js";
 import styles from "./NewsCard.module.scss";
 const NewsCard = ({ src, text, date, link }) => {
@@ -7,12 +6,7 @@ const NewsCard = ({ src, text, date, link }) => {
       <div className={styles.wrapper}>
         <div className={styles.image}>
           <div className={styles.imageWrapper}>
-            <Image
-              alt="Mountains"
-              src={src}
-              fill
-              className={styles.customImg}
-            />
+            <img alt="Mountains" src={src} fill className={styles.customImg} />
           </div>
         </div>
         <div className={styles.text}>

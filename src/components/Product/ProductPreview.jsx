@@ -1,5 +1,4 @@
 import { num_word } from "@/hooks/num_words.js";
-import Image from "next/image.js";
 import Link from "next/link.js";
 import styles from "./ProductPreview.module.scss";
 
@@ -15,7 +14,7 @@ export const ProductPreview = ({
     <Link href={link}>
       <div className={styles.productPreview}>
         <div className={styles.productImage}>
-          <Image src={img} alt={name} fill loading="lazy" />
+          <img src={img} alt={name} loading="lazy" />
         </div>
         <div className={styles.textBlock}>
           <p className={styles.costNormal}>

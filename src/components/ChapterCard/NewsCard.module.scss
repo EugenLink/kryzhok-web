@@ -11,6 +11,13 @@
   width: 400px;
   height: 250px;
   position: relative;
+  img {
+    height: 100%;
+    border-radius: px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .text {

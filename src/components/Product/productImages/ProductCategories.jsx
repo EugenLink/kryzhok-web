@@ -1,5 +1,4 @@
 import Recenz from "@/components/Recenz/Recenz.js";
-import Image from "next/image.js";
 import styles from "./ProductCategories.module.scss";
 
 export const ProductCategories = ({ item, selected, setSelected }) => {
@@ -49,11 +48,10 @@ export const ProductCategories = ({ item, selected, setSelected }) => {
             </ul>
           </div>
           <div className={styles.ImageFullScreenWrapper}>
-            <Image
+            <img
               src={`http://u1978287.isp.regruhosting.ru/product/photos/${item.id}/descImg/${item.descImg}`}
               alt={"img"}
               className={styles.Image}
-              fill
             />
           </div>
         </div>

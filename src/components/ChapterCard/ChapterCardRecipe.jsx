@@ -15,7 +15,7 @@ const ChapterCardRecipe = ({
   return (
     <div className={styles.backgroundWrapper}>
       <div className={styles.contentStyle}>
-        <Image src={src} alt="Банер" fill style={{ objectFit: "cover" }} />
+        <img src={src} alt="Банер" />
       </div>
       <Link href={link}>
         <div className={styles.bannerText}>

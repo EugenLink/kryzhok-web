@@ -49,22 +49,20 @@ export const ProductCardHeadMobile = ({ item, anchor }) => {
               item.images.split(";").map((el) => {
                 return (
                   <div className={styles.ImageFullScreenWrapper} key={el}>
-                    <Image
+                    <img
                       src={`http://u1978287.isp.regruhosting.ru/product/photos/${item.id}/images/${el}`}
                       alt={"img"}
                       className={styles.Image}
-                      fill
                     />
                   </div>
                 );
               })
             ) : (
               <div className={styles.ImageFullScreenWrapper}>
-                <Image
+                <img
                   src={"/noPhoto.png"}
                   alt={"img"}
                   className={styles.Image}
-                  fill
                 />
               </div>
             )}

@@ -1,4 +1,3 @@
-import Image from "next/image.js";
 import { useEffect, useState } from "react";
 import styles from "./ProductImages.module.scss";
 
@@ -28,11 +27,10 @@ export const ProductImages = ({ images, id }) => {
                   }`}
                   onClick={() => setActive(`/${el}`)}
                 >
-                  <Image
+                  <img
                     src={`http://u1978287.isp.regruhosting.ru/product/photos/${id}/images/${el}`}
                     alt="img1"
                     className={styles.ImageSmall}
-                    fill
                   />
                 </div>
               );
@@ -40,7 +38,7 @@ export const ProductImages = ({ images, id }) => {
           : null}
       </div>
       <div className={styles.ImageFullScreenWrapper}>
-        <Image
+        <img
           src={
             images
               ? `http://u1978287.isp.regruhosting.ru/product/photos/${id}/images${active}`
@@ -48,7 +46,6 @@ export const ProductImages = ({ images, id }) => {
           }
           alt={"img"}
           className={styles.Image}
-          fill
         />
       </div>
     </div>

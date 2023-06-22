@@ -3,13 +3,13 @@
   align-items: flex-start;
   flex-direction: column;
   .imageWrapper {
-    padding: 10px 3px;
-    margin: 5px;
     cursor: pointer;
+    margin: 5px;
+    padding: 2px;
     position: relative;
     border-radius: 5px;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
 
     display: flex;
     img {
@@ -36,15 +36,17 @@
   margin-left: 10%;
 }
 .Image {
+  height: 100%;
   width: 100%;
   object-fit: contain;
-  object-position: top;
+  object-position: center;
 }
 
 .ImageSmall {
   object-fit: contain;
-  width: 68px;
-  height: 68px;
+  object-position: center;
+  height: 100%;
+  width: 100%;
 }
 .fullImageWrapper {
   position: fixed;
