@@ -122,12 +122,7 @@ export const category = [
     text: "Газовые поверхности",
     pid: "kitchen",
   },
-  {
-    src: "/categorys/lars.jpg",
-    link: "/lars",
-    text: "Лари",
-    pid: "kitchen",
-  },
+
   {
     src: "/categorys/breadsmaker.jpg",
     link: "/breadsmaker",
