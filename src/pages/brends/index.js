@@ -48,7 +48,7 @@ export default function Catalog() {
                 link={"/brends/jacco"}
               />
               <Brends
-                src="/brends/moGo.png"
+                src="/brends/mogo.png"
                 title={"MOJO"}
                 text={
                   "занимается произв одством и продажей современной бытовой техники. Заслуженным хитом MOJO является линейка стильных планетарных миксеров под любой запрос и вкус."
@@ -56,7 +56,7 @@ export default function Catalog() {
                 link={"/brends/mojo"}
               />
               <Brends
-                src="/brends/PHOENIX.png"
+                src="/brends/phoenix.png"
                 title={"PHOENIX"}
                 text={
                   "торговая марка, входит в первую десятку самых известных велосипедных марок, сейчас зарегистрирована более, чем в 104 странах мира."
@@ -64,7 +64,7 @@ export default function Catalog() {
                 link={"/brends/phoenix"}
               />
               <Brends
-                src="/brends/HOLLEBERG.png"
+                src="/brends/holleberg.png"
                 title={"HOLLEBERG"}
                 text={
                   "российская торговая марка телевизоров и прочей электроники. Бренд HOLLEBERG наиболее известен своими телевизорами.Сегодня производитель регулярно пополняет свой модельный ряд в разных направлениях."

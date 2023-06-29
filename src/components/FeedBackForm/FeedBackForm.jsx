@@ -67,30 +67,17 @@ export default function FeedBackForm() {
       valid.city
     ) {
       //send to GSheets
-      console.log("SUCCCES");
-      fetch(
-        "https://sheet.best/api/sheets/39afd001-36d5-4ca9-8d8a-bce2c2f34d28",
-        {
-          method: "POST",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form),
-        }
-      ).then((res) => {
-        if (res.status === 200) {
-          messageApi.success(
-            "Ваш вопрос отправлен, вскоре мы с вами свяжемся."
-          );
-          setForm({
-            fio: "",
-            email: "",
-            phone: "",
-            city: "",
-            question: "",
-          });
-        }
+      const res = fetch(
+        `http://u1978287.isp.regruhosting.ru/addToFeedBack.php?value=${form.email} | ${form.fio} | ${form.phone} | ${form.city} | ${form.question}`
+      );
+
+      messageApi.success("Ваш вопрос отправлен, вскоре мы с вами свяжемся.");
+      setForm({
+        fio: "",
+        email: "",
+        phone: "",
+        city: "",
+        question: "",
       });
     } else {
       setFormValid(valid);

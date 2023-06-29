@@ -26,6 +26,7 @@
     "effector-react": "^22.5.0",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
+    "googleapis": "^120.0.0",
     "html-react-parser": "^3.0.9",
     "moment": "^2.29.4",
     "next": "13.1.6",

@@ -1,7 +1,6 @@
 import { Button, Input, message, Modal } from "antd";
 import { useEffect, useState } from "react";
 import styles from "./Offer.module.scss";
-
 export const Offer = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -31,28 +30,26 @@ export const Offer = ({ children }) => {
     const emailRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (value.match(emailRegex)) {
-      console.log(JSON.stringify({ email: value }));
-      fetch(
-        "https://sheet.best/api/sheets/92ad5788-5901-456a-ac85-ab9e84a91a66",
-        {
-          method: "POST",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email: value }),
-        }
-      ).then((res) => {
-        console.log(res);
-        if (res.status === 200) {
-          setOpen(false);
-          messageApi.success({
-            content: "Спасибо за вашу подписку",
-            className: styles.messageWrapper,
-          });
-          localStorage.setItem(`subscription`, true);
-        }
+      const res = fetch(
+        `http://u1978287.isp.regruhosting.ru/addToOffer.php?email=${value}`
+      );
+      setOpen(false);
+      messageApi.success({
+        content: "Спасибо за вашу подписку",
+        className: styles.messageWrapper,
       });
+      localStorage.setItem(`subscription`, true);
+      //  then((res) => {
+      //     console.log(res);
+      //     if (res.status === 200) {
+      //       setOpen(false);
+      //       messageApi.success({
+      //         content: "Спасибо за вашу подписку",
+      //         className: styles.messageWrapper,
+      //       });
+      //       localStorage.setItem(`subscription`, true);
+      //     }
+      //   });
     } else {
       setValid(false);
       messageApi.error({
