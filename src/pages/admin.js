@@ -90,7 +90,7 @@ export default function Admin({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(
-    `http://u1978287.isp.regruhosting.ru/product/getAllForChange.php`
+    `https://u1978287.isp.regruhosting.ru/product/getAllForChange.php`
   );
 
   const data = await res.json();

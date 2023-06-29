@@ -24,7 +24,7 @@ export const Articles = () => {
     onSuccess("Ok");
   };
   useEffect(() => {
-    fetch(`http://u1978287.isp.regruhosting.ru/articles/getAll.php`)
+    fetch(`https://u1978287.isp.regruhosting.ru/articles/getAll.php`)
       .then((res) => res.json())
       .then((res) => setAllNews(res));
   }, []);
@@ -60,7 +60,7 @@ export const Articles = () => {
                       danger
                       onClick={() => {
                         fetch(
-                          `http://u1978287.isp.regruhosting.ru/articles/delete.php?id=${el[0]}`
+                          `https://u1978287.isp.regruhosting.ru/articles/delete.php?id=${el[0]}`
                         )
                           .then((res) => res.json())
                           .then((res) => {
@@ -136,7 +136,7 @@ export const Articles = () => {
                         }}
                       >
                         <img
-                          src={`http://u1978287.isp.regruhosting.ru/articles/photos/${id
+                          src={`https://u1978287.isp.regruhosting.ru/articles/photos/${id
                             .toString()
                             .substring(5)}/${alt}`}
                           alt={alt}
@@ -169,10 +169,13 @@ export const Articles = () => {
                 formData.append("images", filtredImages);
                 formData.append("previewText", previewText);
                 formData.append("author", "Texnika Room");
-                fetch("http://u1978287.isp.regruhosting.ru/articles/push.php", {
-                  method: "POST",
-                  body: formData,
-                })
+                fetch(
+                  "https://u1978287.isp.regruhosting.ru/articles/push.php",
+                  {
+                    method: "POST",
+                    body: formData,
+                  }
+                )
                   .then((res) => res.json())
                   .then((res) => {
                     if (res === "true") {

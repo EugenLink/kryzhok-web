@@ -121,12 +121,12 @@ export async function getServerSideProps(context) {
   const { chapter } = context.query;
   // Fetch data from external API
   const res = await fetch(
-    `http://u1978287.isp.regruhosting.ru/product/getById.php?id=${productCard}`
+    `https://u1978287.isp.regruhosting.ru/product/getById.php?id=${productCard}`
   );
 
   const item = await res.json();
   const hitsReq = await fetch(
-    `http://u1978287.isp.regruhosting.ru/product/getByChaperForCarousel.php?chapter=${chapter}`
+    `https://u1978287.isp.regruhosting.ru/product/getByChaperForCarousel.php?chapter=${chapter}`
   );
 
   const hits = await hitsReq.json();

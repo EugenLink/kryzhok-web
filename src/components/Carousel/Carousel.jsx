@@ -89,7 +89,7 @@ export const Carousel = ({ items }) => {
               link={getLink(el.Chapter, el.PreChapter, el.id)}
               img={
                 el.previewImg.length
-                  ? `http://u1978287.isp.regruhosting.ru/product/photos/${el.id}/previewImg/${el.previewImg}`
+                  ? `https://u1978287.isp.regruhosting.ru/product/photos/${el.id}/previewImg/${el.previewImg}`
                   : "/noPhoto.png"
               }
             />

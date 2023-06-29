@@ -69,7 +69,7 @@ export default function Mojo({ data }) {
 }
 export async function getServerSideProps() {
   const res = await fetch(
-    `http://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=MOJO`
+    `https://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=MOJO`
   );
 
   const data = await res.json();

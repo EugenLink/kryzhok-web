@@ -77,7 +77,7 @@ export default function Holleberg({ data }) {
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `http://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=HOLLEBERG`
+    `https://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=HOLLEBERG`
   );
 
   const data = await res.json();

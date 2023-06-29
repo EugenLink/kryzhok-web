@@ -47,7 +47,7 @@ const Recenz = ({
     fmData.append("id", id);
     fmData.append("count", count + 1);
 
-    fetch(`http://u1978287.isp.regruhosting.ru/recenz/addRecenz.php`, {
+    fetch(`https://u1978287.isp.regruhosting.ru/recenz/addRecenz.php`, {
       method: "POST",
       body: fmData,
     })
@@ -85,7 +85,7 @@ const Recenz = ({
   const deleteRecenz = () => {
     if (confirm("Вы уверены что хотите удалить отзыв?")) {
       fetch(
-        `http://u1978287.isp.regruhosting.ru/recenz/deleteRecenz.php?id=${id}&idR=${itemId}&count=${
+        `https://u1978287.isp.regruhosting.ru/recenz/deleteRecenz.php?id=${id}&idR=${itemId}&count=${
           count - 1
         }`
       )
