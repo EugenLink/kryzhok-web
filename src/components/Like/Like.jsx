@@ -23,7 +23,7 @@ const Like = ({ likes, id }) => {
           onClick={() => {
             setLiked(false);
             fetch(
-              `http://u1978287.isp.regruhosting.ru/recipes/setLike.php?id=${id}&likes=${
+              `https://u1978287.isp.regruhosting.ru/recipes/setLike.php?id=${id}&likes=${
                 +likes - 1
               }`
             );
@@ -37,7 +37,7 @@ const Like = ({ likes, id }) => {
           onClick={() => {
             setLiked(true);
             fetch(
-              `http://u1978287.isp.regruhosting.ru/recipes/setLike.php?id=${id}&likes=${
+              `https://u1978287.isp.regruhosting.ru/recipes/setLike.php?id=${id}&likes=${
                 +likes + 1
               }`
             );

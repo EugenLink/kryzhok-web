@@ -34,7 +34,7 @@ export default function News({ data }) {
               return (
                 <NewsCard
                   key={el[0]}
-                  src={`http://u1978287.isp.regruhosting.ru/news/photos/${el[0]}/logo.png`}
+                  src={`https://u1978287.isp.regruhosting.ru/news/photos/${el[0]}/logo.png`}
                   text={el[1]}
                   date={moment(el[3]).format("DD.MM.YYYY HH:mm")}
                   link={`${path}/${el[0]}?name=${el[1]}`}
@@ -52,7 +52,7 @@ export default function News({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(
-    `http://u1978287.isp.regruhosting.ru/news/getAllNews.php`
+    `https://u1978287.isp.regruhosting.ru/news/getAllNews.php`
   );
 
   const data = await res.json();

@@ -80,7 +80,7 @@ export default function Jacco({ data }) {
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `http://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=JACCO`
+    `https://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=JACCO`
   );
 
   const data = await res.json();

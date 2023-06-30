@@ -41,7 +41,7 @@ export default function Catalogs({ data }) {
                 link={getLink(el.Chapter, el.PreChapter, el.id)}
                 img={
                   el.previewImg.length
-                    ? `http://u1978287.isp.regruhosting.ru/product/photos/${el.id}/previewImg/${el.previewImg}`
+                    ? `https://u1978287.isp.regruhosting.ru/product/photos/${el.id}/previewImg/${el.previewImg}`
                     : "/noPhoto.png"
                 }
               />
@@ -58,7 +58,7 @@ export async function getServerSideProps(context) {
   const { name } = context.query;
   // Fetch data from external API
   const res = await fetch(
-    `http://u1978287.isp.regruhosting.ru/product/getByChapter.php?chapter=${name}`
+    `https://u1978287.isp.regruhosting.ru/product/getByChapter.php?chapter=${name}`
   );
 
   const data = await res.json();

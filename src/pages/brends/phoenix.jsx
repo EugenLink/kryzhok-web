@@ -74,7 +74,7 @@ export default function Phoenix({ data }) {
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `http://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=PHOENIX`
+    `https://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=PHOENIX`
   );
 
   const data = await res.json();

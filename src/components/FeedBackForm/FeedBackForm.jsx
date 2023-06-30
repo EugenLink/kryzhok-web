@@ -68,7 +68,7 @@ export default function FeedBackForm() {
     ) {
       //send to GSheets
       const res = fetch(
-        `http://u1978287.isp.regruhosting.ru/addToFeedBack.php?value=${form.email} | ${form.fio} | ${form.phone} | ${form.city} | ${form.question}`
+        `https://u1978287.isp.regruhosting.ru/addToFeedBack.php?value=${form.email} | ${form.fio} | ${form.phone} | ${form.city} | ${form.question}`
       );
 
       messageApi.success("Ваш вопрос отправлен, вскоре мы с вами свяжемся.");

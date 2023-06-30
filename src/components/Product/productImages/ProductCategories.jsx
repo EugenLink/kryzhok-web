@@ -49,7 +49,7 @@ export const ProductCategories = ({ item, selected, setSelected }) => {
           </div>
           <div className={styles.ImageFullScreenWrapper}>
             <img
-              src={`http://u1978287.isp.regruhosting.ru/product/photos/${item.id}/descImg/${item.descImg}`}
+              src={`https://u1978287.isp.regruhosting.ru/product/photos/${item.id}/descImg/${item.descImg}`}
               alt={"img"}
               className={styles.Image}
             />
