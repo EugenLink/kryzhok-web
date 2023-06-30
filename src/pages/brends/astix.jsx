@@ -74,7 +74,7 @@ export default function Astix({ data }) {
 
 export async function getServerSideProps() {
   const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=ASTIX`
+    `http://u1978287.isp.regruhosting.ru/product/getByBrend.php?brend=ASTIX`
   );
 
   const data = await res.json();

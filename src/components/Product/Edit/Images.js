@@ -31,7 +31,7 @@ export const Images = ({
               uid: el,
               name: el,
               status: "done",
-              url: `https://u1978287.isp.regruhosting.ru/product/photos/${id}/${type}/${el}`,
+              url: `http://u1978287.isp.regruhosting.ru/product/photos/${id}/${type}/${el}`,
             };
           })
         : []
@@ -73,7 +73,7 @@ export const Images = ({
       fmData.append("images", arr);
       fmData.append("image", file);
       fetch(
-        `https://u1978287.isp.regruhosting.ru/product/addImages.php?id=${id}&type=${type}`,
+        `http://u1978287.isp.regruhosting.ru/product/addImages.php?id=${id}&type=${type}`,
         {
           method: "POST",
           body: fmData,
@@ -100,7 +100,7 @@ export const Images = ({
 
     fmData.append("images", arr);
     fetch(
-      `https://u1978287.isp.regruhosting.ru/product/removeImages.php?id=${id}&name=${file.name}&type=${type}`,
+      `http://u1978287.isp.regruhosting.ru/product/removeImages.php?id=${id}&name=${file.name}&type=${type}`,
       {
         method: "POST",
         body: fmData,

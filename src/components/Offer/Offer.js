@@ -31,7 +31,7 @@ export const Offer = ({ children }) => {
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (value.match(emailRegex)) {
       const res = fetch(
-        `https://u1978287.isp.regruhosting.ru/addToOffer.php?email=${value}`
+        `http://u1978287.isp.regruhosting.ru/addToOffer.php?email=${value}`
       );
       setOpen(false);
       messageApi.success({

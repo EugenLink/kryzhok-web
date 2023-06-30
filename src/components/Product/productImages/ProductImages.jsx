@@ -28,7 +28,7 @@ export const ProductImages = ({ images, id }) => {
                   onClick={() => setActive(`/${el}`)}
                 >
                   <img
-                    src={`https://u1978287.isp.regruhosting.ru/product/photos/${id}/images/${el}`}
+                    src={`http://u1978287.isp.regruhosting.ru/product/photos/${id}/images/${el}`}
                     alt="img1"
                     className={styles.ImageSmall}
                   />
@@ -41,7 +41,7 @@ export const ProductImages = ({ images, id }) => {
         <img
           src={
             images
-              ? `https://u1978287.isp.regruhosting.ru/product/photos/${id}/images${active}`
+              ? `http://u1978287.isp.regruhosting.ru/product/photos/${id}/images${active}`
               : active
           }
           alt={"img"}

@@ -1,7 +1,7 @@
 import { combine, createEffect, createEvent, createStore } from "effector";
 
 export const getProducts = createEffect(async () => {
-  const url = `https://u1978287.isp.regruhosting.ru/product/getAll.php?`;
+  const url = `http://u1978287.isp.regruhosting.ru/product/getAll.php?`;
   const req = await fetch(url);
 
   return req.json();
