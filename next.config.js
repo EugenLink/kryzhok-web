@@ -13,7 +13,7 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
-        protocol: "http",
+        protocol: "https",
         hostname: "u1978287.isp.regruhosting.ru",
         port: "",
         pathname: "/**",

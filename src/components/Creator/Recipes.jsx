@@ -68,7 +68,7 @@ export const Recipes = () => {
                                 (el2) => el[0] !== el2[0]
                               );
                               setAllNews(ftlr);
-                              messageApi.success("Рецепт успешно удалена");
+                              messageApi.success("Рецепт успешно удален");
                             } else {
                               messageApi.error("Произошла ошибка");
                             }
@@ -219,7 +219,7 @@ export const Recipes = () => {
                     if (res === "true") {
                       const newNews = [id, title, "", type, moment().toDate()];
                       setAllNews([newNews, ...allNews]);
-                      messageApi.success("Рецепт успешно загружена");
+                      messageApi.success("Рецепт успешно загружен");
 
                       setTitle("");
                       setTime("");
