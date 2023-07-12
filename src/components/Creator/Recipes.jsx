@@ -223,7 +223,7 @@ export const Recipes = () => {
 
                       setTitle("");
                       setTime("");
-                      setType("");
+
                       setImages([]);
                     } else {
                       messageApi.error("Произошла ошибка");
