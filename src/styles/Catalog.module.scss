@@ -139,7 +139,11 @@
 }
 .parsedItems {
   font-size: 16px;
-  margin: 30px 0;
+
+  margin: 50px 100px;
+  ul {
+    margin-left: 36px;
+  }
   img {
     padding: 20px 0;
     width: auto;
@@ -293,6 +297,9 @@
     span {
       font-size: 12px !important;
     }
+  }
+  .parsedItems {
+    margin: 50px 20px;
   }
   .title {
     font-size: 24px;

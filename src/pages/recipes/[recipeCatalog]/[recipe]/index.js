@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 export default function Recipe({ data }) {
   const router = useRouter();
   const { name } = router.query;
-
+  console.log(data[2]);
   return (
     <div>
       <Head>
