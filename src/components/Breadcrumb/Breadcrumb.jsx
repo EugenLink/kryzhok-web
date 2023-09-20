@@ -55,6 +55,7 @@ const getBreadCrumb = (enName, last, name) => {
       link: "/catalog/home/tv?name=Телевизоры и кронштейны",
       title: "Телевизоры и кронштейны",
     },
+
     {
       name: "acustic",
       link: "/catalog/home/acustic?name=Акустика",
@@ -117,6 +118,11 @@ const getBreadCrumb = (enName, last, name) => {
       name: "fans",
       link: "/catalog/climate/fans?name=Вентиляторы",
       title: "Вентиляторы",
+    },
+    {
+      name: "split",
+      link: "/catalog/climate/split?name=Кондиционеры и сплит-системы",
+      title: "Кондиционеры и сплит-системы",
     },
     {
       name: "bicycles",

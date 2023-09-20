@@ -135,6 +135,9 @@ export default function Header() {
                 <Link href="/catalog/climate/fans?name=Вентиляторы">
                   <p>Вентиляторы</p>
                 </Link>
+                <Link href="/catalog/climate/split?name=Кондиционеры и сплит-системы">
+                  <p>Кондиционеры и сплит-системы</p>
+                </Link>
               </div>
               <p className={styles.title}>
                 <Link href="/catalog/climate?name=Климат">ОТКРЫТЬ ВСЕ</Link>

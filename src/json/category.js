@@ -98,7 +98,12 @@ export const category = [
     text: "Вентиляторы",
     pid: "climate",
   },
-
+  {
+    src: "/categorys/split.jpg",
+    link: "/split",
+    text: "Кондиционеры и сплит-системы",
+    pid: "climate",
+  },
   {
     src: "/categorys/pools.jpg",
     link: "/pools",
