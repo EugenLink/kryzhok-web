@@ -47,16 +47,17 @@ export const category = [
     text: "Термопоты",
     pid: "kitchen",
   },
-  {
-    src: "/categorys/oven.jpg",
-    link: "/oven",
-    text: "Духовые шкафы",
-    pid: "kitchen",
-  },
+
   {
     src: "/categorys/fridge.jpg",
     link: "/fridge",
     text: "Холодильники",
+    pid: "kitchen",
+  },
+  {
+    src: "/categorys/lars.jpg",
+    link: "/lars",
+    text: "Лари",
     pid: "kitchen",
   },
   {
@@ -97,12 +98,7 @@ export const category = [
     text: "Вентиляторы",
     pid: "climate",
   },
-  {
-    src: "/categorys/bicycles.jpg",
-    link: "/bicycles",
-    text: "Велосипеды",
-    pid: "sport",
-  },
+
   {
     src: "/categorys/pools.jpg",
     link: "/pools",
@@ -116,12 +112,12 @@ export const category = [
     text: "Жарочные шкафы",
     pid: "kitchen",
   },
-  {
-    src: "/categorys/gas.jpg",
-    link: "/gas",
-    text: "Газовые поверхности",
-    pid: "kitchen",
-  },
+  // {
+  //   src: "/categorys/gas.jpg",
+  //   link: "/gas",
+  //   text: "Газовые поверхности",
+  //   pid: "kitchen",
+  // },
 
   {
     src: "/categorys/breadsmaker.jpg",

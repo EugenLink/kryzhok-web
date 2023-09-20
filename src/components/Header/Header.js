@@ -91,11 +91,12 @@ export default function Header() {
                 <Link href="/catalog/kitchen/termos?name=Термопоты">
                   <p>Термопоты</p>
                 </Link>
-                <Link href="/catalog/kitchen/oven?name=Духовые шкафы">
-                  <p>Духовые шкафы</p>
-                </Link>
+
                 <Link href="/catalog/kitchen/fridge?name=Холодильники">
                   <p>Холодильники</p>
+                </Link>
+                <Link href="/catalog/kitchen/lars?name=Лари">
+                  <p>Лари</p>
                 </Link>
                 <Link href="/catalog/kitchen/grils?name=Грили">
                   <p>Грили</p>
@@ -142,9 +143,7 @@ export default function Header() {
             <div className={styles.flexRow}>
               <div>
                 <p className={styles.title}>СПОРТ</p>
-                <Link href="/catalog/sport/bicycles?name=Велосипеды">
-                  <p>Велосипеды</p>
-                </Link>
+
                 <Link href="/catalog/sport/pools?name=Бассейны">
                   <p>Бассейны</p>
                 </Link>
