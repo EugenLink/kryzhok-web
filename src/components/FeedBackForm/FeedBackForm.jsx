@@ -66,19 +66,34 @@ export default function FeedBackForm() {
       valid.question &&
       valid.city
     ) {
-      //send to GSheets
-      const res = fetch(
-        `https://u1978287.isp.regruhosting.ru/addToFeedBack.php?value=${form.email} | ${form.fio} | ${form.phone} | ${form.city} | ${form.question}`
-      );
+      const fmData = new FormData();
+      fmData.append("initials", form.fio);
+      fmData.append("email", form.email);
+      fmData.append("phone", form.phone);
+      fmData.append("city", form.city);
+      fmData.append("text", form.question);
 
-      messageApi.success("Ваш вопрос отправлен, вскоре мы с вами свяжемся.");
-      setForm({
-        fio: "",
-        email: "",
-        phone: "",
-        city: "",
-        question: "",
-      });
+      fetch(`https://u1978287.isp.regruhosting.ru/addToFeedBack.php`, {
+        method: "POST",
+        body: fmData,
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          if (res) {
+            messageApi.success(
+              "Ваш вопрос отправлен, вскоре мы с вами свяжемся."
+            );
+            setForm({
+              fio: "",
+              email: "",
+              phone: "",
+              city: "",
+              question: "",
+            });
+          } else {
+            messageApi.error("Произошла ошибка, попробуйте позже.");
+          }
+        });
     } else {
       setFormValid(valid);
     }

@@ -1,6 +1,8 @@
 import { Articles } from "@/components/Creator/Arcticles.jsx";
+import { FeedBackControl } from "@/components/Creator/Feedback.jsx";
 import { News } from "@/components/Creator/News.jsx";
 import { Recipes } from "@/components/Creator/Recipes.jsx";
+import { SubsControl } from "@/components/Creator/Subs.jsx";
 import Login from "@/components/Login/Login.jsx";
 import { Edit } from "@/components/Product/Edit/Edit.jsx";
 import styles from "@/styles/Admin.module.scss";
@@ -37,10 +39,19 @@ export default function Admin({ data }) {
       label: "Статьи",
       key: "articles",
     },
+    {
+      label: "Обратная связь",
+      key: "feedback",
+      danger: data.fbc,
+    },
+    {
+      label: "Подписки",
+      key: "subs",
+      danger: data.sbc,
+    },
   ];
   const [current, setCurrent] = useState("product");
   const onClick = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
   };
 
@@ -63,10 +74,12 @@ export default function Admin({ data }) {
               mode="horizontal"
               items={Navitems}
             />
-            {current === "product" ? <Edit products={data} /> : null}
+            {current === "product" ? <Edit products={data.products} /> : null}
             {current === "news" ? <News /> : null}
             {current === "articles" ? <Articles /> : null}
             {current === "recipes" ? <Recipes /> : null}
+            {current === "feedback" ? <FeedBackControl /> : null}
+            {current === "subs" ? <SubsControl /> : null}
           </div>
         ) : (
           <div className={styles.center}>
