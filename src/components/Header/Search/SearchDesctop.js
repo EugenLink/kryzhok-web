@@ -1,5 +1,6 @@
 import FullScreen from "@/components/FullScreen/FullScreen.jsx";
 import getLink from "@/hooks/getLinkFromBase.js";
+import { sendMetrik } from "@/hooks/metriks.js";
 import {
   $products,
   $searchItems,
@@ -85,7 +86,16 @@ export const SearchDesctop = () => {
                         href={getLink(el.Chapter, el.PreChapter, el.id)}
                         key={el.id}
                       >
-                        <li className={styles.searchItem}>
+                        <li
+                          className={styles.searchItem}
+                          onClick={() =>
+                            sendMetrik(
+                              "reachGoal",
+                              "search",
+                              `${el.Name} ${el.Model}`
+                            )
+                          }
+                        >
                           <p className={styles.searchItemName}>
                             {el.Name} {el.Model}
                           </p>

@@ -47,6 +47,7 @@ export const SearchWrapper = () => {
               if (e.target.value > 3) {
                 setSearchList(true);
               }
+
               setValue(e.target.value);
             }}
             onFocus={() => setSearchList(true)}
@@ -66,7 +67,10 @@ export const SearchWrapper = () => {
                         href={getLink(el.Chapter, el.PreChapter, el.id)}
                         key={el.id}
                       >
-                        <li className={styles.searchItem}>
+                        <li
+                          className={styles.searchItem}
+                          onClick={() => console.log(1111)}
+                        >
                           <p className={styles.searchItemName}>
                             {el.Name} {el.Model}
                           </p>

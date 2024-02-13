@@ -24,7 +24,7 @@ export const SearchMobile = () => {
       getProducts();
     }
   }, [products.length]);
-  console.log(value);
+
   return (
     <div className={styles.search}>
       <div className={`${styles.searchWrapper} `}>
@@ -47,7 +47,9 @@ export const SearchMobile = () => {
               placeholder={"Поиск по товарам"}
               onFocus={() => setIsSearchFocus(true)}
               value={value}
-              onChange={(e) => setValue(e.target.value)}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
               onBlur={() => {
                 const timer = setTimeout(() => setIsSearchFocus(false), 200);
               }}
