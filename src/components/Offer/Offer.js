@@ -10,13 +10,12 @@ export const Offer = ({ children }) => {
   };
   const [messageApi, contextHolder] = message.useMessage();
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem(`subscription`);
-
-      if (!saved) {
-        const timer = setTimeout(() => setOpen(true), 35000);
-      }
-    }
+    // if (typeof window !== "undefined") {
+    //   const saved = localStorage.getItem(`subscription`);
+    //   if (!saved) {
+    //     const timer = setTimeout(() => setOpen(true), 35000);
+    //   }
+    // }
   }, []);
   const handleCancel = () => {
     setOpen(false);
