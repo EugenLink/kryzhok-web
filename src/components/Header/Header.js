@@ -145,17 +145,20 @@ export default function Header() {
             </div>
             <div className={styles.flexRow}>
               <div>
-                <p className={styles.title}>СПОРТ</p>
+                <p className={styles.title}>САД И СПОРТ</p>
 
                 <Link href="/catalog/sport/pools?name=Бассейны">
                   <p>Бассейны</p>
                 </Link>
-                <Link href="/catalog/sport/trimers?name=Тримеры">
-                  <p>Тримеры</p>
+                <Link href="/catalog/sport/bicycles?name=Велосипеды">
+                  <p>Велосипеды</p>
+                </Link>
+                <Link href="/catalog/sport/dacha?name=Дача">
+                  <p>Дача</p>
                 </Link>
               </div>
               <p className={styles.title}>
-                <Link href="/catalog/sport?name=Спорт">ОТКРЫТЬ ВСЕ</Link>
+                <Link href="/catalog/sport?name=Сад и спорт">ОТКРЫТЬ ВСЕ</Link>
               </p>
             </div>
           </div>

@@ -49,8 +49,8 @@ export const category = [
   },
   {
     src: "/categorys/trimers.jpg",
-    link: "/trimers",
-    text: "Тримеры",
+    link: "/dacha",
+    text: "Дача",
     pid: "sport",
   },
   {
@@ -115,7 +115,12 @@ export const category = [
     text: "Бассейны",
     pid: "sport",
   },
-
+  {
+    src: "/categorys/bicycles.jpg",
+    link: "/bicycles",
+    text: "Велосипеды",
+    pid: "sport",
+  },
   {
     src: "/categorys/roasting.jpg",
     link: "/roasting",

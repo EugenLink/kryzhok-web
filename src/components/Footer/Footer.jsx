@@ -61,7 +61,7 @@ export default function Footer() {
             <Link href="/catalog/climate?name=Климат">Климат</Link>
           </li>
           <li>
-            <Link href="/catalog/sport?name=Спорт">Спорт</Link>
+            <Link href="/catalog/sport?name=Сад и спорт">Сад и спорт</Link>
           </li>
         </ul>
         <ul className={styles.list}>

@@ -31,13 +31,13 @@ const getBreadCrumb = (enName, last, name) => {
     },
     {
       name: "sport",
-      link: "/catalog/sport?name=Спорт",
-      title: "Спорт",
+      link: "/catalog/sport?name=Сад и спорт",
+      title: "Сад и спорт",
     },
     {
-      name: "trimers",
-      link: "/catalog/sport/trimers?name=Тримеры",
-      title: "Тримеры",
+      name: "dacha",
+      link: "/catalog/sport/dacha?name=Дача",
+      title: "Дача",
     },
     {
       name: "home",

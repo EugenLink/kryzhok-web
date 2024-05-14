@@ -58,7 +58,7 @@ export const Burger = () => {
                 <Link href="/catalog/climate?name=Климат">Климат</Link>
               </li>
               <li onClick={() => setOpen(false)}>
-                <Link href="/catalog/sport?name=Спорт">Спорт</Link>
+                <Link href="/catalog/sport?name=Сад и спорт">Сад и спорт</Link>
               </li>
             </ul>
           ) : null}

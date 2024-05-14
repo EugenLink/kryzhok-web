@@ -21,11 +21,11 @@ const names = [
   },
   {
     name: "sport",
-    title: "Спорт",
+    title: "Сад и спорт",
   },
   {
-    name: "trimers",
-    title: "Тримеры",
+    name: "dacha",
+    title: "Дача",
   },
   {
     name: "home",
