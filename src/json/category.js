@@ -47,7 +47,12 @@ export const category = [
     text: "Термопоты",
     pid: "kitchen",
   },
-
+  {
+    src: "/categorys/trimers.jpg",
+    link: "/trimers",
+    text: "Тримеры",
+    pid: "sport",
+  },
   {
     src: "/categorys/fridge.jpg",
     link: "/fridge",

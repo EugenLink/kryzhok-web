@@ -150,6 +150,9 @@ export default function Header() {
                 <Link href="/catalog/sport/pools?name=Бассейны">
                   <p>Бассейны</p>
                 </Link>
+                <Link href="/catalog/sport/trimers?name=Тримеры">
+                  <p>Тримеры</p>
+                </Link>
               </div>
               <p className={styles.title}>
                 <Link href="/catalog/sport?name=Спорт">ОТКРЫТЬ ВСЕ</Link>

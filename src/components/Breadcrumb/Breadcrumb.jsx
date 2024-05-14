@@ -35,6 +35,11 @@ const getBreadCrumb = (enName, last, name) => {
       title: "Спорт",
     },
     {
+      name: "trimers",
+      link: "/catalog/sport/trimers?name=Тримеры",
+      title: "Тримеры",
+    },
+    {
       name: "home",
       link: "/catalog/home?name=Дом",
       title: "Дом",

@@ -24,6 +24,10 @@ const names = [
     title: "Спорт",
   },
   {
+    name: "trimers",
+    title: "Тримеры",
+  },
+  {
     name: "home",
     title: "Дом",
   },
