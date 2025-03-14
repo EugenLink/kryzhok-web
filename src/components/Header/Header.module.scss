@@ -1,23 +1,70 @@
-.header {
-  margin-top: 20px;
-
-  display: flex;
-
+.logo {
+  margin: 0 15px;
+  margin-top: 5px;
+  width: 200px;
+  height: 50px;
+}
+.likedItems {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  width: 18px;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 1.35;
+  color: white;
+  height: 18px;
+}
+.headerWrapper {
+  width: 100%;
   justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  .rightNav {
+    display: flex;
+    align-items: center;
+    .iconBtn {
+      width: 44px;
+      height: 44px;
+
+      display: flex;
+      justify-content: center;
+      background-clip: padding-box;
+      cursor: pointer;
+      align-items: center;
+      background-color: white;
+    }
+  }
+  .loginButton {
+    margin-left: 5px;
+    padding: 10px 15px;
+    border-radius: 60px;
+    background-clip: padding-box;
+    display: flex;
+    border: 1px solid rgb(35, 35, 35);
+    cursor: pointer;
+
+    p {
+      padding: 0 10px;
+      font-size: 13px;
+    }
+  }
 }
 
-.logo {
-  margin-bottom: 2px;
-  margin-left: 20px;
-  width: 200px;
-  height: 40px;
+.iconBtn:hover {
+  background-color: red;
 }
 
 .headerNav {
-  margin-left: 50px;
+  flex: 1;
+  // margin-left: 50px;
   display: flex;
+  align-items: center;
+
   p {
-    font-size: 14px;
+    font-size: 11px;
     padding: 15px 20px;
     cursor: pointer;
     font-weight: 500;
@@ -31,7 +78,7 @@
 
 .catalogUnderWrapper {
   position: absolute;
-  top: 80px;
+  top: 60px;
   left: 0;
   width: 100%;
   height: 200vh;
@@ -41,7 +88,7 @@
 
 .whiteWrapper {
   width: 100%;
-  height: 260px;
+  height: 340px;
   background: white;
   position: absolute;
   font-size: 13px;
@@ -50,9 +97,99 @@
   justify-content: center;
   border-top: 1px solid rgb(159, 158, 158);
 }
+
+.popoverDrop {
+  p {
+    padding: 5px 0;
+    cursor: pointer;
+  }
+}
+
+.selectedItem {
+  font-weight: 700;
+}
+.partMenu {
+  flex: 3 !important;
+}
+
+.thirdMenu {
+  box-sizing: border-box; /* Учитываем padding и border в ширине */
+  padding: 10px; /* Отступы внутри блоков */
+  flex: 2;
+  li {
+    font-size: 14px;
+  }
+}
+
+.underLogin {
+  font-weight: 600;
+  background-color: #009578;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  color: white;
+  border-radius: 25px;
+}
+
+@media (max-width: 900px) {
+  .underLogin {
+    padding: 5px 10px;
+  }
+}
+.searchInput {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: none;
+  left: 5px;
+  height: 30px;
+  width: 290px;
+  font-weight: 400;
+}
+
+.searchInput:focus {
+  outline: none;
+  border: none;
+}
+
+.catalogItems {
+  width: 100%;
+
+  height: 100%;
+
+  list-style: none;
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+.selectCatalogMenu {
+  box-sizing: border-box; /* Учитываем padding и border в ширине */
+  flex: 1;
+
+  ul {
+    padding: 10px 20px;
+    height: 90%;
+    list-style: none;
+    li {
+      cursor: pointer;
+      padding: 5px 0;
+
+      &:hover {
+        color: rgb(126, 126, 126) !important;
+      }
+    }
+  }
+  .selectMenuList {
+    border-right: 1px solid rgb(192, 191, 191);
+    font-size: 15px;
+  }
+}
 .catalogWrapper {
   display: flex;
-  justify-content: space-between;
+  height: 325px;
   max-width: 1400px;
   width: 100%;
   padding: 0 30px;

@@ -1,0 +1,125 @@
+.modalContent {
+  .label {
+    font-size: 10px;
+    color: red;
+    text-align: left;
+    margin-bottom: -10px;
+    margin-top: 0;
+    padding: 0;
+  }
+  h1 {
+    font-size: 24px;
+  }
+
+  .selectType {
+    display: flex;
+
+    p {
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+
+      width: 50%;
+      padding-bottom: 12px;
+      border-bottom: none;
+
+      &:first-child {
+        border-right: 1px solid rgb(163, 163, 163);
+        border-radius: 8px 0 0 0;
+      }
+      &:last-child {
+        border-radius: 0 8px 0 0;
+      }
+    }
+    .activeSelect {
+      background-color: #009578;
+      color: white;
+      border-bottom: 1px solid gray !important;
+    }
+    padding-bottom: 25px;
+  }
+  .inputChange {
+    padding: 10px 20px;
+  }
+  h1 {
+    text-align: center;
+  }
+  p {
+    padding: 10px 0;
+  }
+
+  .formLogin {
+    padding: 20px 0;
+    input {
+      border-color: rgb(199, 199, 199);
+      border-radius: 5px;
+    }
+  }
+
+  .forgotPass {
+    font-weight: 500;
+    color: #009578;
+    cursor: pointer;
+  }
+  .button {
+    background-color: #009578;
+  }
+
+  .underButton {
+    font-size: 12px;
+    text-align: center;
+    span {
+      color: #009578;
+      cursor: pointer;
+    }
+  }
+}
+
+.searchWrapper {
+  min-height: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .nothing {
+    margin-top: 200px;
+    font-size: 1.5rem;
+    color: rgb(205, 205, 205);
+  }
+  .searchItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  input {
+    width: 80%;
+    border: none;
+    border: 1px solid rgb(176, 176, 176);
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .underLogin {
+    padding: 5px 10px;
+  }
+
+  .searchWrapper {
+    padding-top: 30px;
+    min-height: 100vh;
+    height: 100%;
+  }
+  .desctop {
+    display: none !important;
+  }
+  .ant-modal {
+    width: 100vw !important;
+  }
+
+  .modalContent {
+    height: 100vh;
+    padding-top: 50px;
+  }
+}

@@ -10,6 +10,71 @@
     padding: 5px 20px;
   }
 }
+
+.imagesGalery {
+  img {
+    margin: 20px;
+  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.gallery {
+  h4 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}
+
+.bottomInfo {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+
+  div:first-child {
+    text-align: left;
+  }
+  div:last-child {
+    text-align: right;
+  }
+}
+
+.cardFirstBlock {
+  margin-top: 50px;
+  display: flex;
+  gap: 20px; // Расстояние между текстом и изображением
+  padding: 10px;
+  background-color: #e5e5e5;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse; // Меняем направление на колонку при уменьшении экрана
+  }
+}
+
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column; // Текст занимает доступное пространство
+  h2 {
+    margin-bottom: 10px;
+  }
+}
+
+.image {
+  flex: 1; // Изображение занимает доступное пространство
+
+  img {
+    max-width: 100%; // Изображение не выходит за пределы блока
+    height: auto;
+    border-radius: 8px;
+    width: 600px; // Скругление углов
+  }
+}
+.title2 {
+  font-size: 30px;
+}
 .title {
   margin: 25px;
   text-transform: uppercase;
@@ -23,8 +88,9 @@
 }
 
 .productsWrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .productCardWrapper {
@@ -293,6 +359,21 @@
   }
 }
 @media screen and (max-width: 810px) {
+  .bottomInfo {
+    flex-direction: column;
+    div:first-child {
+      text-align: left;
+    }
+    div:last-child {
+      text-align: left;
+    }
+  }
+  .tabss {
+    flex-wrap: wrap;
+  }
+  .tabs {
+    font-size: 12px;
+  }
   .breadCrumb {
     span {
       font-size: 12px !important;
@@ -310,9 +391,6 @@
   .subTitle {
     font-size: 10px;
   }
-  .productsWrapper {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
 }
 
 @media screen and (max-width: 468px) {
@@ -321,9 +399,6 @@
   }
   .parsedItems {
     font-size: 14px;
-  }
-  .productsWrapper {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
 }
 

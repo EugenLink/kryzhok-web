@@ -19,7 +19,7 @@ export const SubsControl = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   console.log(data);
   useEffect(() => {
-    fetch(`https://u1978287.isp.regruhosting.ru/controls/getSubs.php`)
+    fetch(`https://u1978287.isp.regruhosting.ru/kryzhok/controls/getSubs.php`)
       .then((res) => res.json())
       .then((res) => {
         let initData = res.map((el) => ({
@@ -37,7 +37,7 @@ export const SubsControl = () => {
   const onSelectTest = (record, s) => {
     const selectId = record["key"];
     fetch(
-      `https://u1978287.isp.regruhosting.ru/controls/setCheckedSubs.php?id=${selectId}&value=${
+      `https://u1978287.isp.regruhosting.ru/kryzhok/controls/setCheckedSubs.php?id=${selectId}&value=${
         s ? "1" : "0"
       }`
     );

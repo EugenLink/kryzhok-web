@@ -2,5 +2,10 @@
   "emmet.preferences": {},
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  }
+  },
+  "[go]": {
+    "editor.formatOnSave": false
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

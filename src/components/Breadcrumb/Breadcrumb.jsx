@@ -227,7 +227,7 @@ const getBreadCrumb = (enName, last, name) => {
     {
       name: "articles",
       link: "/articles",
-      title: "Статьи",
+      title: "Мероприятия",
     },
     {
       name: "feedback",

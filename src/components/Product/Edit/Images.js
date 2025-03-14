@@ -69,7 +69,6 @@ export const Images = ({
     } else {
       const fmData = new FormData();
       const arr = [...fileList, file].map((el) => el.name).join(";");
-
       fmData.append("images", arr);
       fmData.append("image", file);
       fetch(

@@ -17,22 +17,22 @@ export default function Footer() {
       <div className={styles.footerWrapper}>
         <div className={styles.contacts}>
           <p style={{ fontWeight: 700 }}>Контакты</p>
-          <p>Телефон горячей линии 8 967 822-13-30</p>
+          <p>Телефон горячей линии 999 999 09 99</p>
           <div className={styles.footerImages}>
-            <Link href="https://vk.com/texnika_room">
+            <Link href="/">
               <Image src={Vk} alt="vk" />
             </Link>
-            <Link href="https://wa.me/89678221330">
+            <Link href="/">
               <Image src={Wa} alt="wa" />
             </Link>
-            <Link href="https://t.me/texnika_room">
+            <Link href="/">
               <Image src={Tg} alt="tg" />
             </Link>
-            <Link href="https://www.instagram.com/texnika_room/">
+            <Link href="/">
               <Image src={Inst} alt="inst" />
             </Link>
           </div>
-          <div className={styles.footerImages}>
+          {/* <div className={styles.footerImages}>
             <Link href="https://www.ozon.ru/seller/texnika-room-88203/?miniapp=seller_88203&sprt=1">
               <Image src={Ozon} alt="Ozon" />
             </Link>
@@ -45,48 +45,53 @@ export default function Footer() {
             <Link href="https://market.yandex.ru/search?businessId=862729&allowCollapsing=1&local-offers-first=0">
               <Image src={Ym} alt="Ym" />
             </Link>
-          </div>
+          </div> */}
         </div>
-        <ul className={styles.list}>
-          <li className={styles.link}>
-            <Link href="/catalog/home?name=Дом">Дом</Link>
-          </li>
-          <li>
-            <Link href="/catalog/kitchen?name=Кухня">Кухня</Link>
-          </li>
-          <li>
-            <Link href="/catalog/dishes?name=Посуда">Посуда</Link>
-          </li>
-          <li>
-            <Link href="/catalog/climate?name=Климат">Климат</Link>
-          </li>
-          <li>
-            <Link href="/catalog/sport?name=Сад и спорт">Сад и спорт</Link>
-          </li>
+
+        <ul className={styles.list} style={{ textAlign: "left" }}>
+          <p style={{ padding: 5, textAlign: "left" }}>
+            <Link
+              className="text-[#0e141b] text-sm font-medium leading-normal"
+              href="/news"
+            >
+              Новости
+            </Link>
+          </p>
+          <p style={{ padding: 5 }}>
+            {" "}
+            <Link
+              className="text-[#0e141b] text-sm font-medium leading-normal"
+              href="/articles"
+            >
+              Меропириятия
+            </Link>
+          </p>
+          <p style={{ padding: 5 }}>
+            <Link
+              className="text-[#0e141b] text-sm font-medium leading-normal"
+              href="/about"
+            >
+              О нас
+            </Link>
+          </p>
+          <p style={{ padding: 5 }}>
+            <Link
+              className="text-[#0e141b] text-sm font-medium leading-normal"
+              href="/feedback"
+            >
+              Помощь
+            </Link>
+          </p>
         </ul>
         <ul className={styles.list}>
           <li>
-            <Link href="/news">Новости</Link>
+            <Link href="/about">Пункт</Link>
           </li>
           <li>
-            <Link href="/recipes">Рецепты</Link>
+            <Link href="/feedback">Пункт</Link>
           </li>
           <li>
-            <Link href="/articles">Статьи</Link>
-          </li>
-          <li>
-            <Link href="/brends">Бренды</Link>
-          </li>
-        </ul>
-        <ul className={styles.list}>
-          <li>
-            <Link href="/about">О нас</Link>
-          </li>
-          <li>
-            <Link href="/feedback">Обратная связь</Link>
-          </li>
-          <li>
-            <Link href="/where-buy">Где купить</Link>
+            <Link href="/where-buy">Пункт</Link>
           </li>
         </ul>
       </div>

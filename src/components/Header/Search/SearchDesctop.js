@@ -34,7 +34,7 @@ export const SearchDesctop = () => {
         <label className={styles.inputWrapper}>
           <input
             type="text"
-            placeholder={"Поиск по товарам"}
+            placeholder={"Удобный поиск по сайту"}
             onFocus={() => setIsSearchFocus(true)}
             value={value}
             onChange={(e) => {

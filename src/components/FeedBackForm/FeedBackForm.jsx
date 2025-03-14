@@ -72,8 +72,7 @@ export default function FeedBackForm() {
       fmData.append("phone", form.phone);
       fmData.append("city", form.city);
       fmData.append("text", form.question);
-
-      fetch(`https://u1978287.isp.regruhosting.ru/addToFeedBack.php`, {
+      fetch(`https://u1978287.isp.regruhosting.ru/kryzhok/addToFeedBack.php`, {
         method: "POST",
         body: fmData,
       })

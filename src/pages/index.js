@@ -1,11 +1,14 @@
+import { Banners } from "@/components/Banners/Banners.jsx";
 import { Loader } from "@/components/Loader/Loader.jsx";
 import { MainList } from "@/components/MainList/MainList.jsx";
 import styles from "@/styles/Home.module.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Header from "../components/Header/Header";
-import { Banners } from "./../components/Banners/Banners";
-
 import Footer from "./../components/Footer/Footer";
 
 export default function Home({ data }) {
@@ -14,11 +17,10 @@ export default function Home({ data }) {
     const timer = setTimeout(() => setLoad(true), 3000);
     return () => clearTimeout(timer);
   }, []);
-
   return (
     <div>
       <Head>
-        <title>Texnika Room</title>
+        <title>Кружок</title>
         <meta
           name="description"
           content="Шоурум бытовой техники Texnika Room"
@@ -31,7 +33,8 @@ export default function Home({ data }) {
         {load ? null : <Loader />}
 
         <Banners />
-        <MainList hit={data.hit} newI={data.new} />
+
+        <MainList hit={data} />
       </main>
       <Footer />
     </div>
@@ -41,7 +44,7 @@ export default function Home({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/product/getHitAndNew.php`
+    `https://u1978287.isp.regruhosting.ru/kryzhok/products/getHits.php`
   );
 
   const data = await res.json();

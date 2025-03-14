@@ -1,5 +1,7 @@
-import { Carousel } from "antd";
+import { Carousel, Radio } from "antd";
+import Image from "next/image.js";
 import styles from "./Banners.module.scss";
+import { useState } from "react";
 
 export const Banners = () => {
   const onChange = (currentSlide) => {
@@ -12,14 +14,14 @@ export const Banners = () => {
           <div
             className={styles.banner1}
             style={{
-              backgroundImage: 'URL("/banners/1.png")',
+              backgroundImage: 'URL("/banners/banner1.png")',
             }}
           >
             <div className={styles.container}>
               <h1>
-                Техника для вашего <br></br>дома и уюта
+                Заголовок банера <br></br>
               </h1>
-              <span>Стильный шоурум бытовой техники</span>
+              <span>Текст банера</span>
             </div>
           </div>
         </div>
@@ -27,13 +29,14 @@ export const Banners = () => {
           <div
             className={styles.banner1}
             style={{
-              backgroundImage: 'URL("/banners/2.png")',
+              backgroundImage: 'URL("/banners/banner2.png")',
             }}
           >
             <div className={styles.container}>
               <h1>
-                Не плати за бренд,<br></br>плати за качество
+                Заголовок банера <br></br>
               </h1>
+              <span>Текст банера</span>
             </div>
           </div>
         </div>
@@ -41,17 +44,14 @@ export const Banners = () => {
           <div
             className={styles.banner1}
             style={{
-              backgroundImage: 'URL("/banners/3.png")',
+              backgroundImage: 'URL("/banners/banner3.png")',
             }}
           >
             <div className={`${styles.container} ${styles.last}`}>
               <h1>
-                Наша команда посетила все <br></br> заводы производителей лично!
+                Заголовок банера <br></br>
               </h1>
-              <span>
-                Мы объездили много выставок, чтобы выбрать <br /> качество по
-                доступной цене
-              </span>
+              <span>Текст банера</span>
             </div>
           </div>
         </div>

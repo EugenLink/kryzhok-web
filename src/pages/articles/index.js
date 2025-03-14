@@ -16,8 +16,8 @@ export default function News({ data }) {
   return (
     <div>
       <Head>
-        <title>Статьи</title>
-        <meta name="description" content="Статьи Texnika Room" />
+        <title>Меропириятия</title>
+        <meta name="description" content="Мероприятия" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -27,14 +27,14 @@ export default function News({ data }) {
           <div className={styles.breadCrumb}>
             <BreadcrumbDinamic />
           </div>
-          <h2 className={styles.title}>СТАТЬИ</h2>
+          <h2 className={styles.title}>МЕРОПРИЯТИЯ</h2>
           <div className={styles.articlesWrapper}>
             {data.map((el) => {
               return (
                 <ArticleCard
                   key={el[0]}
                   title={el[1]}
-                  src={`https://u1978287.isp.regruhosting.ru/articles/photos/${el[0]}/logo.png`}
+                  src={`https://u1978287.isp.regruhosting.ru/kryzhok/articles/photos/${el[0]}/logo.png`}
                   previewText={el[2]}
                   date={el[4]}
                   author={el[5]}
@@ -53,7 +53,7 @@ export default function News({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/articles/getAll.php`
+    `https://u1978287.isp.regruhosting.ru/kryzhok/articles/getAll.php`
   );
 
   const data = await res.json();

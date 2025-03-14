@@ -1,40 +1,12 @@
-import { combine, createEffect, createEvent, createStore } from "effector";
+import { createStore, createEvent } from "effector";
 
-export const getProducts = createEffect(async () => {
-  const url = `https://u1978287.isp.regruhosting.ru/product/getAll.php?`;
-  const req = await fetch(url);
+// Создаем событие для обновления данных пользователя
+export const setUser = createEvent();
 
-  return req.json();
-});
+// Создаем хранилище для данных пользователя
+export const $user = createStore(null).on(setUser, (_, user) => user);
 
-export const $products = createStore([]).on(
-  getProducts.doneData,
-  (_, data) => data
-);
+export const setLiked = createEvent();
 
-export const setValue = createEvent();
-
-export const $value = createStore("").on(setValue, (_, payload) => payload);
-
-export const $searchItems = combine(
-  $products,
-  getProducts.pending,
-  $value,
-  (data, isLoading, value) => {
-    if (isLoading) {
-      return "loading";
-    } else {
-      if (value.length < 3) {
-        return null;
-      } else {
-        return data.filter(
-          (el) =>
-            el.Chapter.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-            el.Name.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-            el.Model.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-            el.PreChapter.toLowerCase().indexOf(value.toLowerCase()) !== -1
-        );
-      }
-    }
-  }
-);
+// Создаем хранилище для данных пользователя
+export const $liked = createStore("").on(setLiked, (_, liked) => liked);

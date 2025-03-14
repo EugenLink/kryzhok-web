@@ -1,3 +1,74 @@
+.yMapContainer {
+  padding-bottom: 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 120px;
+}
+
+.textInAbout {
+  background: white;
+  color: black;
+  font-weight: 500;
+  padding: 10px 10px;
+
+  text-align: center;
+}
+@media screen and (max-width: 990px) {
+  .textInAbout {
+    font-size: 16px !important;
+  }
+  .flex {
+    display: block;
+    padding: 10px 0;
+  }
+  .square {
+    width: 100% !important;
+  }
+
+  .rectangle {
+    width: 100% !important;
+  }
+}
+
+.square {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 35%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  transition: width 0.3s, height 0.3s, background-size 0.3s;
+}
+
+.square.expanded {
+  width: 60%;
+  height: 350px;
+}
+
+.rectangle {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  width: 60%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  transition: width 0.3s, height 0.3s, background-size 0.3s;
+}
+
+.rectangle.shrunk {
+  width: 35%;
+  height: 350px;
+}
+
 .productType {
   display: flex;
   justify-content: center;
@@ -9,7 +80,27 @@
     font-size: 20px;
   }
 }
+.favorites {
+  display: flex;
+  justify-content: space-between;
+}
 
+.textCenter {
+  margin: 35px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .h1 {
+    font-size: 32px;
+    font-weight: 500;
+  }
+  .h2 {
+    padding-top: 15px;
+    font-size: 16px;
+    color: gray;
+  }
+}
 .slideButton {
   width: 40px;
   height: 40px;
@@ -157,6 +248,12 @@
 }
 
 @media screen and (max-width: 630px) {
+  .textCenter {
+    .h1 {
+      text-align: center;
+      font-size: 24px !important;
+    }
+  }
   .caurusel {
     padding: 0 5px;
   }

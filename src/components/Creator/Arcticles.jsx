@@ -24,7 +24,7 @@ export const Articles = () => {
     onSuccess("Ok");
   };
   useEffect(() => {
-    fetch(`https://u1978287.isp.regruhosting.ru/articles/getAll.php`)
+    fetch(`https://u1978287.isp.regruhosting.ru/kryzhok/articles/getAll.php`)
       .then((res) => res.json())
       .then((res) => setAllNews(res));
   }, []);
@@ -33,7 +33,7 @@ export const Articles = () => {
     <div className={styles.wrapper}>
       {contextHolder}
       <div className={styles.editor}>
-        <h2>Текущие статьи</h2>
+        <h2>Текущие мероприятия</h2>
         {allNews.length ? (
           <ul className={styles.list}>
             {allNews.map((el) => {
@@ -52,7 +52,7 @@ export const Articles = () => {
                         rel="noreferrer"
                         style={{ marginRight: "20px" }}
                       >
-                        <Button type="primary">Просмотр статьи</Button>
+                        <Button type="primary">Просмотр мероприятия</Button>
                       </a>
                     </Link>
                     <Button
@@ -60,7 +60,7 @@ export const Articles = () => {
                       danger
                       onClick={() => {
                         fetch(
-                          `https://u1978287.isp.regruhosting.ru/articles/delete.php?id=${el[0]}`
+                          `https://u1978287.isp.regruhosting.ru/kryzhok/articles/delete.php?id=${el[0]}`
                         )
                           .then((res) => res.json())
                           .then((res) => {
@@ -69,7 +69,7 @@ export const Articles = () => {
                                 (el2) => el[0] !== el2[0]
                               );
                               setAllNews(ftlr);
-                              messageApi.success("Статья успешно удалена");
+                              messageApi.success("Мероприятие успешно удалена");
                             } else {
                               messageApi.error("Произошла ошибка");
                             }
@@ -86,10 +86,10 @@ export const Articles = () => {
         ) : (
           <p style={{ textAlign: "center", padding: 20 }}>ПУСТО</p>
         )}
-        <h2>Добавить новую статью</h2>
+        <h2>Добавить новое мероприятие</h2>
         <div className={styles.flex}>
           <div className={styles.editorInput}>
-            <p>Заголовок статьи:</p>
+            <p>Заголовок:</p>
             <Input
               placeholder="Заголовок"
               value={title}
@@ -136,7 +136,7 @@ export const Articles = () => {
                         }}
                       >
                         <img
-                          src={`https://u1978287.isp.regruhosting.ru/articles/photos/${id
+                          src={`https://u1978287.isp.regruhosting.ru/kryzhok/articles/photos/${id
                             .toString()
                             .substring(5)}/${alt}`}
                           alt={alt}
@@ -170,7 +170,7 @@ export const Articles = () => {
                 formData.append("previewText", previewText);
                 formData.append("author", "Texnika Room");
                 fetch(
-                  "https://u1978287.isp.regruhosting.ru/articles/push.php",
+                  "https://u1978287.isp.regruhosting.ru/kryzhok/articles/push.php",
                   {
                     method: "POST",
                     body: formData,
@@ -187,7 +187,7 @@ export const Articles = () => {
                         moment().toDate(),
                       ];
                       setAllNews([newNews, ...allNews]);
-                      messageApi.success("Статья успешно загружена");
+                      messageApi.success("Мероприятие успешно загружено");
 
                       setTitle("");
                       setPreviewText("");

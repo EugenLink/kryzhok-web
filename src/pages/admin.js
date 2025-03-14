@@ -31,12 +31,9 @@ export default function Admin({ data }) {
       label: "Новости",
       key: "news",
     },
+
     {
-      label: "Рецепты",
-      key: "recipes",
-    },
-    {
-      label: "Статьи",
+      label: "Мероприятия",
       key: "articles",
     },
     {
@@ -77,7 +74,6 @@ export default function Admin({ data }) {
             {current === "product" ? <Edit products={data.products} /> : null}
             {current === "news" ? <News /> : null}
             {current === "articles" ? <Articles /> : null}
-            {current === "recipes" ? <Recipes /> : null}
             {current === "feedback" ? <FeedBackControl /> : null}
             {current === "subs" ? <SubsControl /> : null}
           </div>

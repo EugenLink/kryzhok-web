@@ -1,51 +1,70 @@
 .closeMenuButton {
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    right: 5%;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 5%;
 }
 
 .menu {
-    p {
-        padding: 10px 5px;
-        font-weight: 500;
-    }
+  p {
+    font-weight: 500;
+  }
 }
 
+.burgeritem {
+  display: flex;
+  align-items: center;
+  padding: 9px 0;
+  p {
+    margin-right: 10px;
+  }
+}
+.likedItems {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  width: 18px;
+  line-height: 1 !important;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  height: 18px;
+}
 .catalogMobile {
-    display: none;
-    ul {
-        font-family: 'Montserrat', sans-serif !important;
+  display: none;
+  ul {
+    font-family: "Montserrat", sans-serif !important;
 
-        list-style: none;
-        margin-left: 20px;
-        li {
-            padding: 5px 0;
-            font-weight: 500;
-            color: #545454;
-        }
+    list-style: none;
+    li {
+      padding: 5px 0;
+      font-weight: 500;
+      color: #545454;
     }
-    .catalogList {
-        display: flex;
-        align-items: center;
-        span {
-            font-weight: 600;
-        }
-        i {
-            margin-left: 7px;
-            margin-top: -3px;
-        }
+  }
+  .catalogList {
+    text-align: center;
+    span {
+      font-weight: 600;
     }
+    i {
+      margin-left: 7px;
+      margin-top: -3px;
+    }
+  }
 }
 
-
-@media screen and (max-width: 1000px) { 
-
-    .openMenu {
-        transform: scale(0.8)
-    }
-    .catalogMobile {
-        display: block;
-        
-    }
+@media screen and (max-width: 1000px) {
+  .openMenu {
+    transform: scale(0.8);
+  }
+  .catalogMobile {
+    border-bottom: 2px solid gray;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .itemWrapper {
+  }
 }

@@ -4,38 +4,20 @@ export default function Document() {
   return (
     <Html lang="ru">
       <Head>
-        <meta name="yandex-verification" content="f7342e2557f0b31e" />
+        <link rel="icon" href="/favicon.ico" />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap"
+          rel="stylesheet"
+        />
+        <script
+          src="https://cdn.tailwindcss.com?plugins=forms,container-queries" // Замените на ваш URL скрипта
+          async
+        />
       </Head>
       <body>
         <Main />
         <NextScript />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(96005951, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-              `,
-          }}
-        />
-        <noscript>
-          <div>
-            <img
-              src="https://mc.yandex.ru/watch/96005951"
-              style={{ position: "absolute", left: "-9999px" }}
-              alt=""
-            />
-          </div>
-        </noscript>
       </body>
     </Html>
   );

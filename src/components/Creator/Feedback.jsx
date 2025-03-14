@@ -35,7 +35,9 @@ export const FeedBackControl = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
   useEffect(() => {
-    fetch(`https://u1978287.isp.regruhosting.ru/controls/getFeedback.php`)
+    fetch(
+      `https://u1978287.isp.regruhosting.ru/kryzhok/controls/getFeedback.php`
+    )
       .then((res) => res.json())
       .then((res) => {
         let initData = res.map((el) => ({
@@ -57,7 +59,7 @@ export const FeedBackControl = () => {
   const onSelectTest = (record, s) => {
     const selectId = record["key"];
     fetch(
-      `https://u1978287.isp.regruhosting.ru/controls/setFeedbackCheked.php?id=${selectId}&value=${
+      `https://u1978287.isp.regruhosting.ru/kryzhok/controls/setFeedbackCheked.php?id=${selectId}&value=${
         s ? "1" : "0"
       }`
     );

@@ -1,0 +1,94 @@
+.contentWrapper {
+    display: flex;
+
+    flex-direction: column;
+    min-height: 100vh;
+  
+    .cpWrapper {
+      min-height: 85vh;
+      border-radius: 25px;
+      margin: 0 auto;
+      width: 100%;
+      
+      max-width: 1400px;
+      padding: 45px 20px;
+      display: grid;
+  grid-template-columns: 25% 75%; /* Левая колонка 30%, правая 70% */
+  grid-template-rows: 1fr 1fr; /* Две строки по 50% высоты */
+  height: 100vh;
+ 
+    }
+    .left {
+        grid-column: 1; /* Левая колонка */
+        grid-row: 1 / span 2; /* Занимает обе строки */
+        display: flex;
+        flex-direction: column;
+        
+      }
+      
+      .rightTop {
+        grid-column: 2; /* Правая колонка */
+        grid-row: 1; /* Верхняя строка */
+        background-color: lightcoral;
+      }
+      
+      .rightBottom {
+        grid-column: 2; /* Правая колонка */
+        grid-row: 2; /* Нижняя строка */
+        background-color: lightgreen;
+      }
+  }
+
+  .widget {
+    display: flex; /* Включаем Flexbox */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    width: 250px; /* Ширина виджета */
+    height: 50px; /* Высота виджета */
+    padding: 5px; /* Отступы внутри виджета */
+    border-radius: 5px; /* Скругление углов */
+  }
+  
+  .iconLeft {
+    display: flex; /* Включаем Flexbox для выравнивания иконки по центру */
+    align-items: center; /* Выравниваем по вертикали */
+    justify-content: center; /* Выравниваем по горизонтали */
+    width: 20px; /* Ширина круглого блока */
+    height: 20px; /* Высота круглого блока */
+    border-radius: 50%; /* Делаем блок круглым */
+   
+    margin-right: 10px; /* Отступ справа от иконки */
+  
+    span {
+      font-size: 20px; /* Размер иконки */
+    }
+  }
+  
+  .textContent {
+    flex: 1; /* Занимает всё доступное пространство между иконками */
+  }
+  
+  .label {
+    font-size: 8px; /* Размер текста label */
+    color: #666; /* Цвет текста label */
+  }
+  
+  .value {
+    font-size: 14px; /* Размер текста значения */
+    font-weight: 500; /* Жирный шрифт для значения */
+  }
+  
+  .iconRight {
+    display: flex; /* Включаем Flexbox для иконки и текста справа */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    gap: 5px; /* Расстояние между иконкой и текстом */
+    font-size: 18px; /* Размер текста справа */
+    color: #333; /* Цвет текста справа */
+    img {
+        margin-bottom: -1px;
+    }
+  }
+
+  .green {
+    color: rgb(32, 214, 32);
+    font-size: 14px;
+  }
