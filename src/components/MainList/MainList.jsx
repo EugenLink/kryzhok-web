@@ -1,4 +1,3 @@
-import Image from "next/image.js";
 import ProductPreviewMini from "../Product/ProductPreviewMini.jsx";
 import styles from "./MainList.module.scss";
 import { useEffect, useState } from "react";
@@ -44,6 +43,7 @@ export const MainList = ({ hit = [] }) => {
     const numberOfBlocks = Math.floor(screenWidth / blockWidth);
     return numberOfBlocks;
   };
+  console.log(count);
   return (
     <div className="container">
       <div className={styles.textCenter}>
@@ -79,7 +79,7 @@ export const MainList = ({ hit = [] }) => {
       <div>
         <Carousel
           afterChange={onChange}
-          slidesToShow={count}
+          slidesToShow={count >= 3 ? 3 : count}
           arrows={true}
           prevArrow={<CustomArrow direction="prev" />}
           nextArrow={<CustomArrow direction="next" />}

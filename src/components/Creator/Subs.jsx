@@ -1,7 +1,6 @@
 import { Table } from "antd";
 import { useEffect, useState } from "react";
 import styles from "./Creator.module.scss";
-const { Column, ColumnGroup } = Table;
 
 const columns = [
   {
@@ -17,7 +16,6 @@ const columns = [
 export const SubsControl = () => {
   const [data, setData] = useState([]);
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-  console.log(data);
   useEffect(() => {
     fetch(`https://u1978287.isp.regruhosting.ru/kryzhok/controls/getSubs.php`)
       .then((res) => res.json())

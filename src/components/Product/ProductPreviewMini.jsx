@@ -19,7 +19,7 @@ export default function ProductPreviewMini({
   chapter,
   date = "26 Ноября, 2024",
   photo = "noPhoto.jpg",
-  width = 360,
+  width = 320,
   likedPop = false,
   text = "Откройте мир футбола вместе с нами! В нашей Детской Академии Футбола ваш ребенок научится не только мастерству игры, но и командной работе, дисциплине и уверенности в себе. Присоединяйтесь к нам и дайте вашему ребенку шанс стать настоящим чемпионом!",
 }) {
@@ -130,6 +130,7 @@ export default function ProductPreviewMini({
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           width: 320,
+          height: 250,
         }}
         image={`https://u1978287.isp.regruhosting.ru/kryzhok/products/images/${id}/${photo}`}
         alt="photo"

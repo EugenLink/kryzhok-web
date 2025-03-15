@@ -1,12 +1,8 @@
 import { Carousel, Radio } from "antd";
-import Image from "next/image.js";
 import styles from "./Banners.module.scss";
-import { useState } from "react";
 
 export const Banners = () => {
-  const onChange = (currentSlide) => {
-    console.log(currentSlide);
-  };
+  const onChange = (currentSlide) => {};
   return (
     <div className={styles.bannerContainer}>
       <Carousel afterChange={onChange} autoplay={true}>

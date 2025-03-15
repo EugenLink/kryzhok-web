@@ -5,8 +5,6 @@ import { Modal } from "antd";
 
 import { useState, useEffect } from "react";
 import ProductPreviewMini from "../Product/ProductPreviewMini";
-import { Pagination } from "@mui/material";
-import Image from "next/image";
 
 export default function ModalSearch({ handleOk, isOpen, cancel }) {
   const [value, setValue] = useState("");

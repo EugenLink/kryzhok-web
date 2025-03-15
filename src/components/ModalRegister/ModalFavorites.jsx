@@ -1,10 +1,9 @@
 import * as React from "react";
 import styles from "./ModalRegister.module.scss";
 
-import { Button, Input, message, Modal } from "antd";
+import { Modal } from "antd";
 import { $liked, $user } from "@/state/products";
 import { useStore } from "effector-react";
-import { Pagination } from "@mui/material";
 import ProductPreviewMini from "../Product/ProductPreviewMini";
 
 export default function ModalFavorites({ handleOk, isOpen, cancel }) {

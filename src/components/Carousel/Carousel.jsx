@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Carousel.module.scss";
 const CustomArrow = ({ direction, onClick }) => {
   const arrowClass =

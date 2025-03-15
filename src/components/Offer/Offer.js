@@ -4,10 +4,7 @@ import styles from "./Offer.module.scss";
 export const Offer = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
-  const [already, setAlready] = useState(false);
-  const showModal = () => {
-    setOpen(true);
-  };
+
   const [messageApi, contextHolder] = message.useMessage();
   useEffect(() => {
     // if (typeof window !== "undefined") {

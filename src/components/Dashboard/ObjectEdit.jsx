@@ -1,9 +1,6 @@
 import {
   Box,
   FormControl,
-  Input,
-  InputAdornment,
-  InputLabel,
   MenuItem,
   OutlinedInput,
   Select,
@@ -12,10 +9,6 @@ import {
 } from "@mui/material";
 import styles from "./Dashboard.module.scss";
 
-import { AccountCircle, PersonOutlineSharp } from "@mui/icons-material";
-import VipBanner from "./VipBanner";
-import AddIcon from "@mui/icons-material/Add";
-import Link from "next/link";
 import UploadImage from "./UploadImage";
 import { useEffect, useState } from "react";
 import { userAgent } from "next/server";
@@ -23,7 +16,6 @@ import { useStore } from "effector-react";
 import { $user } from "@/state/products";
 import { Button, message } from "antd";
 import { useRouter } from "next/router";
-import { category } from "@/json/newCategotry";
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {

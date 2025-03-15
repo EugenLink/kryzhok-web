@@ -53,7 +53,6 @@ export const Burger = ({ showModalSearch, showModalFav }) => {
 
           <ul>
             {category.map((el, i) => {
-              console.log(el);
               return (
                 <BurgerItem
                   key={i}

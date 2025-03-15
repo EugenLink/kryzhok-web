@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 import { YMaps, Map, Panorama, Placemark } from "@pbe/react-yandex-maps";
 import { Carousel, Image } from "antd";
 import { Box, Tab, Tabs } from "@mui/material";
-import Link from "next/link";
 import CustomArrow from "@/components/Carousel/Carousel";
 import ProductPreviewMini from "@/components/Product/ProductPreviewMini";
 
@@ -41,9 +40,7 @@ function a11yProps(index) {
 export default function ProductCard({ item, hits }) {
   const router = useRouter();
   const [value, setValue] = useState(0);
-  const onChange = (currentSlide) => {
-    console.log(currentSlide);
-  };
+  const onChange = (currentSlide) => {};
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

@@ -1,7 +1,6 @@
 import { Table } from "antd";
 import { useEffect, useState } from "react";
 import styles from "./Creator.module.scss";
-const { Column, ColumnGroup } = Table;
 
 const columns = [
   {

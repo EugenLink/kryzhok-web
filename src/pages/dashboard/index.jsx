@@ -1,12 +1,9 @@
-import BreadcrumbDinamic from "@/components/Breadcrumb/Breadcrumb.jsx";
 import DashboardWrapper from "@/components/Dashboard/Dashboard";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import { $user } from "@/state/products";
 import styles from "@/styles/Catalog.module.scss";
 import { useStore } from "effector-react";
-import parse from "html-react-parser";
-import moment from "moment";
 
 import Head from "next/head";
 import { useRouter } from "next/router";

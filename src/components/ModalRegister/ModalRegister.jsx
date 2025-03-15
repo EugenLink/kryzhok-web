@@ -6,8 +6,7 @@ import { Button } from "antd";
 import axios from "axios";
 
 import { useState } from "react";
-import { $user, setUser } from "@/state/products";
-import { useStore } from "effector-react";
+import { setUser } from "@/state/products";
 
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -2,7 +2,6 @@ import { FormControl, Input, InputAdornment, InputLabel } from "@mui/material";
 import styles from "./Dashboard.module.scss";
 import { AccountCircle } from "@mui/icons-material";
 import VipBanner from "./VipBanner";
-import AddIcon from "@mui/icons-material/Add";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { $user, setUser } from "@/state/products";

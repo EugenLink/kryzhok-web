@@ -1,7 +1,6 @@
 import BreadcrumbDinamic from "@/components/Breadcrumb/Breadcrumb.jsx";
 import styles from "@/styles/Catalog.module.scss";
 import Head from "next/head";
-import Image from "next/image.js";
 import Header from "../components/Header/Header";
 import Footer from "./../components/Footer/Footer";
 
