@@ -12,20 +12,18 @@ import { BurgerItem } from "./BurgerItem";
 
 export const Burger = ({ showModalSearch, showModalFav }) => {
   const [open, setOpen] = useState(false);
-  const [openCatalog, setOpenCatalog] = useState(true);
   const showDrawer = () => {
     setOpen(true);
   };
   const onClose = () => {
     setOpen(false);
   };
-
   const user = useStore($user); // Получаем данные пользователя из хранилища
   const liked = useStore($liked); // Получаем данные пользователя из хранилища
   const showModal = () => {
     setIsModalOpen(true);
   };
-
+  console.log(liked);
   return (
     <div>
       <Image
@@ -59,6 +57,7 @@ export const Burger = ({ showModalSearch, showModalFav }) => {
                   title={el.text}
                   subcat={el.subcat}
                   items={el.items}
+                  close={() => setOpen(false)}
                 />
               );
             })}

@@ -8,7 +8,7 @@ import styles from "./Burger.module.scss";
 import { useStore } from "effector-react";
 import { $liked, $user, setUser } from "@/state/products";
 
-export const BurgerItem = ({ title, items, subcat = null }) => {
+export const BurgerItem = ({ title, items, subcat = null, close }) => {
   const [isOpen, setOpen] = useState(false);
   return (
     <div className={styles.itemWrapper}>
@@ -21,7 +21,7 @@ export const BurgerItem = ({ title, items, subcat = null }) => {
           {subcat
             ? subcat.map((el, i) => (
                 <div key={i} className="pl-2 pb-2">
-                  <BurgerItem title={el.text} items={el.items} />
+                  <BurgerItem title={el.text} items={el.items} close={close} />
                 </div>
               ))
             : null}
@@ -31,7 +31,11 @@ export const BurgerItem = ({ title, items, subcat = null }) => {
         <div className="pl-4">
           {items.map((el, i) => (
             <p className="pb-2" style={{ color: "#009578" }} key={i}>
-              <Link href={`/catalog?name=${el.text}`} key={i}>
+              <Link
+                href={`/catalog?name=${el.text}`}
+                key={i}
+                onClick={() => close()}
+              >
                 {el.text}
               </Link>
             </p>

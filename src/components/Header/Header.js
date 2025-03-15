@@ -20,6 +20,7 @@ export default function Header() {
   const [isModalOpenSearch, setIsModalOpenSearch] = useState(false);
   const [isModalOpenChange, setIsModalOpenChange] = useState(false);
   const [isModalOpenFav, setIsModalOpenFav] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   const [funcName, setFuncName] = useState(null);
   const [dropState, setDropState] = useState({ item: null, title: "" });
@@ -37,7 +38,9 @@ export default function Header() {
     if (data) {
       setLiked(JSON.parse(data).likes);
     } else {
-      setLiked(localStorage.getItem("likes"));
+      setLiked(
+        localStorage.getItem("likes") ? localStorage.getItem("likes") : ""
+      );
     }
   }, []);
 
@@ -81,16 +84,24 @@ export default function Header() {
   const content = (
     <div className={styles.popoverDrop}>
       {user?.type === "comp" ? (
-        <Link href={"/dashboard"}>
+        <Link href={"/dashboard"} onClick={() => setVisible(false)}>
           <p>Личный кабинет</p>
         </Link>
       ) : null}
 
-      <p onClick={() => showModalChange(true)}>Сменить пароль</p>
+      <p
+        onClick={() => {
+          showModalChange(true);
+          setVisible(false);
+        }}
+      >
+        Сменить пароль
+      </p>
       <p
         onClick={() => {
           localStorage.removeItem("user");
           setUser(null);
+          setVisible(false);
           setLiked(localStorage.getItem("likes"));
         }}
       >
@@ -241,10 +252,14 @@ export default function Header() {
             <Popover
               content={content}
               trigger="click"
+              open={visible}
               title={user.type === "user" ? "Пользователь" : "Компания"}
               overlayStyle={{ width: 200 }}
             >
-              <div className={styles.underLogin}>
+              <div
+                className={styles.underLogin}
+                onClick={() => setVisible(!visible)}
+              >
                 <p>{user.username}</p>
               </div>
             </Popover>

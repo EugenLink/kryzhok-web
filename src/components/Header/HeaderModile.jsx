@@ -28,10 +28,11 @@ export default function HeaderMobile() {
     if (data) {
       setLiked(JSON.parse(data).likes);
     } else {
-      setLiked(localStorage.getItem("likes"));
+      setLiked(
+        localStorage.getItem("likes") ? localStorage.getItem("likes") : ""
+      );
     }
   }, []);
-
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -72,11 +73,18 @@ export default function HeaderMobile() {
   const content = (
     <div className={styles.popoverDrop}>
       {user?.type === "comp" ? (
-        <Link href={"/dashboard"}>
+        <Link href={"/dashboard"} onClick={() => setVisible(false)}>
           <p>Личный кабинет</p>
         </Link>
       ) : null}
-
+      <p
+        onClick={() => {
+          setVisible(false);
+          showModalFav(true);
+        }}
+      >
+        Избранное
+      </p>
       <p
         onClick={() => {
           setVisible(false);
@@ -89,6 +97,7 @@ export default function HeaderMobile() {
         onClick={() => {
           localStorage.removeItem("user");
           setUser(null);
+          setVisible(false);
           setLiked(localStorage.getItem("likes"));
         }}
       >
@@ -156,7 +165,10 @@ export default function HeaderMobile() {
             title={user.type === "user" ? "Пользователь" : "Компания"}
             overlayStyle={{ width: 200 }}
           >
-            <div className={styles.underLogin} onClick={() => setVisible(true)}>
+            <div
+              className={styles.underLogin}
+              onClick={() => setVisible(!visible)}
+            >
               <p>{user.username[0]}</p>
             </div>
           </Popover>
