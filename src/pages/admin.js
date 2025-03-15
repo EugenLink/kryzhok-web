@@ -49,8 +49,8 @@ export default function Admin({ data }) {
   return (
     <div>
       <Head>
-        <title>Texnika Room</title>
-        <meta name="description" content="Шоурум бытовой техники" />
+        <title>Кружок админка</title>
+        <meta name="description" content="Кружок" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

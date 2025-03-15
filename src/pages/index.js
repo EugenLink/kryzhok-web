@@ -18,10 +18,7 @@ export default function Home({ data }) {
     <div>
       <Head>
         <title>Кружок</title>
-        <meta
-          name="description"
-          content="Шоурум бытовой техники Texnika Room"
-        />
+        <meta name="description" content="Кружок" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

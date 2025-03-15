@@ -17,7 +17,7 @@ export default function News({ data }) {
     <div>
       <Head>
         <title>Новости</title>
-        <meta name="description" content="Новости Texnika Room" />
+        <meta name="description" content="Новости Kryzhok" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

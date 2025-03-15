@@ -168,7 +168,7 @@ export const Articles = () => {
                 formData.append("content", htmlString);
                 formData.append("images", filtredImages);
                 formData.append("previewText", previewText);
-                formData.append("author", "Texnika Room");
+                formData.append("author", "Администрация");
                 fetch(
                   "https://u1978287.isp.regruhosting.ru/kryzhok/articles/push.php",
                   {
