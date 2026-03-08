@@ -42,13 +42,22 @@ export async function getServerSideProps(context) {
   const { news } = context.params;
 
   // Fetch data from external API
+try {
+    const res = await fetch(
+      `https://u1978287.isp.regruhosting.ru/kryzhok/news/getNews.php?id=${news}`
+    );
 
-  const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/kryzhok/news/getNews.php?id=${news}`
-  );
-  const data = await res.json();
+    const data = await res.json();
 
-  // Pass data to the page via props
+    return { props: { data } };
+  } catch (error) {
+    console.error("Fetch error:", error);
 
-  return { props: { data } };
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
+ 
 }

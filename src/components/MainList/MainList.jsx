@@ -43,7 +43,6 @@ export const MainList = ({ hit = [] }) => {
     const numberOfBlocks = Math.floor(screenWidth / blockWidth);
     return numberOfBlocks;
   };
-  console.log(count);
   return (
     <div className="container">
       <div className={styles.textCenter}>
@@ -85,6 +84,7 @@ export const MainList = ({ hit = [] }) => {
           nextArrow={<CustomArrow direction="next" />}
         >
           {hit.map((el, i) => {
+         
             return (
               <ProductPreviewMini
                 id={el.id}

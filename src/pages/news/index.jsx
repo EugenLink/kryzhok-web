@@ -51,11 +51,22 @@ export default function News({ data }) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/kryzhok/news/getAllNews.php`
-  );
-  const data = await res.json();
+  try {
+    const res = await fetch(
+      `https://u1978287.isp.regruhosting.ru/kryzhok/news/getAllNews.php`
+    );
 
-  // Pass data to the page via props
-  return { props: { data } };
+    const data = await res.json();
+
+    return { props: { data } };
+  } catch (error) {
+    console.error("Fetch error:", error);
+
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
+
 }

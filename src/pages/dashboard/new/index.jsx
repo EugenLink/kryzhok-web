@@ -44,12 +44,22 @@ export default function New() {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/kryzhok/articles/getAll.php`
-  );
+  try {
+    const res = await fetch(
+      `https://u1978287.isp.regruhosting.ru/kryzhok/articles/getAll.php`
+    );
 
-  const data = await res.json();
+    const data = await res.json();
 
-  // Pass data to the page via props
-  return { props: { data } };
+    return { props: { data } };
+  } catch (error) {
+    console.error("Fetch error:", error);
+
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
+ 
 }

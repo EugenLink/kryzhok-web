@@ -14,7 +14,7 @@ import { $liked, $user, setLiked, setUser } from "@/state/products";
 import { useStore } from "effector-react";
 import axios from "axios";
 export default function ProductPreviewMini({
-  id,
+  id =1,
   title = "Футбольная академия",
   chapter,
   date = "26 Ноября, 2024",
@@ -27,7 +27,7 @@ export default function ProductPreviewMini({
   const user = useStore($user); // Получаем данные пользователя из хранилища
   const [isLiked, setIsLiked] = useState("");
   const liked = useStore($liked); // Получаем данные пользователя из хранилища
-
+  console.log(title)
   const success = (text) => {
     messageApi.open({
       type: "success",

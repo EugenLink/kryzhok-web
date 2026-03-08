@@ -34,11 +34,10 @@
     "moment": "^2.29.4",
     "next": "13.1.6",
     "next-optimized-images": "^2.6.2",
-    "node-sass": ">=7.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-loader-spinner": "^6.1.6",
-    "sass": "^1.58.0"
+    "sass": "^1.90.0"
   }
 }
