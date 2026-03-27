@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 export default function News({ data }) {
   const router = useRouter();
   const { name } = router.query;
-
+  console.log(data)
   return (
     <div>
       <Head>
@@ -28,13 +28,13 @@ export default function News({ data }) {
             <BreadcrumbDinamic />
           </div>
           <h2 className={styles.title} style={{ fontWeight: 500 }}>
-            {name}
+            {data.title}
           </h2>
 
-          <div className={styles.parsedItems}>{parse(data[3])}</div>
+          <div className={styles.parsedItems}>{parse(data.content)}</div>
           <div className={styles.bottomBlock}>
-            <p style={{ fontWeight: 500 }}>Автор: {data[5]}</p>
-            <p>{moment(data[4]).format("DD.MM.YYYY HH:mm")}</p>
+            <p style={{ fontWeight: 500 }}>Автор: {data.author}</p>
+            <p>{moment(data.created_at).format("DD.MM.YYYY HH:mm")}</p>
           </div>
         </main>
         <Footer />
@@ -49,7 +49,7 @@ export async function getServerSideProps(context) {
   // Fetch data from external API
 
   const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/kryzhok/articles/getOne.php?id=${article}`
+    `https://api.kryzhok.ru/articles/get.php?id=${article}`
   );
   const data = await res.json();
 

@@ -349,7 +349,7 @@ export default function ObjectCreate() {
       formData.append("links", data.links);
 
       fetch(
-        "https://u1978287.isp.regruhosting.ru/kryzhok/products/add_product.php",
+        "https://api.kryzhok.ru/products/add_product.php",
         {
           method: "POST",
 
@@ -362,7 +362,6 @@ export default function ObjectCreate() {
             success("Объект успешно добавлен!");
             router.push("/dashboard");
           } else {
-            console.log(result);
             error("Произошла ошибка, попробуйте позже!");
           }
         })

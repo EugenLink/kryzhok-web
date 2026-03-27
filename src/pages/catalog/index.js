@@ -12,6 +12,7 @@ import ProductPreviewMini from "@/components/Product/ProductPreviewMini";
 export default function Catalog({ data }) {
   const router = useRouter();
   const { name } = router.query;
+  console.log(data)
   return (
     <div>
       <Head>
@@ -30,6 +31,7 @@ export default function Catalog({ data }) {
           <h2 className={styles.title}>{name}</h2>
 
           <div className={styles.productsWrapper}>
+          
             {data.map((el, i) => (
               <ProductPreviewMini
                 key={i}
@@ -53,7 +55,7 @@ export async function getServerSideProps(context) {
 
   // Fetch data from external API
   const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/kryzhok/products/getByChapter.php?category=${name}`
+    `https://api.kryzhok.ru/products/getByChapter.php?category=${name}`
   );
 
   const data = await res.json();

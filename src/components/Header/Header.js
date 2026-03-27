@@ -34,6 +34,7 @@ export default function Header() {
   useEffect(() => {
     const data = localStorage.getItem("user");
 
+  
     setUser(data ? JSON.parse(localStorage.getItem("user")) : null);
     if (data) {
       setLiked(JSON.parse(data).likes);

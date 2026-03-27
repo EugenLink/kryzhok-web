@@ -284,13 +284,14 @@ export default function ObjectEdit({ item, back }) {
   };
   useEffect(() => {
     setFileList(
-      data.images
-        ? data.images.split(",").map((el) => {
+      data.gallery
+        ? data.gallery.map((el) => {
+          
             return {
               uid: el,
               name: el,
               status: "done",
-              url: `https://u1978287.isp.regruhosting.ru/kryzhok/products/images/${data.id}/${el}`,
+              url: `https://api.kryzhok.ru/products/${el}`,
             };
           })
         : []
@@ -298,11 +299,12 @@ export default function ObjectEdit({ item, back }) {
     setFileListPreview(
       data.image_preview
         ? data.image_preview.split(",").map((el) => {
+          
             return {
               uid: el,
               name: el,
               status: "done",
-              url: `https://u1978287.isp.regruhosting.ru/kryzhok/products/images/${data.id}/${el}`,
+               url: `https://api.kryzhok.ru/products/${el}`,
             };
           })
         : []
@@ -310,9 +312,7 @@ export default function ObjectEdit({ item, back }) {
   }, [data]);
 
   const submit = () => {
-    if (user.id != data.userID) {
-      return;
-    }
+
     let newErr = errors;
 
     if (data.name.length < 3) {
@@ -343,11 +343,13 @@ export default function ObjectEdit({ item, back }) {
     } else {
       const formData = new FormData();
       for (const item of fileList) {
+
         formData.append(
           "images[]",
           item.originFileObj ? item.originFileObj : item.name
         ); // 'files[]' — имя поля для файлов
       }
+      console.log(fileList)
       formData.append(
         "image_preview",
         fileListPreview[0].originFileObj
@@ -366,7 +368,7 @@ export default function ObjectEdit({ item, back }) {
       formData.append("links", data.links);
       formData.append("id", data.id);
       fetch(
-        "https://u1978287.isp.regruhosting.ru/kryzhok/products/edit_product.php",
+        "https://api.kryzhok.ru/products/edit_product.php",
         {
           method: "POST",
 

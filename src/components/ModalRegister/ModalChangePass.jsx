@@ -61,10 +61,10 @@ export default function ModalChangePass({ handleOk, isOpen, cancel }) {
 
       try {
         const response = await axios.post(
-          "https://u1978287.isp.regruhosting.ru/kryzhok/users/change-password.php",
+          "https://api.kryzhok.ru/users/change-password.php",
           formData
         );
-        if (response.data.status === "success") {
+        if (response.data.success) {
           success("Вы успешно сменили пароль");
           handleOk();
         } else {

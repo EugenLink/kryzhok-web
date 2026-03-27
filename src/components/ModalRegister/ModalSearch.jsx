@@ -12,7 +12,7 @@ export default function ModalSearch({ handleOk, isOpen, cancel }) {
   const [data, setData] = useState([]);
   useEffect(() => {
     // URL вашего PHP-файла
-    const url = `https://u1978287.isp.regruhosting.ru/kryzhok/products/getForSearch.php?search=${value}`;
+    const url = `https://api.kryzhok.ru/products/getForSearch.php?search=${value}`;
     // Выполняем запрос
     setPage(1);
     if (value.length >= 3) {

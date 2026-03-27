@@ -33,12 +33,12 @@ export default function Admin({ data }) {
     {
       label: "Обратная связь",
       key: "feedback",
-      danger: data.fbc,
+      
     },
     {
       label: "Подписки",
       key: "subs",
-      danger: data.sbc,
+      
     },
   ];
   const [current, setCurrent] = useState("product");
@@ -89,14 +89,14 @@ export default function Admin({ data }) {
   );
 }
 
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/product/getAllForChange.php`
-  );
+// export async function getServerSideProps() {
+//   Fetch data from external API
+//   const res = await fetch(
+//     `https://u1978287.isp.regruhosting.ru/product/getAllForChange.php`
+//   );
 
-  const data = await res.json();
+//   const data = await res.json();
 
-  // Pass data to the page via props
-  return { props: { data } };
-}
+//   // Pass data to the page via props
+//   return { props: { data } };
+// }

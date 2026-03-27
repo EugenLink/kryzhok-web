@@ -52,6 +52,7 @@ export default function ModalRegister({ handleOk, isOpen, cancel }) {
 
   const register = async (data) => {
     let formData = new FormData();
+    console.log(data)
     if (select === "user") {
       formData.append("username", data.name);
       formData.append("confidant", data.name);
@@ -66,14 +67,15 @@ export default function ModalRegister({ handleOk, isOpen, cancel }) {
     formData.append("type", select);
     try {
       const response = await axios.post(
-        "https://u1978287.isp.regruhosting.ru/kryzhok/users/register.php",
+        "https://api.kryzhok.ru/users/register.php",
         formData
       );
-      if (response.data.status === "success") {
+      if (response.data.success ) {
         success("Вы успешно Зарегестрировались, теперь войдите!");
         setType("login");
       } else {
-        error("Неверное имя пользователя или пароль");
+
+        error(response.data.error);
       }
     } catch (e) {
       error("Произошла ошибка внутри сайта, пожалуйста попробуйте позже");
@@ -83,21 +85,26 @@ export default function ModalRegister({ handleOk, isOpen, cancel }) {
   const login = async (data) => {
     let formData = new FormData();
 
-    formData.append("username", data.email);
+    formData.append("email", data.email);
     formData.append("password", data.pass);
     formData.append("type", select);
 
     try {
       const response = await axios.post(
-        "https://u1978287.isp.regruhosting.ru/kryzhok/users/login.php",
-        formData
+        "https://api.kryzhok.ru/users/login.php",
+        formData,
+       {
+      withCredentials: true // важно для HttpOnly cookies
+    }
       );
-      if (response.data.status === "success") {
+      if (response.data.success) {
         localStorage.setItem("user", JSON.stringify(response.data.user));
         success("Вы успешно вошли!");
-        handleOk();
+       handleOk();
         setUser(response.data.user);
       } else {
+        console.log(data)
+        console.log(response.data)
         error("Неверное имя пользователя или пароль");
       }
     } catch (e) {
@@ -210,10 +217,10 @@ export default function ModalRegister({ handleOk, isOpen, cancel }) {
 
       try {
         const response = await axios.post(
-          "https://u1978287.isp.regruhosting.ru/kryzhok/users/forgot_password.php",
+          "https://api.kryzhok.ru/users/forgot-password.php",
           formData
         );
-        if (response.data.status === "success") {
+        if (response.data.success) {
           setForgot(false);
           success("Проверьте вашу почту!");
         } else {

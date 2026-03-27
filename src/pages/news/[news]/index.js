@@ -27,10 +27,10 @@ export default function News({ data }) {
             <BreadcrumbDinamic />
           </div>
           <h2 className={styles.title} style={{ fontWeight: 500 }}>
-            {name}
+            {data.title}
           </h2>
 
-          <div className={styles.parsedItems}>{parse(data[2])}</div>
+          <div className={styles.parsedItems}>{parse(data.content)}</div>
         </main>
         <Footer />
       </div>
@@ -44,7 +44,7 @@ export async function getServerSideProps(context) {
   // Fetch data from external API
 try {
     const res = await fetch(
-      `https://u1978287.isp.regruhosting.ru/kryzhok/news/getNews.php?id=${news}`
+      `https://api.kryzhok.ru/news/getNews.php?id=${news}`
     );
 
     const data = await res.json();

@@ -24,7 +24,7 @@ export const Articles = () => {
     onSuccess("Ok");
   };
   useEffect(() => {
-    fetch(`https://u1978287.isp.regruhosting.ru/kryzhok/articles/getAll.php`)
+    fetch(`https://api.kryzhok.ru/articles/getAll.php`)
       .then((res) => res.json())
       .then((res) => setAllNews(res));
   }, []);
@@ -60,7 +60,7 @@ export const Articles = () => {
                       danger
                       onClick={() => {
                         fetch(
-                          `https://u1978287.isp.regruhosting.ru/kryzhok/articles/delete.php?id=${el[0]}`
+                          `https://api.kryzhok.ru/articles/delete.php?id=${el[0]}`
                         )
                           .then((res) => res.json())
                           .then((res) => {
@@ -136,7 +136,7 @@ export const Articles = () => {
                         }}
                       >
                         <img
-                          src={`https://u1978287.isp.regruhosting.ru/kryzhok/articles/photos/${id
+                          src={`https://api.kryzhok.ru/articles/photos/${id
                             .toString()
                             .substring(5)}/${alt}`}
                           alt={alt}
@@ -170,7 +170,7 @@ export const Articles = () => {
                 formData.append("previewText", previewText);
                 formData.append("author", "Администрация");
                 fetch(
-                  "https://u1978287.isp.regruhosting.ru/kryzhok/articles/push.php",
+                  "https://api.kryzhok.ru/articles/push.php",
                   {
                     method: "POST",
                     body: formData,

@@ -19,6 +19,7 @@ export default function UploadImage({
   count,
   fileListUp,
 }) {
+  
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
   const handlePreview = async (file) => {

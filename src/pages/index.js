@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header/Header";
 import Footer from "./../components/Footer/Footer";
 
-export default function Home({ data }) {
+export default function Home({ result }) {
   const [load, setLoad] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => setLoad(true), 3000);
@@ -30,44 +30,8 @@ export default function Home({ data }) {
 
         <Banners />
 
-        {/* <MainList hit={data} /> */}
-        <MainList hit={[{
-  id : 1,
-  title : "Футбольная академия",
-  chapter : '12312',
-  date : "26 Ноября, 2024",
-  photo : "noPhoto.jpg",
-  width : 320,
-  likedPop : false,
-  text : "Откройте мир футбола вместе с нами! В нашей Детской Академии Футбола ваш ребенок научится не только мастерству игры, но и командной работе, дисциплине и уверенности в себе. Присоединяйтесь к нам и дайте вашему ребенку шанс стать настоящим чемпионом!",
-}, {
-  id : 2,
-  title : "Футбольная академия",
-  chapter : '12312',
-  date : "26 Ноября, 2024",
-  photo : "noPhoto.jpg",
-  width : 320,
-  likedPop : false,
-  text : "Откройте мир футбола вместе с нами! В нашей Детской Академии Футбола ваш ребенок научится не только мастерству игры, но и командной работе, дисциплине и уверенности в себе. Присоединяйтесь к нам и дайте вашему ребенку шанс стать настоящим чемпионом!",
-}, {
-  id : 3,
-  title : "Футбольная академия",
-  chapter : '12312',
-  date : "26 Ноября, 2024",
-  photo : "noPhoto.jpg",
-  width : 320,
-  likedPop : false,
-  text : "Откройте мир футбола вместе с нами! В нашей Детской Академии Футбола ваш ребенок научится не только мастерству игры, но и командной работе, дисциплине и уверенности в себе. Присоединяйтесь к нам и дайте вашему ребенку шанс стать настоящим чемпионом!",
-}, {
-  id : 3,
-  title : "Футбольная академия",
-  chapter : '12312',
-  date : "26 Ноября, 2024",
-  photo : "noPhoto.jpg",
-  width : 320,
-  likedPop : false,
-  text : "Откройте мир футбола вместе с нами! В нашей Детской Академии Футбола ваш ребенок научится не только мастерству игры, но и командной работе, дисциплине и уверенности в себе. Присоединяйтесь к нам и дайте вашему ребенку шанс стать настоящим чемпионом!",
-}]} />
+        <MainList hit={result} />
+       
       </main>
       <Footer />
     </div>
@@ -78,12 +42,12 @@ export async function getServerSideProps() {
   // Fetch data from external API
   try {
     const res = await fetch(
-      "https://u1978287.isp.regruhosting.ru/kryzhok/products/getHits.php"
+      "https://api.kryzhok.ru/products/getHits.php"
     );
 
     const data = await res.json();
-
-    return { props: { data } };
+    const result = data.data ? data.data : []
+    return { props: { result } };
   } catch (error) {
     console.error("Fetch error:", error);
 

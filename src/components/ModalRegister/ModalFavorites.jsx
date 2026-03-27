@@ -26,7 +26,7 @@ export default function ModalFavorites({ handleOk, isOpen, cancel }) {
       ids = items.length ? items.split(",") : [];
     }
     if (ids.length) {
-      const url = `https://u1978287.isp.regruhosting.ru/kryzhok/products/get_favor.php?ids=[${ids}]`;
+      const url = `https://api.kryzhok.ru/products/get_favor.php?ids=[${ids}]`;
       fetch(url)
         .then((response) => response.json())
         .then((data) => {

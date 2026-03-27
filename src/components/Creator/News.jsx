@@ -23,7 +23,7 @@ export const News = () => {
     onSuccess("Ok");
   };
   useEffect(() => {
-    fetch(`https://u1978287.isp.regruhosting.ru/kryzhok/news/getAllNews.php`)
+    fetch(`https://api.kryzhok.ru/news/getAllNews.php`)
       .then((res) => res.json())
       .then((res) => setAllNews(res));
   }, []);
@@ -56,7 +56,7 @@ export const News = () => {
                       danger
                       onClick={() => {
                         fetch(
-                          `https://u1978287.isp.regruhosting.ru/kryzhok/news/deleteNews.php?id=${el[0]}`
+                          `https://api.kryzhok.ru/news/deleteNews.php?id=${el[0]}`
                         )
                           .then((res) => res.json())
                           .then((res) => {
@@ -114,7 +114,7 @@ export const News = () => {
                 replace: (domNode) => {
                   if (domNode.attribs && domNode.name === "img") {
                     const alt = domNode.attribs.alt;
-
+                    
                     return (
                       <div
                         alt={alt}
@@ -125,7 +125,7 @@ export const News = () => {
                         }}
                       >
                         <img
-                          src={`https://u1978287.isp.regruhosting.ru/kryzhok/news/photos/${id
+                          src={`https://api.kryzhok.ru/news/photos/${id
                             .toString()
                             .substring(5)}/${alt}`}
                           alt={alt}
@@ -158,7 +158,7 @@ export const News = () => {
                 formData.append("images", filtredImages);
 
                 fetch(
-                  "https://u1978287.isp.regruhosting.ru/kryzhok/news/pushToNews.php",
+                  "https://api.kryzhok.ru/news/pushToNews.php",
                   {
                     method: "POST",
                     body: formData,

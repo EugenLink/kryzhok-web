@@ -27,7 +27,6 @@ export default function ProductPreviewMini({
   const user = useStore($user); // Получаем данные пользователя из хранилища
   const [isLiked, setIsLiked] = useState("");
   const liked = useStore($liked); // Получаем данные пользователя из хранилища
-  console.log(title)
   const success = (text) => {
     messageApi.open({
       type: "success",
@@ -85,16 +84,17 @@ export default function ProductPreviewMini({
       formData.append("items", itemsArr.join(","));
       try {
         const response = await axios.post(
-          "https://u1978287.isp.regruhosting.ru/kryzhok/users/add_to_fawor.php",
+          "https://api.kryzhok.ru/users/add_to_fawor.php",
           formData
         );
-        if (response.data.status === "success") {
+        if (response.data.success) {
           if (dislike !== -1) {
             success("Успешно удалили из избранного!");
           } else {
             success("Успешно добавили в избранное!");
           }
         } else {
+          console.log(response.data)
           error("Произошла ошибка");
         }
       } catch (e) {
@@ -132,7 +132,7 @@ export default function ProductPreviewMini({
           width: 320,
           height: 250,
         }}
-        image={`https://u1978287.isp.regruhosting.ru/kryzhok/products/images/${id}/${photo}`}
+        image={`https://api.kryzhok.ru/products/${photo}`}
         alt="photo"
         className={styles.mobile}
       />

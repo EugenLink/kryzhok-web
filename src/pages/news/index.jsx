@@ -10,7 +10,7 @@ import { useRouter } from "next/router.js";
 
 export default function News({ data }) {
   const router = useRouter();
-
+  console.log(data)
   const { asPath } = router;
   const path = asPath.split("?")[0];
   return (
@@ -34,7 +34,7 @@ export default function News({ data }) {
               return (
                 <NewsCard
                   key={el[0]}
-                  src={`https://u1978287.isp.regruhosting.ru/kryzhok/news/photos/${el[0]}/logo.png`}
+                  src={`https://api.kryzhok.ru/news/${el[2]}`}
                   text={el[1]}
                   date={moment(el[3]).format("DD.MM.YYYY HH:mm")}
                   link={`${path}/${el[0]}?name=${el[1]}`}
@@ -53,7 +53,7 @@ export async function getServerSideProps() {
   // Fetch data from external API
   try {
     const res = await fetch(
-      `https://u1978287.isp.regruhosting.ru/kryzhok/news/getAllNews.php`
+      `https://api.kryzhok.ru/news/getAllNews.php`
     );
 
     const data = await res.json();

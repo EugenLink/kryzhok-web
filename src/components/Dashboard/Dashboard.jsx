@@ -11,12 +11,15 @@ import { Button, message } from "antd";
 import EditIcon from "@mui/icons-material/Edit";
 import CloseIcon from "@mui/icons-material/Close";
 import ObjectEdit from "./ObjectEdit";
+import { useRouter } from "next/router";
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 export default function DashboardWrapper() {
   const [data, setData] = useState([]);
+      const router = useRouter();
+
   const user = useStore($user);
   const [selected, setSelected] = useState({});
   const [userData, setUserData] = useState({
@@ -48,19 +51,20 @@ export default function DashboardWrapper() {
     if (confirmRes) {
       try {
         const response = await axios.get(
-          `https://u1978287.isp.regruhosting.ru/kryzhok/products/deleteProduct.php?id=${id}`
+          `https://api.kryzhok.ru/products/deleteProduct.php?id=${id}`
         );
         if (response.data.status === "success") {
           success("Объект успешно удален!");
-          if (user) {
+          if (user) { 
             const fetchData = async () => {
               try {
                 const response = await axios.get(
-                  `https://u1978287.isp.regruhosting.ru/kryzhok/products/getByUser.php?id=${user.id}`
+                  `https://api.kryzhok.ru/products/getByUser.php?userID=${user.id}`
                 );
 
                 if (response.data.status === "success") {
                   setData(response.data.data);
+                  console.log(response.data.data)
                 } else {
                 }
               } catch (e) {}
@@ -68,6 +72,7 @@ export default function DashboardWrapper() {
             fetchData();
           }
         } else {
+          console.log(response.data)
           error("Произошла ошибка, попробуйте позже");
         }
       } catch (e) {
@@ -82,17 +87,21 @@ export default function DashboardWrapper() {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `https://u1978287.isp.regruhosting.ru/kryzhok/products/getByUser.php?id=${user.id}`
+            `https://api.kryzhok.ru/products/getByUser.php?userID=${user.id}`
           );
 
           if (response.data.status === "success") {
+         
             setData(response.data.data);
           } else {
+           
           }
         } catch (e) {}
       };
       fetchData();
-    }
+    } 
+
+
   }, [user, selected]);
   const save = async () => {
     let newErr = errors;
@@ -117,22 +126,24 @@ export default function DashboardWrapper() {
 
       try {
         const response = await axios.post(
-          "https://u1978287.isp.regruhosting.ru/kryzhok/users/updateUser.php",
+          "https://api.kryzhok.ru/users/updateUser.php",
           formData
         );
-        if (response.data.status === "success") {
+        if (response.data.success) {
           success("Вы успешно изменили данные!");
           localStorage.setItem("user", JSON.stringify(userData));
         } else {
           error("Поля не должны быть пустые");
         }
       } catch (e) {
+        console.log(e)
         error("Произошла ошибка внутри сайта, пожалуйста попробуйте позже");
       }
     }
   };
   return (
     <>
+    {user ? <>
       {!selected.id ? (
         <div className={styles.dashWrapper}>
           {contextHolder}
@@ -261,6 +272,8 @@ export default function DashboardWrapper() {
       ) : (
         <ObjectEdit item={selected} back={() => setSelected({})} />
       )}
+    </> : <h3>У вас нет доступа к данному разделу сайта</h3>}
+    
     </>
   );
 }

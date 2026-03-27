@@ -40,6 +40,7 @@ function a11yProps(index) {
 export default function ProductCard({ item, hits }) {
   const router = useRouter();
   const [value, setValue] = useState(0);
+  const [images, setImages] = useState([]);
   const onChange = (currentSlide) => {};
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -47,7 +48,8 @@ export default function ProductCard({ item, hits }) {
   const [count, setCount] = useState(3);
   useEffect(() => {
     setCount(getWidth());
-  }, []);
+    setImages(JSON.parse(item.gallery))
+  }, [item]);
   const getWidth = () => {
     const screenWidth = window.innerWidth; // Ширина окна браузера
 
@@ -57,6 +59,7 @@ export default function ProductCard({ item, hits }) {
     const numberOfBlocks = Math.floor(screenWidth / blockWidth);
     return numberOfBlocks;
   };
+
   return (
     <div>
       <Head>
@@ -176,7 +179,7 @@ export default function ProductCard({ item, hits }) {
               </div>
               <div className={styles.image}>
                 <Image
-                  src={`https://u1978287.isp.regruhosting.ru/kryzhok/products/images/${item.id}/${item.image_preview}`} // Замените на ваше изображение
+                  src={`https://api.kryzhok.ru/products/${item.image_preview}`} // Замените на ваше изображение
                   alt="Пример изображения"
                   width="100%" // Ширина изображения
                   height="100%" // Высота изображения
@@ -185,7 +188,27 @@ export default function ProductCard({ item, hits }) {
               </div>
             </div>
 
-            <div style={{ marginTop: 40, marginBottom: 40 }}>
+            
+          </div>
+          {images ? (
+            <div className={styles.gallery}>
+              <h4>Галерея</h4>
+              <div className={styles.imagesGalery}>
+                {images.map((el, index) => (
+                  <Image
+                    key={index}
+                    src={`https://api.kryzhok.ru/products/${el}`} // Замените на ваше изображение
+                    alt={`Slide ${index + 1}`}
+                    style={{
+                      width: "300px", // Ширина на весь контейнер
+                      height: "300px", // Фиксированная высота
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
+          <div style={{ marginTop: 40, marginBottom: 40 }}>
               <YMaps>
                 <div>
                   <Map
@@ -214,26 +237,6 @@ export default function ProductCard({ item, hits }) {
                 </div>
               </YMaps>
             </div>
-          </div>
-          {item.images ? (
-            <div className={styles.gallery}>
-              <h4>Галерея</h4>
-              <div className={styles.imagesGalery}>
-                {item.images.split(",").map((el, index) => (
-                  <Image
-                    key={index}
-                    src={`https://u1978287.isp.regruhosting.ru/kryzhok/products/images/${item.id}/${el}`} // Замените на ваше изображение
-                    alt={`Slide ${index + 1}`}
-                    style={{
-                      width: "300px", // Ширина на весь контейнер
-                      height: "300px", // Фиксированная высота
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-          ) : null}
-
           <div className={styles.productCardWrapper}></div>
           {hits ? (
             <div className={styles.recomended}>
@@ -272,12 +275,12 @@ export async function getServerSideProps(context) {
   const { chapter } = context.query;
   // Fetch data from external API
   const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/kryzhok/products/getById.php?id=${pid}`
+    `https://api.kryzhok.ru/products/getById.php?id=${pid}`
   );
 
   const item = await res.json();
   const hitsReq = await fetch(
-    `https://u1978287.isp.regruhosting.ru/kryzhok/products/getByChaperForCarousel.php?chapter=${chapter}`
+    `https://api.kryzhok.ru/products/getByChapter.php?category=${chapter}`
   );
 
   const hits = await hitsReq.json();

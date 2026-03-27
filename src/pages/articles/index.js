@@ -12,7 +12,7 @@ export default function News({ data }) {
 
   const { asPath } = router;
   const path = asPath.split("?")[0];
-
+  console.log(data)
   return (
     <div>
       <Head>
@@ -34,7 +34,7 @@ export default function News({ data }) {
                 <ArticleCard
                   key={el[0]}
                   title={el[1]}
-                  src={`https://u1978287.isp.regruhosting.ru/kryzhok/articles/photos/${el[0]}/logo.png`}
+                  src={`https://api.kryzhok.ru/articles/${el[2]}`}
                   previewText={el[2]}
                   date={el[4]}
                   author={el[5]}
@@ -53,7 +53,7 @@ export default function News({ data }) {
 export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(
-    `https://u1978287.isp.regruhosting.ru/kryzhok/articles/getAll.php`
+    `https://api.kryzhok.ru/articles/getAll.php`
   );
 
   const data = await res.json();

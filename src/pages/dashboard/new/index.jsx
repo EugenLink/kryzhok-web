@@ -43,23 +43,4 @@ export default function New() {
   );
 }
 
-export async function getServerSideProps(context) {
-  try {
-    const res = await fetch(
-      `https://u1978287.isp.regruhosting.ru/kryzhok/articles/getAll.php`
-    );
 
-    const data = await res.json();
-
-    return { props: { data } };
-  } catch (error) {
-    console.error("Fetch error:", error);
-
-    return {
-      props: {
-        data: [],
-      },
-    };
-  }
- 
-}

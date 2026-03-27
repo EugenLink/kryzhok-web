@@ -4,7 +4,7 @@ const Login = ({ func }) => {
   const [login, setLogin] = useState("");
   const [pass, setPass] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
-
+  
   return (
     <Space direction="vertical">
       {contextHolder}
@@ -22,11 +22,23 @@ const Login = ({ func }) => {
         type="primary"
         style={{ float: "right", marginTop: "15px" }}
         onClick={() => {
-          if (login === "admin" && pass === "qJzdk+=?-a{=#F7D") {
-            func();
-          } else {
-            messageApi.error("Неверный логин или пароль");
-          }
+          let formData = new FormData();
+
+          formData.append("login", login);
+          formData.append("password", pass);
+          fetch("https://api.kryzhok.ru/users/admin.php", {
+            method: "POST",
+            body: formData
+          })
+            .then(res => res.json())
+            .then(res => {
+              if (res.success) {
+                func();
+              } else {
+                messageApi.error("Неверный логин или пароль");
+              }
+            });
+          
         }}
       >
         Войти

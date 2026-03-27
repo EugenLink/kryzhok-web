@@ -14,7 +14,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "u1978287.isp.regruhosting.ru",
+        hostname: "api.kryzhok.ru",
         port: "",
         pathname: "/**",
       },
