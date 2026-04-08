@@ -1,4 +1,5 @@
-@import-normalize @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap');
+@import "fonts.css";
+
 body,
 h1,
 p {
@@ -19,8 +20,9 @@ a {
 }
 
 :root {
-  font-family: "Noto Sans", serif;
+  font-family: "MyFont", sans-serif;
   font-optical-sizing: auto;
+  font-weight: 400;
 
   font-style: normal;
   font-variation-settings: "wdth" 100;
@@ -58,6 +60,9 @@ a {
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+}
+.font400 {
+  font-weight: 600 !important;
 }
 .ant-modal-content {
   padding: 0 !important;
@@ -120,7 +125,6 @@ a {
   margin: 0 auto;
   width: 100%;
   max-width: 1400px;
-  padding: 0 30px;
 }
 
 .slick-dots {
@@ -267,7 +271,7 @@ button.is_active {
     width: 100% !important;
   }
   .container {
-    padding: 0 20px;
+    padding: 0;
   }
 }
 
@@ -324,4 +328,36 @@ button.is_active {
 input:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background: orange !important;
+  opacity: 1;
+}
+
+@media screen and (max-width: 560px) {
+  .swiper-button-next {
+    display: none !important ;
+  }
+  .swiper-button-prev {
+    display: none !important ;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 10s linear infinite;
 }

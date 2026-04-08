@@ -1,7 +1,3 @@
-.yMapContainer {
-  padding-bottom: 20px;
-}
-
 .flex {
   display: flex;
   justify-content: space-between;
@@ -43,7 +39,10 @@
   height: 350px;
   background-size: cover;
   background-position: center;
-  transition: width 0.3s, height 0.3s, background-size 0.3s;
+  transition:
+    width 0.3s,
+    height 0.3s,
+    background-size 0.3s;
 }
 
 .square.expanded {
@@ -61,7 +60,10 @@
   height: 350px;
   background-size: cover;
   background-position: center;
-  transition: width 0.3s, height 0.3s, background-size 0.3s;
+  transition:
+    width 0.3s,
+    height 0.3s,
+    background-size 0.3s;
 }
 
 .rectangle.shrunk {
