@@ -1,12 +1,24 @@
 import React, { useRef, useEffect, useState } from "react";
+import Tesseract from "tesseract.js";
 
 export default function Camera() {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
-  const [data, setData] = useState(
-    "https://i.scdn.co/image/ab67616d0000b2738cdfe55fa7cf10ad94b05c1d",
-  );
-  const takePhoto = () => {
+  const [text, setText] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    async function startCamera() {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: "environment" },
+      });
+      videoRef.current.srcObject = stream;
+    }
+
+    startCamera();
+  }, []);
+
+  const takePhotoAndRead = async () => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
 
@@ -17,37 +29,40 @@ export default function Camera() {
     ctx.drawImage(video, 0, 0);
 
     const imageData = canvas.toDataURL("image/png");
-    console.log(imageData); // тут твоя картинка
-    setData(imageData);
+
+    setLoading(true);
+
+    const result = await Tesseract.recognize(
+      imageData,
+      "rus+eng", // русский + английский
+      {
+        logger: (m) => console.log(m),
+      },
+    );
+
+    setText(result.data.text);
+    setLoading(false);
   };
-  useEffect(() => {
-    async function startCamera() {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: "environment" }, // задняя камера
-        });
-
-        videoRef.current.srcObject = stream;
-      } catch (err) {
-        console.error("Ошибка доступа к камере:", err);
-      }
-    }
-
-    startCamera();
-  }, []);
 
   return (
     <div>
-      <h2>Камера</h2>
-      <button onClick={takePhoto}>Считать</button>
-      <img src={data} />
-      <canvas ref={canvasRef} style={{ display: "none" }} />
+      <h2>Камера + OCR</h2>
+
       <video
         ref={videoRef}
         autoPlay
         playsInline
         style={{ width: "100%", maxWidth: "500px" }}
       />
+
+      <br />
+      <button onClick={takePhotoAndRead}>Считать текст</button>
+
+      <canvas ref={canvasRef} style={{ display: "none" }} />
+
+      {loading && <p>Распознаю...</p>}
+
+      <pre style={{ whiteSpace: "pre-wrap" }}>{text}</pre>
     </div>
   );
 }
