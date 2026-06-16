@@ -9,6 +9,7 @@ import Footer from "./../components/Footer/Footer";
 import HeaderNew from "@/components/Header/HeaderNew";
 import BannerNew from "@/components/Banners/BannersNew";
 import FooterNew from "@/components/Footer/FooterNew";
+import Camera from "@/components/Camer/Camera";
 
 export default function Home({ result }) {
   const [load, setLoad] = useState(false);
@@ -19,22 +20,7 @@ export default function Home({ result }) {
 
   return (
     <div>
-      <Head>
-        <title>Кружок</title>
-        <meta name="description" content="Кружок" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <HeaderNew />
-      {/* <Header /> */}
-      <main className={styles.main}>
-        {load ? null : <Loader />}
-
-        <BannerNew />
-
-        <MainList hit={result} />
-      </main>
-      <FooterNew />
+      <Camera />
     </div>
   );
 }
